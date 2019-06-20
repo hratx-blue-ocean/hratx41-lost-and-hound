@@ -36,6 +36,9 @@ The deep-dive codebase is broken into two major pieces: the client and the serve
 We expect all of our software engineers to be capable of assessing the scope of a ticket and grade it on a point scale of difficulty where 1 point is small, 2 is a good size, 3 is large, 5 is huge, and anything above 5 needs to be broken into multiple tickets if possible. This will be tremendously helpful when assigning team members to tickets.
 
 Here are some good practices for arriving at a specific grade when approaching a new topic. You do not need to be familiar with all of these techniques; pick one that works for you and matches with what the rest of your group would pick and stick to it.
+
+[More ticketing information](https://docs.google.com/document/d/1i79WKUQuhc8nqrkZ-VHDbWCUL94H1WoIHBhV7K3Lbw8/edit?usp=sharing)
+
 ### Consider the [Johari Window](https://www.communicationtheory.org/the-johari-window-model/ "Johari Window"). 
   1. If something is a known-known (you have done this thing before more than once), the process to create will be predictable and consistent. That may mean that is a smaller ticket.
   2. If something is a known-unknown (you haven't done it before but you know people who have and can consult them if you're stuck), the process to create will be predictable but inconsistent. That may mean a slightly larget ticket.
