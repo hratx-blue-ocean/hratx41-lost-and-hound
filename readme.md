@@ -28,6 +28,8 @@ We take version control very seriously here at Blue Ocean. You will be expected 
   5. **Always pull from master onto your working branch and fix conflicts before submitting a pull request to master.** 
   6. Use `git rebase` to create a linear commit history when creating a pull request. [See details here](https://www.atlassian.com/git/tutorials/merging-vs-rebasing "Merging v. Rebasing"). Additionally use squashing when you rebase to make commit history more readable.
   7. Approve pull requests only if you did not write any of the code submitted for review.
+  
+[More git workflow information](https://docs.google.com/document/d/1Kuvpv0rs9He9YRmbB_XVOfNKtakjioRAOjEUaGTqFtU/edit?usp=sharing)
 
 ## Codebase Overview
 The deep-dive codebase is broken into two major pieces: the client and the server. The codebase has three separate package.json files and you will need to validate existing scripts and write new ones which are able to easily move between the top layer of the repo and the two lower layers to help you manage your Node packages. 
