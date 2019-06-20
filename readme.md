@@ -37,8 +37,6 @@ We expect all of our software engineers to be capable of assessing the scope of 
 
 Here are some good practices for arriving at a specific grade when approaching a new topic. You do not need to be familiar with all of these techniques; pick one that works for you and matches with what the rest of your group would pick and stick to it.
 
-[More ticketing information](https://docs.google.com/document/d/1i79WKUQuhc8nqrkZ-VHDbWCUL94H1WoIHBhV7K3Lbw8/edit?usp=sharing)
-
 ### Consider the [Johari Window](https://www.communicationtheory.org/the-johari-window-model/ "Johari Window"). 
   1. If something is a known-known (you have done this thing before more than once), the process to create will be predictable and consistent. That may mean that is a smaller ticket.
   2. If something is a known-unknown (you haven't done it before but you know people who have and can consult them if you're stuck), the process to create will be predictable but inconsistent. That may mean a slightly larget ticket.
@@ -46,6 +44,9 @@ Here are some good practices for arriving at a specific grade when approaching a
 ### Consider the breadth and depth of a given ticket. Tickets should be reasonably narrow and shallow.
   1. A broad ticket is one which touches many components.
   2. A deep ticket is one which adds a complex feature, changes many existing features, or adds many simple features within a single component.
+  
+[More ticketing information](https://docs.google.com/document/d/1i79WKUQuhc8nqrkZ-VHDbWCUL94H1WoIHBhV7K3Lbw8/edit?usp=sharing)
+
 
 ## Developer Operations
 Now that you're at a real company with many people who might all need simultaneous but separate access to a single deployed instance, it's time to think about SSH operational security and how to manage multiple users through AWS. Not every member of your team will need access to either AWS credentials or to an SSH key-pair (such a broad distribution can create chaos) but you shoud avoid bottlenecking by wisely distributing access across team members.
