@@ -7,8 +7,33 @@ Trello Board: https://trello.com/b/1Ry424Xs/hratx40-blue-ocean
 
 How do you feel today? [![Build Status](https://travis-ci.com/hratx39-blue-ocean/deep-dive.svg?branch=master)](https://travis-ci.com/hratx39-blue-ocean/deep-dive)
 
-## Agile Workflow
-Daily standups are a must.
+## Your Agile Process
+Expect this project to push you outside of your comfort zone. Welcome to your first day of life as a professional developer with a professional workflow.
+
+You will be interacting with and playing various roles consistent with an agile work enviroment. We expect you to build software meeting each of our standards over the next week.
+
+## Minimum requirements
+Choose a project based around ideas presented during kick off
+
+Create a backlog of tickets to work through during the week
+
+Participate in a Sprint Planning and a Sprint Retrospective
+
+Attend Daily Standup Meetings
+
+Meet Acceptance Criteria determined by the user
+
+Minimum of 60% test coverage. Tests include unit and integration tests.
+
+Use contiuous integration and continous delivery practices
+
+Deploy early, and often
+Always have a working application in master
+Create a professional quality Github repo including a Readme, Test Coverage, and Clean Code.
+
+Atleast 50% of the tickets you worked on should be done with a pair. (Include co-authors in your commits)
+
+We're here to help guide you through this process...and potentially throw some wrenches in as well ;)
 
 ## Contribution Guidelines
 We expect our new software engineers to start contributing to our codebase immediately. That doesn't mean we want maverick manatees swimming wild and munching on whatever looks tastiest with no concern for what other herdmates are doing. That means:
