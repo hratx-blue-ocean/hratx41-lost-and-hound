@@ -35,6 +35,9 @@ Atleast 50% of the tickets you worked on should be done with a pair. (Include co
 
 We're here to help guide you through this process...and potentially throw some wrenches in as well ;)
 
+## Get Started
+The PM should clone the repo down to their machine, rimraf the .git, and the create a new repo **on this organization** and push the code up to that repo. The naming convention should follow this format: hratx##-projectname (where ## is your cohort number and projectname is the name of your project).
+
 ## Contribution Guidelines
 We expect our new software engineers to start contributing to our codebase immediately. That doesn't mean we want maverick manatees swimming wild and munching on whatever looks tastiest with no concern for what other herdmates are doing. That means:
   1. No code shall be written except that which directly addresses a specific ticket.
