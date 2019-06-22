@@ -1,33 +1,16 @@
-import React, { Component } from 'react';
-import fetch from 'node-fetch';
-// import './App.css';
+import React, { useState, useEffect } from "react";
+// import axios from "axios";
+import Splash from "./Components/Splash.jsx";
+import "./App.scss";
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      seaCreatures: []
-    };
-    this.api = `http://localhost:8000/api/example`;
-  }
-  componentDidMount() {
-    fetch(this.api)
-      .then(res => res.json())
-      .then(seaCreatures => {
-        this.setState({ seaCreatures: seaCreatures.data });
-      });
-  }
+const App = () => {
+  const [pageType, setPageType] = useState();
 
-  render() {
-    return (
-      <>
-        <h1>Welcome to Blue Ocean!</h1>
-        <ul>
-          {this.state.seaCreatures.map((creature, index) => (
-            <li key={index}>{creature}</li>
-          ))}
-        </ul>
-      </>
-    );
-  }
-}
+  useEffect(() => {
+    setPageType(<Splash setPageType={setPageType} />);
+  }, []);
+
+  return <>{pageType}</>;
+};
+
+export default App;
