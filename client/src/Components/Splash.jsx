@@ -1,15 +1,18 @@
 import React from "react";
 import "../Styles/splash.scss";
-import { Container } from "react-bootstrap";
+//import { Container } from "react-bootstrap";
 // import Lost from "./Lost.jsx";
 // import Found from "./Found.jsx";
 
 const Splash = props => {
   return (
     <>
-      <Container>
-        <div id="centerModal">
-          I<br />
+      <div className="header">
+        <div>Lost and Hound</div>
+      </div>
+      <div className="splashContainer">
+        <div>I</div>
+        <div>
           <button
           // onClick={() => {
           //   props.setPageType(<Lost />);
@@ -24,9 +27,12 @@ const Splash = props => {
           >
             Found
           </button>
-          <br />A DOG
         </div>
-      </Container>
+        <div>A DOG</div>
+      </div>
+      <div className="footer">
+        <div>Pawter</div>
+      </div>
     </>
   );
 };

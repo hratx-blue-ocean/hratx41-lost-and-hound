@@ -1,22 +1,48 @@
 body {
-  background-color: pink;
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+  background-image: url(https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-#centerModal {
-  //   position: absolute;
-  //   top: 30%;
-  //   left: 35%;
-  //   align-content: center;
-  //   position: absolute;
+.splashContainer {
   display: flex;
-  justify-content: center;
-  font-size: 28px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6vh;
+  font-family: helvetica;
+}
+
+.header {
+  background: #00000038;
+  display: flex;
+  justify-content: flex-end;
+  font-family: Calibri, sans-serif;
+  font-size: 30px;
+  height: 40px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  background: #00000038;
+  display: flex;
+  color: white;
 }
 
 button {
-  height: 200px;
-  width: 200px;
+  outline: 0;
+  color: white;
+  height: 81px;
+  width: 150px;
   margin: 30px;
-  border-radius: 25%;
+  border-radius: 10px;
   font-size: 28px;
+  background: #00000038;
 }
