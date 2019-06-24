@@ -7,32 +7,28 @@ import "../Styles/splash.scss";
 const Splash = props => {
   return (
     <>
-      <div className="header">
-        <div>Lost and Hound</div>
-      </div>
+      <h3 className="header">Lost and Hound</h3>
       <div className="splashContainer">
-        <div>I</div>
+        <h3>I</h3>
         <div>
           <button
-          // onClick={() => {
-          //   props.setPageType(<Lost />);
-          // }}
+            className="splashButton"
+            value="Lost"
+            onClick={props.clickHandler}
           >
             Lost
           </button>
           <button
-          // onClick={() => {
-          //   props.setPageType(<Found />);
-          // }}
+            className="splashButton"
+            value="Found"
+            onClick={props.clickHandler}
           >
             Found
           </button>
         </div>
-        <div>A DOG</div>
+        <h3>A DOG</h3>
       </div>
-      <div className="footer">
-        <div>Pawter</div>
-      </div>
+      <div className="footer">Pawter Placeholder</div>
     </>
   );
 };
