@@ -1,28 +1,28 @@
-const path = require('path');
-const SRC_DIR = path.join(__dirname, '/src');
-const DIST_DIR = path.join(__dirname, '/public');
+const path = require("path");
+const SRC_DIR = path.join(__dirname, "/src");
+const DIST_DIR = path.join(__dirname, "/public");
 module.exports = {
   entry: `${SRC_DIR}/index.js`,
   output: {
-  filename: 'bundle.js',
-  path: DIST_DIR
+    filename: "bundle.js",
+    path: DIST_DIR
   },
-  module : {
-    rules : [
+  module: {
+    rules: [
       {
         test: /\.(js|mjs|jsx)$/,
-        enforce: 'pre',
-        loader: 'eslint-loader'
+        enforce: "pre",
+        loader: "eslint-loader"
       },
       {
-        test : /\.js?/,
-        include : SRC_DIR,
-        loader : 'babel-loader'
-      },
-      {
-        test: /\.css$/,
+        test: /\.js?/,
         include: SRC_DIR,
-        loader: 'css-loader'
+        loader: "babel-loader"
+      },
+      {
+        test: /\.scss$/,
+        include: SRC_DIR,
+        loader: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },
