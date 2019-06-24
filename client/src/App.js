@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 // import axios from "axios";
 import Splash from "./Components/Splash.jsx";
@@ -37,7 +36,7 @@ class App extends React.Component {
       results: [1, 2, 3]
     });
   }
-  //
+
   setText(e) {
     let temp = e.target.id;
     let value = e.target.value;
@@ -67,32 +66,5 @@ class App extends React.Component {
     );
   }
 }
-=======
-import React, { useState, useEffect } from 'react';
-// import axios from "axios";
-import Splash from './Components/Splash.jsx';
-import './App.scss';
-
-const App = () => {
-	const [pageType, setPageType] = useState();
-	const [action, setAction] = useState('');
-	const [formData, setFormData] = useState({
-		color: '',
-		date: null,
-		size: '',
-		location: 0,
-	});
-
-	useEffect(() => {
-		setPageType(<Splash setPageType={setPageType} />);
-	}, []);
-
-	useEffect(() => {
-		//axios request
-	}, [formData]);
-
-	return <>{pageType}</>;
-};
->>>>>>> develop
 
 export default App;
