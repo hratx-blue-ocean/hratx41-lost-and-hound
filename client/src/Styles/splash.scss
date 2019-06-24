@@ -12,14 +12,18 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 6vh;
-  font-family: helvetica;
+  font-size: 23px;
+  font-weight: 900;
+  font-family: calibri, sans-serif;
 }
 
 .header {
   background: #00000038;
+  color: white;
   display: flex;
   justify-content: flex-end;
   font-family: Calibri, sans-serif;
+  font-weight: 900;
   font-size: 30px;
   height: 40px;
   border-bottom-right-radius: 2px;
@@ -43,6 +47,8 @@ button {
   width: 150px;
   margin: 30px;
   border-radius: 10px;
+  font-family: calibri, sans-serif;
+  font-weight: 900;
   font-size: 28px;
   background: #00000038;
 }
