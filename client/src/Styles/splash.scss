@@ -1,7 +1,6 @@
 body {
   margin: 0;
-  overflow: hidden;
-  height: 100vh;
+  background-attachment: fixed;
   background-image: url(https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=750&w=1260);
   background-size: cover;
   background-repeat: no-repeat;
@@ -44,14 +43,21 @@ body {
 }
 
 .splashButton {
-  outline: 0;
   color: white;
   height: 81px;
   width: 150px;
   margin: 30px;
-  border-radius: 10px;
+  border-radius: 5px;
   font-family: calibri, sans-serif;
   font-weight: 900;
   font-size: 28px;
   background: #00000038;
+}
+
+.splashButton:hover {
+  opacity: 0.5;
+}
+
+button:focus {
+  outline: 0;
 }

@@ -1,10 +1,12 @@
 import React from "react";
-// import axios from "axios";
+import axios from "axios";
 import Splash from "./Components/Splash.jsx";
 //import "./App.scss";
 import SearchForm from "./Components/SearchForm.jsx";
 import ResultsList from "./Components/ResultsList.jsx";
 import Footer from "./Components/Footer.jsx";
+// import ResultsList from "./Components/ResultsList.jsx";
+import Header from "./Components/Header.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +27,7 @@ class App extends React.Component {
     this.fetchHandler = this.fetchHandler.bind(this);
     this.setText = this.setText.bind(this);
   }
-  //
+
   splashPageClickHandler(e) {
     this.setState({
       action: e.target.value
@@ -33,38 +35,43 @@ class App extends React.Component {
   }
 
   fetchHandler() {
-    this.setState({
-      results: [1, 2, 3]
+    axios.get("/api/found").then(response => {
+      console.log(response.data);
+      this.setState({
+        results: response.data
+      });
     });
   }
 
   setText(e) {
     let temp = e.target.id;
     let value = e.target.value;
-    this.setState(
-      (prevState, props) => {
-        prevState.formData[temp] = value;
-        return { formData: prevState.formData };
-      },
-      () => {
-        console.log(this.state);
-      }
-    );
+    this.setState((prevState, props) => {
+      prevState.formData[temp] = value;
+      return { formData: prevState.formData };
+    });
   }
 
   render() {
     return (
-      <div>
+      <>
+        <Header />
         {this.state.action === "" ? (
           <Splash clickHandler={this.splashPageClickHandler} />
         ) : (
-          <SearchForm text={this.setText} fetch={this.fetchHandler} />
+          <SearchForm
+            results={this.state.results}
+            text={this.setText}
+            fetch={this.fetchHandler}
+          />
         )}
-        {this.state.results === [] ? null : (
+          <Footer />
+        {/* {this.state.results === [] ? null : (
           <ResultsList results={this.state.results} />
         )}
-        <Footer />
       </div>
+        )} */}
+      </>
     );
   }
 }
