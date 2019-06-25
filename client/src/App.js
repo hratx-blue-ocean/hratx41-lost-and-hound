@@ -1,5 +1,5 @@
 import React from "react";
-// import axios from "axios";
+import axios from "axios";
 import Splash from "./Components/Splash.jsx";
 //import "./App.scss";
 import SearchForm from "./Components/SearchForm.jsx";
@@ -33,8 +33,11 @@ class App extends React.Component {
   }
 
   fetchHandler() {
-    this.setState({
-      results: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10, 11]
+    axios.get("/api/found").then(response => {
+      console.log(response.data);
+      this.setState({
+        results: response.data
+      });
     });
   }
 

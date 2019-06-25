@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, ListGroup } from "react-bootstrap";
 
 const Result = props => {
   return (
@@ -9,13 +9,14 @@ const Result = props => {
     //   <div>Description</div>
     // </div>
     <Card style={{ width: "33%" }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Img variant="top" src={props.result.image.url} />
       <Card.Body>
-        <Card.Title>Doggie Name</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        <ListGroup>
+          <ListGroup.Item>{props.result.age}</ListGroup.Item>
+          <ListGroup.Item>{props.result.color}</ListGroup.Item>
+          <ListGroup.Item>{props.result.looks_like}</ListGroup.Item>
+          <ListGroup.Item>{props.result.sex}</ListGroup.Item>
+        </ListGroup>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
