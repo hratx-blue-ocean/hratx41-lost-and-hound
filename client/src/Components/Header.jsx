@@ -1,20 +1,15 @@
 import React from "react";
 import "../Styles/splash.scss";
 import { Container } from "react-bootstrap";
-import Pawprint from "../Assets/paw-print-01.svg";
-import MenuDropdown from "../Assets/icons9-menu.svg";
+// import { ReactComponent as Pawprint } from "../Assets/paw-print-01.svg";
+// import { ReactComponent as MenuDropdown } from "../Assets/icons8-menu.svg";
 
 const Header = props => {
   return (
     <>
-      <Container>
-        <div class="header">
-          <Pawprint id="header-logo" /> <span id="header-">LOST AND HOUND</span>
-          <MenuDropdown class="menu-icon" id="header-menu-icon" />
-        </div>
-      </Container>
+      <h3 className="header">Lost and Hound</h3>
     </>
   );
 };
 
-export default About;
+export default Header;

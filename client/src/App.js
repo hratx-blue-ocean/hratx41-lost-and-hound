@@ -4,6 +4,8 @@ import Splash from "./Components/Splash.jsx";
 //import "./App.scss";
 import SearchForm from "./Components/SearchForm.jsx";
 import ResultsList from "./Components/ResultsList.jsx";
+import Header from "./Components/Header.jsx";
+import About from "./Components/About.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -54,6 +56,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <Header />
         {this.state.action === "" ? (
           <Splash clickHandler={this.splashPageClickHandler} />
         ) : (
