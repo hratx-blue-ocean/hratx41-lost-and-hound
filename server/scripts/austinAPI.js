@@ -39,19 +39,16 @@
 //   .catch(function (error) {
 //     console.error('an error has occurred: ' + error);
 //   });
-
 const axios = require('axios');
 
 const getAACFoundData = (searchParams, callback) => {
-  // const reqParams = {
-  //   '$$app_token': process.env.APP_TOKEN,
-  //   '$limit': 5000,
-  //   type: 'Dog',
-  //   looks_like: searchParams.breed,
-  //   color: searchParams.color,
-  //   sex: searchParams.gender,
-  // }
-  axios.get('https://data.austintexas.gov/resource/kz4x-q9k5.json', { params: searchParams })
+  const addParams = {
+    '$$app_token': process.env.APP_TOKEN,
+    '$limit': 5000,
+    type: 'Dog'
+  }
+  const queryParams = { ...addParams, ...searchParams }
+  axios.get(process.env.AAC_URL, { params: queryParams })
     .then(dogResults => {
       callback(null, dogResults.data);
     })
