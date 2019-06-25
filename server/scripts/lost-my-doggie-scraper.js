@@ -32,18 +32,27 @@ nightmare
     //get address
     let allAdresses = document.querySelectorAll('.info h6:nth-of-type(2)');
     allAdresses = [...allAdresses];
-    allAdresses = allAdresses.map(elem => elem.innerText);
+    allAdresses = allAdresses.map(elem => {
+      let address = elem.innerText;
+      let zip = address.split("\n")[1];
+      let city = address.split(",")[0];
+      return {
+        zip,
+        city,
+        state: "TX",
+      }
+    });
 
     //get breed
     let allBreeds = document.querySelectorAll('.custom li:first-of-type');
     allBreeds = [...allBreeds];
-    allBreeds = allBreeds.map(elem => elem.innerHTML);
+    allBreeds = allBreeds.map(elem => elem.innerHTML.trim());
 
 
     //get color
     let allColors = document.querySelectorAll('.custom li:nth-of-type(2)');
     allColors = [...allColors];
-    allColors = allColors.map(elem => elem.innerHTML);
+    allColors = allColors.map(elem => elem.innerHTML.split(", ").join("/"));
 
     //get date
     let allDates = document.querySelectorAll('.custom li:nth-of-type(3)');
@@ -66,7 +75,7 @@ nightmare
       dogObj["breed"] = allBreeds[i];
       dogObj["color"] = allColors[i];
       dogObj["date"] = allDates[i];
-      dogObj["url"] = allImages[i];
+      dogObj["image"] = allImages[i];
 
       resultArray.push(dogObj);
     }
