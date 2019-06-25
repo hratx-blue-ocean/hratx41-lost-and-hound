@@ -26,11 +26,18 @@ class App extends React.Component {
     this.splashPageClickHandler = this.splashPageClickHandler.bind(this);
     this.fetchHandler = this.fetchHandler.bind(this);
     this.setText = this.setText.bind(this);
+    this.homeRedirect = this.homeRedirect.bind(this);
   }
 
   splashPageClickHandler(e) {
     this.setState({
       action: e.target.value
+    });
+  }
+
+  homeRedirect() {
+    this.setState({
+      action: ""
     });
   }
 
@@ -55,7 +62,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Header />
+        <Header homeRedirect={this.homeRedirect} />
         {this.state.action === "" ? (
           <Splash clickHandler={this.splashPageClickHandler} />
         ) : (
@@ -65,7 +72,7 @@ class App extends React.Component {
             fetch={this.fetchHandler}
           />
         )}
-          <Footer />
+        <Footer />
         {/* {this.state.results === [] ? null : (
           <ResultsList results={this.state.results} />
         )}
