@@ -19,10 +19,10 @@ app.use((_, res, next) => {
 app.use(logger("dev"));
 
 // You can place your routes here, feel free to refactor:
-const { example } = require("./routes");
+const { example, foundDogs } = require("./routes");
 app.use(express.static(path.join(__dirname, "../client/public")));
 app.use("/api/example", example);
-
+app.use("/api/found", foundDogs);
 // app.get("/", (req, res) => {
 //   res.send("HELLO");
 // });
