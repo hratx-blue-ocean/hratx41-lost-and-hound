@@ -1,6 +1,5 @@
 import React from "react";
 import "../Styles/splash.scss";
-import Header from "./Header.jsx";
 import About from "./About.jsx";
 
 const Splash = props => {
