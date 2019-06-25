@@ -3,7 +3,7 @@ import React from "react";
 import Splash from "./Components/Splash.jsx";
 //import "./App.scss";
 import SearchForm from "./Components/SearchForm.jsx";
-import ResultsList from "./Components/ResultsList.jsx";
+// import ResultsList from "./Components/ResultsList.jsx";
 import Header from "./Components/Header.jsx";
 
 class App extends React.Component {
@@ -46,7 +46,7 @@ class App extends React.Component {
       return { formData: prevState.formData };
     });
   }
-  //
+
   render() {
     return (
       <>
@@ -54,11 +54,15 @@ class App extends React.Component {
         {this.state.action === "" ? (
           <Splash clickHandler={this.splashPageClickHandler} />
         ) : (
-          <SearchForm text={this.setText} fetch={this.fetchHandler} />
+          <SearchForm
+            results={this.state.results}
+            text={this.setText}
+            fetch={this.fetchHandler}
+          />
         )}
-        {this.state.results === [] ? null : (
+        {/* {this.state.results === [] ? null : (
           <ResultsList results={this.state.results} />
-        )}
+        )} */}
       </>
     );
   }

@@ -1,13 +1,12 @@
 import React from "react";
 import "../Styles/splash.scss";
-// import { ReactComponent as Pawprint } from "../Assets/paw-print-01.svg";
-// import { ReactComponent as MenuDropdown } from "../Assets/icons8-menu.svg";
+import { Navbar } from "react-bootstrap";
 
 const Header = props => {
   return (
-    <>
-      <h3 className="header">Lost and Hound</h3>
-    </>
+    <Navbar sticky="top" bg="light" expand="lg">
+      <Navbar.Brand>Lost And Hound</Navbar.Brand>
+    </Navbar>
   );
 };
 

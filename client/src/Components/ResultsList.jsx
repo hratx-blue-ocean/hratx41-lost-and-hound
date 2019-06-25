@@ -4,7 +4,7 @@ import { Container, Row } from "react-bootstrap";
 
 const ResultsList = props => {
   return (
-    <div>
+    <div className="mx-auto">
       <Container>
         <Row>
           {props.results.map((result, index) => {

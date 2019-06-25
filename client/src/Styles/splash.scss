@@ -52,6 +52,10 @@ body {
   background: #00000038;
 }
 
+.splashButton:hover {
+  opacity: 0.5;
+}
+
 button:focus {
   outline: 0;
 }
