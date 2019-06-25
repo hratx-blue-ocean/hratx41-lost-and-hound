@@ -1,10 +1,9 @@
 import React from "react";
 import axios from "axios";
 import Splash from "./Components/Splash.jsx";
-//import "./App.scss";
 import SearchForm from "./Components/SearchForm.jsx";
-// import ResultsList from "./Components/ResultsList.jsx";
 import Header from "./Components/Header.jsx";
+// import { Modal } from "react-bootstrap";
 
 class App extends React.Component {
   constructor(props) {
@@ -17,13 +16,16 @@ class App extends React.Component {
         color: "",
         size: ["small", "medium", "large"],
         gender: ["male", "female"],
-        zipcode: null
+        zipcode: null,
+        modalView: true,
+        modalIndex: -1
       },
       results: []
     };
     this.splashPageClickHandler = this.splashPageClickHandler.bind(this);
     this.fetchHandler = this.fetchHandler.bind(this);
     this.setText = this.setText.bind(this);
+    this.resultExpand = this.resultExpand.bind(this);
   }
 
   splashPageClickHandler(e) {
@@ -50,6 +52,13 @@ class App extends React.Component {
     });
   }
 
+  resultExpand(index) {
+    this.setState({
+      modalView: !this.state.modalView,
+      modalIndex: index
+    });
+  }
+  //
   render() {
     return (
       <>
@@ -61,11 +70,11 @@ class App extends React.Component {
             results={this.state.results}
             text={this.setText}
             fetch={this.fetchHandler}
+            resultExpand={this.resultExpand}
+            modalView={this.state.modalView}
+            modalIndex={this.state.modalIndex}
           />
         )}
-        {/* {this.state.results === [] ? null : (
-          <ResultsList results={this.state.results} />
-        )} */}
       </>
     );
   }

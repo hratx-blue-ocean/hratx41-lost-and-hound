@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Container, Row, Col, Button } from "react-bootstrap";
+import { Form, Container, Row, Col, Button, Modal } from "react-bootstrap";
 import ResultsList from "./ResultsList.jsx";
 const SearchForm = props => {
   return (
@@ -47,7 +47,6 @@ const SearchForm = props => {
               </Button>
             </Form>
           </Col>
-          {/* <Col sm={2} /> */}
           <Col md={8}>
             <Form className="m-3">
               <Form.Control
@@ -58,16 +57,35 @@ const SearchForm = props => {
               />
             </Form>
             {props.results === [] ? null : (
-              <ResultsList results={props.results} />
+              <ResultsList
+                resultExpand={props.resultExpand}
+                modalView={props.modalView}
+                results={props.results}
+              />
             )}
           </Col>
           <Col md={2} />
         </Row>
       </Container>
+      <Modal
+        show={props.modalView}
+        onHide={props.resultExpand}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Dialog>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal title</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body />
+
+          <Modal.Footer />
+        </Modal.Dialog>
+      </Modal>
     </div>
   );
 };
 
 export default SearchForm;
-
-//
