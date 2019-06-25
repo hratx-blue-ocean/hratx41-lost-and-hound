@@ -1,13 +1,10 @@
 import React from "react";
 import "../Styles/splash.scss";
-
-// import Lost from "./Lost.jsx";
-// import Found from "./Found.jsx";
+import About from "./About.jsx";
 
 const Splash = props => {
   return (
     <>
-      <h3 className="header">Lost and Hound</h3>
       <div className="splashContainer">
         <h3>I</h3>
         <div>
@@ -28,7 +25,10 @@ const Splash = props => {
         </div>
         <h3>A DOG</h3>
       </div>
-      <div className="footer">Pawter Placeholder</div>
+      {/* <div className="footer">Pawter Placeholder</div> */}
+      <div className="footer">
+        <About />
+      </div>
     </>
   );
 };

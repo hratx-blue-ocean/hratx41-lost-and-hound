@@ -22,11 +22,15 @@ module.exports = {
       {
         test: /\.scss$/,
         include: SRC_DIR,
-        loader: ["style-loader", "css-loader", "sass-loader"]
+        loaders: ["style-loader", "css-loader", "sass-loader"]
       },
       {
         test: /\.css$/,
-        loader: ["style-loader", "css-loader"]
+        loaders: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.less$/,
+        loaders: ["style-loader", "css-loader", "less-loader"]
       }
     ]
   },
