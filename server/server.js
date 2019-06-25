@@ -3,18 +3,13 @@ const createError = require("http-errors");
 const logger = require("morgan");
 const express = require("express");
 const path = require("path");
+const cors = require("cors");
 const app = express();
 // app.set("view engine", "html");
 //commment test
 // open up CORS
-app.use((_, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+
+app.use(cors());
 
 app.use(logger("dev"));
 
