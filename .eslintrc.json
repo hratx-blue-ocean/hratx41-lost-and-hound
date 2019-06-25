@@ -7,8 +7,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:jsx-a11y/recommended",
-    "react-app",
-    "eslint-plugin-prettier"
+    "react-app"
   ],
   "globals": {
     "Atomics": "readonly",
