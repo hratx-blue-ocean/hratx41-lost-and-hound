@@ -2,7 +2,7 @@
 
 var Nightmare = require('nightmare'),
   nightmare = Nightmare({
-    show: true
+    show: false
   });
 
 nightmare
