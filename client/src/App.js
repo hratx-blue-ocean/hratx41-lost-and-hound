@@ -4,6 +4,7 @@ import Splash from "./Components/Splash.jsx";
 //import "./App.scss";
 import SearchForm from "./Components/SearchForm.jsx";
 import ResultsList from "./Components/ResultsList.jsx";
+import Footer from "./Components/Footer.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -62,6 +63,7 @@ class App extends React.Component {
         {this.state.results === [] ? null : (
           <ResultsList results={this.state.results} />
         )}
+        <Footer />
       </div>
     );
   }

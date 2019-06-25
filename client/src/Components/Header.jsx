@@ -17,4 +17,4 @@ const Header = props => {
   );
 };
 
-export default About;
+export default Header;

@@ -32,13 +32,15 @@ body {
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  height: 100px;
+  height: 220px;
   width: 100%;
-  background: #00000038;
+  background: #333;
   display: flex;
   color: white;
+
+  display: inline-block;
 }
 
 .splashButton {
