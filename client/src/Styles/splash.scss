@@ -16,6 +16,11 @@ body {
   font-family: calibri, sans-serif;
 }
 
+// nav bar "Lost and Hound" is clickable
+.navTitle:hover {
+  cursor: pointer;
+}
+
 .header {
   background: #00000038;
   color: white;
