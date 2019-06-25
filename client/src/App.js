@@ -24,7 +24,7 @@ class App extends React.Component {
     this.fetchHandler = this.fetchHandler.bind(this);
     this.setText = this.setText.bind(this);
   }
-  //
+
   splashPageClickHandler(e) {
     this.setState({
       action: e.target.value
