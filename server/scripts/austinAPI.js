@@ -53,7 +53,7 @@ const getAACFoundData = (searchParams, callback) => {
   // }
   axios.get('https://data.austintexas.gov/resource/kz4x-q9k5.json', { params: searchParams })
     .then(dogResults => {
-      callback(null, dogResults);
+      callback(null, dogResults.data);
     })
     .catch(err => {
       callback(err);

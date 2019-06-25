@@ -20,7 +20,7 @@ describe('Austin Data API', () => {
         sex: 'Neutered Male',
       };
     getAACFoundData(testParams, (err, results) => {
-      const resResults = results.data
+      const resResults = results
       // console.log(results.data);
       should.not.exist(err);
       should.exist(resResults);
