@@ -1,60 +1,40 @@
-// let Nightmare = require('nightmare');
-
-// let nightmare = Nightmare({
-//   show: false
-// });
-
-// nightmare
-//   //load a url
-//   .goto('https://data.austintexas.gov/api/views/hye6-gvq2/rows.json?accessType=DOWNLOAD')
-//   .evaluate(function () {
-//     let allElems = document.querySelector('pre')
-//     return allElems.innerHTML;
-//   })
-//   //end the Nightmare instance along with the Electron instance it wraps
-//   .end()
-//   .then(function (result) {
-
-//     let animalArray = JSON.parse(result).data;
-//     animalArray = [...animalArray];
-//     animalArray = animalArray.filter((element) => element[9]);
-//     animalArray = animalArray.filter((element) => element[9][0]);
-//     animalArray = animalArray.filter((element) => element[12].toLowerCase() === "dog")
-
-//     let lostDogs = []
-//     animalArray.forEach(element => {
-//       let address = JSON.parse(element[9][0]);
-//       let date = element[11].split("T")[0];
-//       let breed = element[13];
-//       let color = element[14];
-//       let gender = element[15].split(" ")[1];
-//       let age = element[16];
-//       let image = element[17][0];
-
-//       lostDogs.push({ address, date, breed, color, gender, age, image })
-//     });
-//     console.log(lostDogs);
-//   })
-//   //catch errors if they happen
-//   .catch(function (error) {
-//     console.error('an error has occurred: ' + error);
-//   });
+const zipcodes = require('zipcodes');
 const axios = require('axios');
 
 const getAACFoundData = (searchParams, callback) => {
-  const addParams = {
-    '$$app_token': process.env.APP_TOKEN,
-    '$limit': 5000,
-    type: 'Dog'
-  }
-  const queryParams = { ...addParams, ...searchParams }
-  axios.get(process.env.AAC_URL, { params: queryParams })
-    .then(dogResults => {
-      callback(null, dogResults.data);
-    })
-    .catch(err => {
-      callback(err);
-    });
-}
+	const zipcode = searchParams.zipcode || '78704';
+	let currDate = '2019-06-12T00:00:00.000';
+	if (searchParams.lostDate) {
+		currDate = searchParams.lostDate;
+	}
+	const intakeDate = 'intake_date >= "' + currDate + '"';
+	const addParams = {
+		$$app_token: process.env.APP_TOKEN,
+		type: 'Dog',
+		$where: intakeDate,
+	};
+	if (searchParams.lostDate) {
+		delete searchParams.lostDate;
+	}
+	const queryParams = { ...searchParams, ...addParams };
+
+	const sortDist = (obj1, obj2) => {
+		return (
+			zipcodes.distance(zipcode, JSON.parse(obj1.location['human_address']).zip) -
+			zipcodes.distance(zipcode, JSON.parse(obj2.location['human_address']).zip)
+		);
+	};
+
+	axios
+		.get(process.env.AAC_URL, { params: queryParams })
+		.then(dogResults => {
+			// console.log(dogResults);
+			dogResults.data.sort(sortDist);
+			callback(null, dogResults.data);
+		})
+		.catch(err => {
+			callback(err);
+		});
+};
 
 module.exports = { getAACFoundData };
