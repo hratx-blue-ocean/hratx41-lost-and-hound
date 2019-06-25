@@ -8,10 +8,10 @@ const Header = props => {
       <Navbar.Brand className="navTitle" onClick={props.homeRedirect}>
         Lost And Hound
       </Navbar.Brand>
-      <a class="nav-link" href="#">
+      <a className="nav-link" href="#">
         About
       </a>
-      <a class="nav-link" href="#">
+      <a className="nav-link" href="#">
         Resources
       </a>
     </Navbar>
