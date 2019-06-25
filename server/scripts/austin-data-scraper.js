@@ -24,14 +24,14 @@ nightmare
     let lostDogs = []
     animalArray.forEach(element => {
       let address = JSON.parse(element[9][0]);
-      let date = element[11];
+      let date = element[11].split("T")[0];
       let breed = element[13];
       let color = element[14];
-      let sex = element[15];
+      let gender = element[15].split(" ")[1];
       let age = element[16];
       let image = element[17][0];
 
-      lostDogs.push({ address, date, breed, color, sex, age, image })
+      lostDogs.push({ address, date, breed, color, gender, age, image })
     });
     console.log(lostDogs);
   })
