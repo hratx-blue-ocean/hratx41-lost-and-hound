@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import Splash from "./Components/Splash.jsx";
 import SearchForm from "./Components/SearchForm.jsx";
+import ResultsList from "./Components/ResultsList.jsx";
+import Footer from "./Components/Footer.jsx";
 import Header from "./Components/Header.jsx";
 // import { Modal } from "react-bootstrap";
 
@@ -75,6 +77,12 @@ class App extends React.Component {
             modalIndex={this.state.modalIndex}
           />
         )}
+        <Footer />
+        {/* {this.state.results === [] ? null : (
+          <ResultsList results={this.state.results} />
+        )}
+      </div>
+        )} */}
       </>
     );
   }
