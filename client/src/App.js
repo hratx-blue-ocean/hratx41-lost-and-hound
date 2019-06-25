@@ -3,6 +3,8 @@ import axios from "axios";
 import Splash from "./Components/Splash.jsx";
 //import "./App.scss";
 import SearchForm from "./Components/SearchForm.jsx";
+import ResultsList from "./Components/ResultsList.jsx";
+import Footer from "./Components/Footer.jsx";
 // import ResultsList from "./Components/ResultsList.jsx";
 import Header from "./Components/Header.jsx";
 
@@ -63,8 +65,11 @@ class App extends React.Component {
             fetch={this.fetchHandler}
           />
         )}
+          <Footer />
         {/* {this.state.results === [] ? null : (
           <ResultsList results={this.state.results} />
+        )}
+      </div>
         )} */}
       </>
     );
