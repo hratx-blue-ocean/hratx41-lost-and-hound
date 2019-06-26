@@ -58,7 +58,7 @@ const SearchForm = props => {
               />
             </Form>
             {props.results === [] ? null : (
-              <ResultsList results={props.results} />
+              <ResultsList results={props.results} action={props.action} />
             )}
           </Col>
           <Col md={2} />
