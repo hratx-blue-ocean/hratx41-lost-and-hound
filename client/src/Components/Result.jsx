@@ -1,16 +1,20 @@
 import React from "react";
 import { Card, Button, ListGroup } from "react-bootstrap";
+// import axios from "axios";
 
 const Result = props => {
   return (
-    // <div>
-    //   <div>Image</div>
-    //   <div>Name</div>
-    //   <div>Description</div>
-    // </div>
     <Card style={{ width: "33%" }}>
-      {(props.action === "Found") ? <Card.Img variant="top" src={`http://petharbor.com/get_image.asp?RES=Detail&ID=${props.result.animal_id}&LOCATION=ASTN`} />
-        : <Card.Img variant="top" src={props.result.image} />}
+      {props.action === "Found" ? (
+        <Card.Img
+          variant="top"
+          src={`http://petharbor.com/get_image.asp?RES=Detail&ID=${
+            props.result.animal_id
+          }&LOCATION=ASTN`}
+        />
+      ) : (
+        <Card.Img variant="top" src={props.result.image} />
+      )}
       <Card.Body>
         <ListGroup>
           <ListGroup.Item>{props.result.age}</ListGroup.Item>
@@ -23,5 +27,5 @@ const Result = props => {
     </Card>
   );
 };
-
+//
 export default Result;

@@ -1,6 +1,5 @@
 import React from "react";
 import "../Styles/splash.scss";
-import About from "./About.jsx";
 import Banner from "./Banner.jsx";
 
 const Splash = props => {
