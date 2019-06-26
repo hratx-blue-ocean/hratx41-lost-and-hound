@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Splash from "./Components/Splash.jsx";
-//import "./App.scss";
+import "./App.scss";
 import SearchForm from "./Components/SearchForm.jsx";
 import ResultsList from "./Components/ResultsList.jsx";
 import Footer from "./Components/Footer.jsx";
@@ -54,8 +54,8 @@ class App extends React.Component {
         console.log(response.data);
         this.setState({
           results: response.data
-        })
-      })
+        });
+      });
     }
   }
 
@@ -75,13 +75,13 @@ class App extends React.Component {
         {this.state.action === "" ? (
           <Splash clickHandler={this.splashPageClickHandler} />
         ) : (
-            <SearchForm
-              results={this.state.results}
-              text={this.setText}
-              fetch={this.fetchHandler}
-              action={this.state.action}
-            />
-          )}
+          <SearchForm
+            results={this.state.results}
+            text={this.setText}
+            fetch={this.fetchHandler}
+            action={this.state.action}
+          />
+        )}
         <Footer />
         {/* {this.state.results === [] ? null : (
           <ResultsList results={this.state.results} />
