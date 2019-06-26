@@ -6,9 +6,9 @@ const Footer = props => {
     <div className="footer">
       <footer className="page-footer font-small blue pt-4">
         <div className="footer-copyright text-center py-3">
-          © 2019 Paw-Pi-right:
+          © 2019 pawpyright:
           <a href="https://mdbootstrap.com/education/bootstrap/">
-            &nbsp;Lost and Hound
+            &nbsp;lost and hound
           </a>
         </div>
       </footer>

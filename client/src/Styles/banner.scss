@@ -1,6 +1,7 @@
 @import './mixins.scss';
 
 #banner {
+  margin-top: 2%;
   display: grid;
   width: 70%;
   grid-template-columns: 1fr 4fr;
