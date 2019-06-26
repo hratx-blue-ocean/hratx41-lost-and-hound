@@ -3,9 +3,8 @@
 #banner {
   margin-top: 2%;
   display: grid;
-  width: 70%;
+  width: 65%;
   grid-template-columns: 1fr 4fr;
-  // height: 400px;
   justify-content: center;
 
   #logo {
@@ -19,7 +18,7 @@
     #company-name {
       @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
       font-family: 'Pacifico', cursive;
-      font-size: 8rem;
+      font-size: 9rem;
       @include shadow;
     }
 
