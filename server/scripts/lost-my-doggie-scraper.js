@@ -73,9 +73,9 @@ function getLostDogs(callback) {
       for (let i = 0; i < allDates.length; i++) {
         let dogObj = {};
         dogObj["name"] = allNames[i];
-        dogObj["gender"] = allGenders[i];
+        dogObj["sex"] = allGenders[i];
         dogObj["address"] = allAdresses[i];
-        dogObj["breed"] = allBreeds[i];
+        dogObj["looks_like"] = allBreeds[i];
         dogObj["color"] = allColors[i];
         dogObj["date"] = allDates[i];
         dogObj["image"] = allImages[i];

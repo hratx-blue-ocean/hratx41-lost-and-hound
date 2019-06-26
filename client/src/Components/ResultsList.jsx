@@ -8,7 +8,7 @@ const ResultsList = props => {
       <Container>
         <Row>
           {props.results.map((result, index) => {
-            return <Result result={result} />;
+            return <Result result={result} action={props.action} />;
           })}
         </Row>
       </Container>

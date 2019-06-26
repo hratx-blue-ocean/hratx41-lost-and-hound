@@ -42,12 +42,21 @@ class App extends React.Component {
   }
 
   fetchHandler() {
-    axios.get("/api/found").then(response => {
-      console.log(response.data);
-      this.setState({
-        results: response.data
+    if (this.state.action === "Found") {
+      axios.get("/api/found").then(response => {
+        console.log(response.data);
+        this.setState({
+          results: response.data
+        });
       });
-    });
+    } else if (this.state.action === "Lost") {
+      axios.get("/api/lost").then(response => {
+        console.log(response.data);
+        this.setState({
+          results: response.data
+        })
+      })
+    }
   }
 
   setText(e) {
@@ -66,12 +75,13 @@ class App extends React.Component {
         {this.state.action === "" ? (
           <Splash clickHandler={this.splashPageClickHandler} />
         ) : (
-          <SearchForm
-            results={this.state.results}
-            text={this.setText}
-            fetch={this.fetchHandler}
-          />
-        )}
+            <SearchForm
+              results={this.state.results}
+              text={this.setText}
+              fetch={this.fetchHandler}
+              action={this.state.action}
+            />
+          )}
         <Footer />
         {/* {this.state.results === [] ? null : (
           <ResultsList results={this.state.results} />
