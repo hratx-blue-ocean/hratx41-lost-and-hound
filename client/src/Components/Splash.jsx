@@ -1,11 +1,13 @@
 import React from "react";
 import "../Styles/splash.scss";
 import About from "./About.jsx";
+import Banner from "./Banner.jsx";
 
 const Splash = props => {
   return (
     <>
       <div className="splashContainer">
+        <Banner />
         <h3>I</h3>
         <div>
           <button

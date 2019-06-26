@@ -1,0 +1,20 @@
+#banner {
+  display: grid;
+  width: 70%;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  height: 500px;
+  border: solid 1px;
+
+  #logo {
+    border: solid 1px;
+    height: 100%;
+  }
+
+  #company-name {
+    @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+    font-family: 'Pacifico', cursive;
+    font-size: 8rem;
+  }
+
+}
