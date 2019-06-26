@@ -26,7 +26,6 @@ app.get("/flyer", (req, res) => {
     }
   });
 });
-app.use("/api/example", example);
 app.use("/api/found", foundDogs);
 app.use("/api/lost", lostDogs);
 
