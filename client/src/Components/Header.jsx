@@ -1,6 +1,6 @@
 import React from "react";
 import "../Styles/splash.scss";
-import { Navbar } from "react-bootstrap";
+import { Navbar, Button, Nav } from "react-bootstrap";
 
 const Header = props => {
   return (
@@ -8,12 +8,11 @@ const Header = props => {
       <Navbar.Brand className="navTitle" onClick={props.homeRedirect}>
         Lost And Hound
       </Navbar.Brand>
-      <a className="nav-link" href="#">
-        About
-      </a>
-      <a className="nav-link" href="#">
-        Resources
-      </a>
+      <Nav.Link href="#about">About</Nav.Link>
+      <Nav.Link href="#resources">Resources</Nav.Link>
+      <Button value="post" onClick={props.clickHandler}>
+        Submit a Lost or Found Dog
+      </Button>
     </Navbar>
   );
 };

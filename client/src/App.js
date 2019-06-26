@@ -3,10 +3,9 @@ import axios from "axios";
 import Splash from "./Components/Splash.jsx";
 import "./App.scss";
 import SearchForm from "./Components/SearchForm.jsx";
-import ResultsList from "./Components/ResultsList.jsx";
 import Footer from "./Components/Footer.jsx";
-// import ResultsList from "./Components/ResultsList.jsx";
 import Header from "./Components/Header.jsx";
+import PostDog from "./Components/PostDog.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -14,13 +13,13 @@ class App extends React.Component {
     this.state = {
       action: "",
       formData: {
-        search: "",
-        date: "",
+        lostDate: "",
         color: "",
-        size: ["small", "medium", "large"],
         gender: ["male", "female"],
         zipcode: null
       },
+      modalView: true,
+      modalIndex: -1,
       results: []
     };
     this.splashPageClickHandler = this.splashPageClickHandler.bind(this);
@@ -62,18 +61,33 @@ class App extends React.Component {
   setText(e) {
     let temp = e.target.id;
     let value = e.target.value;
+    if (temp === "lostDate") {
+      value += "T00:00:00.000";
+    }
     this.setState((prevState, props) => {
       prevState.formData[temp] = value;
       return { formData: prevState.formData };
     });
   }
 
+  resultExpand(index) {
+    this.setState({
+      modalView: !this.state.modalView,
+      modalIndex: index
+    });
+  }
+
   render() {
     return (
       <>
-        <Header homeRedirect={this.homeRedirect} />
+        <Header
+          clickHandler={this.splashPageClickHandler}
+          homeRedirect={this.homeRedirect}
+        />
         {this.state.action === "" ? (
           <Splash clickHandler={this.splashPageClickHandler} />
+        ) : this.state.action === "post" ? (
+          <PostDog />
         ) : (
           <SearchForm
             results={this.state.results}

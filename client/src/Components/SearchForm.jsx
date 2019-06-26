@@ -16,11 +16,11 @@ const SearchForm = props => {
                   id="zipcode"
                   placeholder="Enter Zip"
                 />
-                <Form.Label>Date</Form.Label>
+                <Form.Label>Lost Date</Form.Label>
                 <Form.Control
                   type="Date"
                   onChange={props.text}
-                  id="date"
+                  id="lostDate"
                   placeholder="Enter Date Lost"
                 />
                 <Form.Label>Color</Form.Label>
@@ -30,12 +30,6 @@ const SearchForm = props => {
                   type="text"
                   placeholder="Color"
                 />
-                <Form.Label>Size</Form.Label>
-                <Form.Control onChange={props.text} id="size" as="select">
-                  <option>Small</option>
-                  <option>Medium</option>
-                  <option>Large</option>
-                </Form.Control>
                 <Form.Label>Gender</Form.Label>
                 <Form.Control onChange={props.text} id="gender" as="select">
                   <option>Male</option>
@@ -47,16 +41,7 @@ const SearchForm = props => {
               </Button>
             </Form>
           </Col>
-          {/* <Col sm={2} /> */}
           <Col md={8}>
-            <Form className="m-3">
-              <Form.Control
-                type="text"
-                onChange={props.text}
-                id="search"
-                placeholder="Search"
-              />
-            </Form>
             {props.results === [] ? null : (
               <ResultsList results={props.results} action={props.action} />
             )}
@@ -69,5 +54,3 @@ const SearchForm = props => {
 };
 
 export default SearchForm;
-
-//
