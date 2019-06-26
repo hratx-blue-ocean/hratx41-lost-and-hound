@@ -1,8 +1,6 @@
-function intervalDogs() {
-  setInterval(getLostDogs, 5000);
-}
 
-function getLostDogs() {
+
+module.exports.getLostDogs = function () {
 
   var Nightmare = require('nightmare');
 
@@ -99,5 +97,3 @@ function getLostDogs() {
       console.error('an error has occurred: ' + error);
     });
 }
-
-export default intervalDogs;

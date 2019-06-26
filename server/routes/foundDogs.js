@@ -1,14 +1,18 @@
 const router = require("express").Router();
-const { getAACFoundData } = require("./../scripts/austinAPI");
+const { allFoundDogs } = require('./../database');
 
 router.get("/", (req, res) => {
   const foundDogParams = req.query;
   if (!foundDogParams) {
     res.sendStatus(500);
   } else {
-    getAACFoundData(foundDogParams, (err, dogs) => {
-      res.status(200).json(dogs);
-    });
+    allFoundDogs((err, dogs) => {
+      if (err) {
+        res.sendStatus(500);
+      } else {
+        res.status(200).json(dogs)
+      }
+    })
   }
 });
 
