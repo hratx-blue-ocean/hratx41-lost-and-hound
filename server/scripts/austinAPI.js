@@ -1,39 +1,38 @@
-const zipcodes = require('zipcodes');
 const axios = require('axios');
+const { uploadDogs } = require('./../database');
 
-const getAACFoundData = (searchParams, callback) => {
-	const zipcode = searchParams.zipcode || '78704';
-	let currDate = '2019-06-12T00:00:00.000';
-	if (searchParams.lostDate) {
-		currDate = searchParams.lostDate;
-	}
+const getAACFoundData = () => {
+	let currDate = '2019-05-25T00:00:00.000';
 	const intakeDate = 'intake_date >= "' + currDate + '"';
-	const addParams = {
+	const queryParams = {
 		$$app_token: process.env.APP_TOKEN,
 		type: 'Dog',
 		$where: intakeDate,
-	};
-	if (searchParams.lostDate) {
-		delete searchParams.lostDate;
-	}
-	const queryParams = { ...searchParams, ...addParams };
-
-	const sortDist = (obj1, obj2) => {
-		return (
-			zipcodes.distance(zipcode, JSON.parse(obj1.location['human_address']).zip) -
-			zipcodes.distance(zipcode, JSON.parse(obj2.location['human_address']).zip)
-		);
 	};
 
 	axios
 		.get(process.env.AAC_URL, { params: queryParams })
 		.then(dogResults => {
-			// console.log(dogResults);
-			dogResults.data.sort(sortDist);
-			callback(null, dogResults.data);
+      // console.log(dogResults);
+      const dogData = dogResults.data.map((dog) => {
+        return {
+          image: 'http://petharbor.com/get_image.asp?RES=Detail&LOCATION=ASTN&ID=' + dog.animal_id,
+          name: null,
+          color: dog.color,
+          date: Date(dog['intake_date']),
+          looksLike: dog['looks_like'],
+          sex: dog.sex,
+          location: JSON.parse(dog.location['human_address']),
+          status: 'Found'
+        }
+      });
+      console.log(dogData);
+			uploadDogs(dogData, (err) => {
+        if (err) throw err;
+      });
 		})
 		.catch(err => {
-			callback(err);
+			throw err;
 		});
 };
 

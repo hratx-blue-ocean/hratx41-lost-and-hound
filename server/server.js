@@ -3,6 +3,7 @@ const logger = require("morgan");
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
+const { getAACFoundData } = require("./scripts/austinAPI")
 const app = express();
 
 // app.set("view engine", "html");
@@ -13,6 +14,10 @@ app.use(cors());
 
 app.use(logger("dev"));
 
+app.use(function(req, res, next) {
+  setInterval(getAACFoundData, 1800000);
+  next();
+})
 // You can place your routes here, feel free to refactor:
 const { foundDogs, lostDogs } = require("./routes");
 app.use(express.static(path.join(__dirname, "../client/public")));
