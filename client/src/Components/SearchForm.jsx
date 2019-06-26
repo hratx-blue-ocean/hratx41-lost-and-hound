@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Container, Row, Col, Button, Modal } from "react-bootstrap";
+import { Form, Container, Row, Col, Button } from "react-bootstrap";
 import ResultsList from "./ResultsList.jsx";
 const SearchForm = props => {
   return (
@@ -16,11 +16,11 @@ const SearchForm = props => {
                   id="zipcode"
                   placeholder="Enter Zip"
                 />
-                <Form.Label>Date</Form.Label>
+                <Form.Label>Lost Date</Form.Label>
                 <Form.Control
                   type="Date"
                   onChange={props.text}
-                  id="date"
+                  id="lostDate"
                   placeholder="Enter Date Lost"
                 />
                 <Form.Label>Color</Form.Label>
@@ -30,12 +30,6 @@ const SearchForm = props => {
                   type="text"
                   placeholder="Color"
                 />
-                <Form.Label>Size</Form.Label>
-                <Form.Control onChange={props.text} id="size" as="select">
-                  <option>Small</option>
-                  <option>Medium</option>
-                  <option>Large</option>
-                </Form.Control>
                 <Form.Label>Gender</Form.Label>
                 <Form.Control onChange={props.text} id="gender" as="select">
                   <option>Male</option>
@@ -48,14 +42,6 @@ const SearchForm = props => {
             </Form>
           </Col>
           <Col md={8}>
-            <Form className="m-3">
-              <Form.Control
-                type="text"
-                onChange={props.text}
-                id="search"
-                placeholder="Search"
-              />
-            </Form>
             {props.results === [] ? null : (
               <ResultsList
                 resultExpand={props.resultExpand}
@@ -67,23 +53,6 @@ const SearchForm = props => {
           <Col md={2} />
         </Row>
       </Container>
-      <Modal
-        show={props.modalView}
-        onHide={props.resultExpand}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Dialog>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal title</Modal.Title>
-          </Modal.Header>
-
-          <Modal.Body />
-
-          <Modal.Footer />
-        </Modal.Dialog>
-      </Modal>
     </div>
   );
 };

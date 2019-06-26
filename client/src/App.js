@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import Splash from "./Components/Splash.jsx";
 import SearchForm from "./Components/SearchForm.jsx";
-import ResultsList from "./Components/ResultsList.jsx";
 import Footer from "./Components/Footer.jsx";
 import Header from "./Components/Header.jsx";
 // import { Modal } from "react-bootstrap";
@@ -14,9 +13,8 @@ class App extends React.Component {
       action: "",
       formData: {
         search: "",
-        date: "",
+        lostDate: "",
         color: "",
-        size: ["small", "medium", "large"],
         gender: ["male", "female"],
         zipcode: null,
         modalView: true,
@@ -38,7 +36,6 @@ class App extends React.Component {
 
   fetchHandler() {
     axios.get("/api/found").then(response => {
-      console.log(response.data);
       this.setState({
         results: response.data
       });
@@ -48,6 +45,9 @@ class App extends React.Component {
   setText(e) {
     let temp = e.target.id;
     let value = e.target.value;
+    if (temp === "lostDate") {
+      value += "T00:00:00.000";
+    }
     this.setState((prevState, props) => {
       prevState.formData[temp] = value;
       return { formData: prevState.formData };
@@ -60,7 +60,7 @@ class App extends React.Component {
       modalIndex: index
     });
   }
-  //
+
   render() {
     return (
       <>

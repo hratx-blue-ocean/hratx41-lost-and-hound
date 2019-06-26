@@ -1,6 +1,5 @@
 import React from "react";
 import "../Styles/splash.scss";
-import About from "./About.jsx";
 
 const Splash = props => {
   return (
@@ -26,9 +25,6 @@ const Splash = props => {
         <h3>A DOG</h3>
       </div>
       {/* <div className="footer">Pawter Placeholder</div> */}
-      <div className="footer">
-        <About />
-      </div>
     </>
   );
 };
