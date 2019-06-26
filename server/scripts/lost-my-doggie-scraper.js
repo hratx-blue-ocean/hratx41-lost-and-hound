@@ -1,13 +1,15 @@
 //BASIC WEB SCRAPER FOR AUSTIN LOST PETS. SLOW. NOT FOR REAL TIME
-const axios = require('axios');
-var Nightmare = require('nightmare');
 
-
-let nightmare = Nightmare({
-  show: false
-});
 
 function getLostDogs(callback) {
+
+  var Nightmare = require('nightmare');
+
+
+  let nightmare = Nightmare({
+    show: false
+  });
+
   nightmare
     //load a url
     .goto('https://www.lostmydoggie.com/missing-pets.cfm?petkindid=1&alerttypeid=1&zipcode=78704&radius=50')
