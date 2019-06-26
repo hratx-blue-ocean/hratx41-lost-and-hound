@@ -12,7 +12,7 @@ const Footer = props => {
                 <h5 className="text-uppercase">Footer Content</h5>
                 <p>
                   Baby dog doo doo doo doo doo baby dog doo doo doo doo doo baby
-                  dog baby shark doo doo doo doo doo baby shark
+                  dog baby dog doo doo doo doo doo baby dog
                 </p>
               </div>
               <div className="col-md-3 mb-md-0 mb-3">

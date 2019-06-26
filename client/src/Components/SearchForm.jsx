@@ -43,11 +43,7 @@ const SearchForm = props => {
           </Col>
           <Col md={8}>
             {props.results === [] ? null : (
-              <ResultsList
-                resultExpand={props.resultExpand}
-                modalView={props.modalView}
-                results={props.results}
-              />
+              <ResultsList results={props.results} action={props.action} />
             )}
           </Col>
           <Col md={2} />

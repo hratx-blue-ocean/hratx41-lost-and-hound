@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "nyc mocha",
-    "start": "nodemon bin/www"
+    "start": "node bin/www"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +16,8 @@
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "nightmare": "^3.0.2",
-    "nyc": "^14.1.0"
+    "nyc": "^14.1.0",
+    "zipcodes": "^8.0.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",

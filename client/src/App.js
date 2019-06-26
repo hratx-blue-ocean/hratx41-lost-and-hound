@@ -25,7 +25,7 @@ class App extends React.Component {
     this.splashPageClickHandler = this.splashPageClickHandler.bind(this);
     this.fetchHandler = this.fetchHandler.bind(this);
     this.setText = this.setText.bind(this);
-    this.resultExpand = this.resultExpand.bind(this);
+    this.homeRedirect = this.homeRedirect.bind(this);
   }
 
   splashPageClickHandler(e) {
@@ -34,12 +34,28 @@ class App extends React.Component {
     });
   }
 
-  fetchHandler() {
-    axios.get("/api/found").then(response => {
-      this.setState({
-        results: response.data
-      });
+  homeRedirect() {
+    this.setState({
+      action: ""
     });
+  }
+
+  fetchHandler() {
+    if (this.state.action === "Found") {
+      axios.get("/api/found").then(response => {
+        console.log(response.data);
+        this.setState({
+          results: response.data
+        });
+      });
+    } else if (this.state.action === "Lost") {
+      axios.get("/api/lost").then(response => {
+        console.log(response.data);
+        this.setState({
+          results: response.data
+        });
+      });
+    }
   }
 
   setText(e) {
@@ -64,7 +80,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Header />
+        <Header homeRedirect={this.homeRedirect} />
         {this.state.action === "" ? (
           <Splash clickHandler={this.splashPageClickHandler} />
         ) : (
@@ -72,9 +88,7 @@ class App extends React.Component {
             results={this.state.results}
             text={this.setText}
             fetch={this.fetchHandler}
-            resultExpand={this.resultExpand}
-            modalView={this.state.modalView}
-            modalIndex={this.state.modalIndex}
+            action={this.state.action}
           />
         )}
         <Footer />

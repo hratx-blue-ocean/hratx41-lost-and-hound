@@ -5,12 +5,16 @@ import axios from "axios";
 const Result = props => {
   return (
     <Card style={{ width: "33%" }}>
-      <Card.Img
-        variant="top"
-        src={`http://petharbor.com/get_image.asp?RES=Detail&ID=${
-          props.result.animal_id
-        }&LOCATION=ASTN`}
-      />
+      {props.action === "Found" ? (
+        <Card.Img
+          variant="top"
+          src={`http://petharbor.com/get_image.asp?RES=Detail&ID=${
+            props.result.animal_id
+          }&LOCATION=ASTN`}
+        />
+      ) : (
+        <Card.Img variant="top" src={props.result.image} />
+      )}
       <Card.Body>
         <ListGroup>
           <ListGroup.Item>{props.result.age}</ListGroup.Item>
