@@ -6,13 +6,13 @@ const Header = props => {
   return (
     <Navbar sticky="top" bg="light" expand="lg">
       <Navbar.Brand className="navTitle" onClick={props.homeRedirect}>
-        Lost And Hound
+        <img src="./assets/logo.png" width="40" />
       </Navbar.Brand>
       <a className="nav-link" href="#">
-        About
+        about
       </a>
       <a className="nav-link" href="#">
-        Resources
+        resources
       </a>
     </Navbar>
   );

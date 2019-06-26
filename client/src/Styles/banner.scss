@@ -1,20 +1,31 @@
+@import './mixins.scss';
+
 #banner {
   display: grid;
   width: 70%;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  height: 500px;
-  border: solid 1px;
+  grid-template-columns: 1fr 4fr;
+  // height: 400px;
+  justify-content: center;
 
   #logo {
-    border: solid 1px;
-    height: 100%;
+    width: 100%;
+    @include shadow;
   }
 
-  #company-name {
-    @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
-    font-family: 'Pacifico', cursive;
-    font-size: 8rem;
+  #title {
+    text-align: center;
+
+    #company-name {
+      @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+      font-family: 'Pacifico', cursive;
+      font-size: 8rem;
+      @include shadow;
+    }
+
+    #sub-title {
+      @include shadow;
+    }
+
   }
 
 }

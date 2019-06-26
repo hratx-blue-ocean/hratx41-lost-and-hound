@@ -7,6 +7,12 @@
   font-weight: 900;
   font-family: 'Nunito', sans-serif;
 
+  #action-selector {
+    background-color: rgba(100, 100, 100, .2);
+    border-radius: 15px;
+    text-align: center;
+    padding: 1%;
+  }
 }
 
 .nav-link {
@@ -34,18 +40,6 @@
   border-bottom-left-radius: 2px;
 }
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  height: 220px;
-  width: 100%;
-  background: #333;
-  display: flex;
-  color: white;
-
-  display: inline-block;
-}
-
 .splashButton {
   color: white;
   height: 81px;
@@ -55,11 +49,10 @@
   font-family: calibri, sans-serif;
   font-weight: 900;
   font-size: 28px;
-  background: #00000038;
+  background-color: #00000038;
 }
 
 .splashButton:hover {
-  // opacity: 0.5;
   background: black;
   font-size: 29px;
 }

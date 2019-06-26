@@ -1,0 +1,6 @@
+// Variables
+$secondary-color: rgba(160, 160, 160, .6);
+
+@mixin shadow {
+  filter: drop-shadow(2px 2px 2px grey);
+}

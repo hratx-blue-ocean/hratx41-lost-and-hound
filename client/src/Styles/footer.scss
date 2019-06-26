@@ -1,0 +1,11 @@
+@import './mixins.scss';
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 7%;
+  width: 100%;
+  background: $secondary-color;
+  color: black;
+  display: inline-block;
+}

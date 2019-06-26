@@ -8,28 +8,26 @@ const Splash = props => {
     <>
       <div className="splashContainer">
         <Banner />
-        <h3>I</h3>
-        <div>
-          <button
-            className="splashButton"
-            value="Lost"
-            onClick={props.clickHandler}
-          >
-            Lost
-          </button>
-          <button
-            className="splashButton"
-            value="Found"
-            onClick={props.clickHandler}
-          >
-            Found
-          </button>
+        <div id="action-selector">
+          <h3>I</h3>
+          <div>
+            <button
+              className="splashButton"
+              value="Lost"
+              onClick={props.clickHandler}
+            >
+              lost
+            </button>
+            <button
+              className="splashButton"
+              value="Found"
+              onClick={props.clickHandler}
+            >
+              found
+            </button>
+          </div>
+          <h3>a dog</h3>
         </div>
-        <h3>A DOG</h3>
-      </div>
-      {/* <div className="footer">Pawter Placeholder</div> */}
-      <div className="footer">
-        <About />
       </div>
     </>
   );
