@@ -4,7 +4,7 @@ import Splash from "./Components/Splash.jsx";
 import SearchForm from "./Components/SearchForm.jsx";
 import Footer from "./Components/Footer.jsx";
 import Header from "./Components/Header.jsx";
-// import { Modal } from "react-bootstrap";
+import PostDog from "./Components/PostDog.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -12,14 +12,13 @@ class App extends React.Component {
     this.state = {
       action: "",
       formData: {
-        search: "",
         lostDate: "",
         color: "",
         gender: ["male", "female"],
-        zipcode: null,
-        modalView: true,
-        modalIndex: -1
+        zipcode: null
       },
+      modalView: true,
+      modalIndex: -1,
       results: []
     };
     this.splashPageClickHandler = this.splashPageClickHandler.bind(this);
@@ -80,9 +79,14 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Header homeRedirect={this.homeRedirect} />
+        <Header
+          clickHandler={this.splashPageClickHandler}
+          homeRedirect={this.homeRedirect}
+        />
         {this.state.action === "" ? (
           <Splash clickHandler={this.splashPageClickHandler} />
+        ) : this.state.action === "post" ? (
+          <PostDog />
         ) : (
           <SearchForm
             results={this.state.results}

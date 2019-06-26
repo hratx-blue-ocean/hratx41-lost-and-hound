@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Button, ListGroup } from "react-bootstrap";
-import axios from "axios";
+// import axios from "axios";
 
 const Result = props => {
   return (
