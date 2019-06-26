@@ -1,9 +1,5 @@
 import React from "react";
-<<<<<<< HEAD
 import "../Styles/footer.scss";
-=======
-import "../Styles/splash.scss";
->>>>>>> develop
 
 const Footer = props => {
   return (
