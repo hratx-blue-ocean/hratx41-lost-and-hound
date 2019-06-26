@@ -1,7 +1,8 @@
-//BASIC WEB SCRAPER FOR AUSTIN LOST PETS. SLOW. NOT FOR REAL TIME
+function intervalDogs() {
+  setInterval(getLostDogs, 5000);
+}
 
-
-function getLostDogs(callback) {
+function getLostDogs() {
 
   var Nightmare = require('nightmare');
 
@@ -92,13 +93,11 @@ function getLostDogs(callback) {
     //run the queue of commands specified, followed by logging the HREF
     .then(function (result) {
       console.log(result);
-      callback(null, result);
     })
     //catch errors if they happen
     .catch(function (error) {
       console.error('an error has occurred: ' + error);
-      callback(error);
     });
 }
 
-module.exports = { getLostDogs };
+export default intervalDogs;

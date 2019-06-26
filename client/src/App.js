@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Splash from "./Components/Splash.jsx";
+import "./App.scss";
 import SearchForm from "./Components/SearchForm.jsx";
 import Footer from "./Components/Footer.jsx";
 import Header from "./Components/Header.jsx";

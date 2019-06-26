@@ -1,5 +1,5 @@
-const example = require('./example');
-const foundDogs = require('./foundDogs')
-const lostDogs = require('./lostDogs');
+const foundDogs = require("./foundDogs");
+const lostDogs = require("./lostDogs");
+const dog = require("./dog");
 
-module.exports = { example, foundDogs, lostDogs }
+module.exports = { dog, foundDogs, lostDogs };
