@@ -3,7 +3,7 @@ const logger = require("morgan");
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
-const { getAACFoundData } = require("./scripts/austinAPI")
+const { getAACFoundData } = require("./scripts/austinAPI");
 const app = express();
 const getlostDogs = require("./scripts/lost-dog-set-interval");
 
@@ -18,17 +18,17 @@ app.use(logger("dev"));
 app.use(function(req, res, next) {
   setInterval(getAACFoundData, 1800000);
   next();
-})
-app.use(function (req, res, next) {
-  setInterval(getlostDogs.getLostDogs, 3600000)
+});
+app.use(function(req, res, next) {
+  setInterval(getlostDogs.getLostDogs, 3600000);
   next();
-})
+});
 
 // You can place your routes here, feel free to refactor:
 const { foundDogs, lostDogs } = require("./routes");
 app.use(express.static(path.join(__dirname, "../client/public")));
 app.get("/flyer", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/public/index.html"), function (
+  res.sendFile(path.join(__dirname, "../client/public/index.html"), function(
     err
   ) {
     if (err) {
@@ -49,7 +49,7 @@ app.use("/api/lost", lostDogs);
 // });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
