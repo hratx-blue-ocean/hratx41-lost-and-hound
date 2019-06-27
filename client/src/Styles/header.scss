@@ -2,6 +2,8 @@
 
 #nav {
   z-index: 99;
+  @include shadow;
+  opacity: .86;
 
   .navTitle {}
 

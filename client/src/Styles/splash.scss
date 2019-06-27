@@ -1,3 +1,5 @@
+@import './mixins.scss';
+
 .splashContainer {
   display: flex;
   flex-direction: column;
@@ -10,7 +12,7 @@
   #banner,
   img,
   #title {
-    border: 1px solid;
+    // border: 1px solid;
   }
 
   #action-selector {
@@ -21,6 +23,7 @@
     padding: 1%;
 
     #splashButton {
+      @include shadow;
       height: 81px;
       width: 150px;
       margin: 30px;
