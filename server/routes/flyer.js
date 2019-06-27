@@ -3,6 +3,7 @@ const db = require("./../database");
 
 router.get("/", (req, res) => {
   const foundDogQuery = req.query;
+  console.log(req.query);
   if (!foundDogQuery) {
     res.sendStatus(500);
   } else {
