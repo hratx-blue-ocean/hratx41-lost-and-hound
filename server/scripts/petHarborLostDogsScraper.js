@@ -25,9 +25,6 @@ const getPHLostDogs = () => {
 			// let allNames = document.querySelectorAll('.info h4');
 			// allNames = [...allNames];
 			// allNames = allNames.map(elem => elem.innerHTML);
-			let allNames = document.querySelectorAll('tbody tr td:nth-of-type(2)');
-			allNames = [...allNames];
-			allNames = allNames.map(elem => elem.innerHTML);
 
 			//get sex
 			// let allGenders = document.querySelectorAll('.info h6:first-of-type');
@@ -98,12 +95,13 @@ const getPHLostDogs = () => {
 				// harker heights
 				// pflugerville
 
-				let dogObj = {};
-				dogObj['name'] = allNames[i];
+        let dogObj = {};
+        let date = new Date(allDates[i]);
+				dogObj['name'] = null;
 				dogObj['sex'] = allGenders[i];
 				dogObj['looksLike'] = allBreeds[i];
 				dogObj['color'] = null;
-				dogObj['date'] = Date(allDates[i]);
+				dogObj['date'] = date;
 				dogObj['image'] = allImages[i];
 				dogObj['status'] = 'Lost';
 				dogObj['location'] = {
