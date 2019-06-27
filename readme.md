@@ -1,20 +1,14 @@
 
-Readme.md template (est time: 4+ hours)
-An extremely important part of your Blue Ocean project is the readme.md that accompanies your code repository.
-It is recommended that you start the readme.md during the sprint, and complete it afterwards.
-You should replace the existing readme.md in your repo with the following information:
- 
-Catchy headline / cool graphic
-Lost and Hound
+#Lost and Hound
 
  
-Who are the contributors (names should link to their github or portfolio page)
-Jacob Nelsen-Epstein - https://github.com/CyberImpXIII
-Surya Fotedar - https://github.com/suryafotedar
-Hunter Mason - https://github.com/MasonHN
-Eric Anthony - https://github.com/anthon78
-Ken Marut - https://github.com/friedpies
-Chad Cramer - https://github.com/Chadcramer
+###contributors:
+⋅⋅*Jacob Nelsen-Epstein - https://github.com/CyberImpXIII
+⋅⋅*Surya Fotedar - https://github.com/suryafotedar
+⋅⋅*Hunter Mason - https://github.com/MasonHN
+⋅⋅*Eric Anthony - https://github.com/anthon78
+⋅⋅*Ken Marut - https://github.com/friedpies
+⋅⋅*Chad Cramer - https://github.com/Chadcramer
 Introduction
 This project was a brief 1-week sprint where our team tried to complete an MVP for an external user (Louis Rangel). Louis envisioned a website that connected lost dogs and their owners. Our team attempted to create a simple, elegant environment to easily achieve this goal. 
 Add any additional content here pertaining to timeline, any personal goals, etc
