@@ -65,7 +65,7 @@ let getLostDogs = function () {
 
       //get image
       let allImages = document.querySelectorAll('.img-responsive');
-      allImages = [...allImages];
+      allImages = [...allImages].slice(1);
       allImages = allImages.map(elem => elem.src)
 
 
