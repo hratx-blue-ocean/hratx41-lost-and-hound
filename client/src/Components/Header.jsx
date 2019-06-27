@@ -9,7 +9,7 @@ const Header = props => {
       <Navbar.Brand className="navTitle" onClick={props.homeRedirect}>
         <img alt="logo" src="./assets/logo.png" width="40" />
       </Navbar.Brand>
-      <Nav className="mr-auto">
+      <Nav className="ml-auto">
         <Nav.Link
           className="g-signin2"
           data-onsuccess="onSignIn"

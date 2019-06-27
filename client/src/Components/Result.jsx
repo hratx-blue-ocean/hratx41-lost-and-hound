@@ -4,7 +4,8 @@ import "../Styles/result.scss";
 
 const Result = props => {
   return (
-    <Card>
+    <div className="card-div">
+    <Card className="dog-card">
       {props.action === "Found" ? (
         <Card.Img
           variant="top"
@@ -26,6 +27,7 @@ const Result = props => {
         </ListGroup>
       </Card.Body>
     </Card>
+    </div>
   );
 };
 //

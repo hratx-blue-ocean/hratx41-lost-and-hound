@@ -5,6 +5,13 @@
   @include shadow;
   opacity: .86;
 
+  .navbar-nav {
+
+    .nav-link {
+      margin: auto;
+    }
+  }
+
   .navTitle {}
 
   #links {}

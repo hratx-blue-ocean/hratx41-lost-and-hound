@@ -2,6 +2,8 @@
 
 #card-container {
   @include item-container;
-  height: 200vh;
-  margin-top: 2%;
+  // height: 200vh;
+  margin: 3%;
+  display: flex;
+  flex-wrap: wrap;
 }

@@ -1,6 +1,17 @@
 @import './mixins.scss';
 
-card {
-  width: 33%;
-  background-color: red;
+$radius: 15px;
+
+.card-div {
+  width: 33.3%;
+  padding: 2%;
+
+  .dog-card {
+    @include shadow;
+    border-radius: $radius;
+
+    img {
+      border-radius: $radius $radius 0 0;
+    }
+  }
 }
