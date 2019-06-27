@@ -2,17 +2,18 @@ const router = require("express").Router();
 const db = require("./../database");
 
 router.get("/", (req, res) => {
-  const foundDogParams = req.query;
-  if (!foundDogParams) {
+  const foundDogQuery = req.query;
+  if (!foundDogQuery) {
     res.sendStatus(500);
   } else {
-    db.allFoundDogs((err, dogs) => {
+    db.oneDog(foundDogQuery.id, (err, dog) => {
       if (err) {
-        res.sendStatus(500);
+        res.send(err);
       } else {
-        res.status(200).json(dogs);
+        res.send(dog);
       }
     });
+    // res.send(req.query);
   }
 });
 

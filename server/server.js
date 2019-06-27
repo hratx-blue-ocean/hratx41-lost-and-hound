@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 });
 
 // You can place your routes here, feel free to refactor:
-const { foundDogs, lostDogs } = require("./routes");
+const { foundDogs, lostDogs, flyer } = require("./routes");
 app.use(express.static(path.join(__dirname, "../client/public")));
 app.get("/flyer", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/public/index.html"), function(
@@ -39,6 +39,7 @@ app.get("/flyer", (req, res) => {
 });
 app.use("/api/found", foundDogs);
 app.use("/api/lost", lostDogs);
+app.use("/api/dog", flyer);
 
 // app.get("/", (req, res) => {
 //   res.send("HELLO");
