@@ -5,17 +5,17 @@
 *Contributors*
 ------------------------------------------------------------------------------
 
-Jacob Nelsen-Epstein - <https://github.com/CyberImpXIII>
+[Jacob Nelsen-Epstein](https://github.com/CyberImpXIII)
 
-Surya Fotedar - <https://github.com/suryafotedar>
+[Surya Fotedar](https://github.com/suryafotedar)
 
-Hunter Mason - <https://github.com/MasonHN>
+[Hunter Mason](https://github.com/MasonHN)
 
-Eric Anthony - <https://github.com/anthon78>
+[Eric Anthony](https://github.com/anthon78)
 
-Ken Marut - <https://github.com/friedpies>
+[Ken Marut](https://github.com/friedpies)
 
-Chad Cramer - <https://github.com/Chadcramer>
+[Chad Cramer](https://github.com/Chadcramer)
 
 *Introduction*
 ------------
