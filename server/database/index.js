@@ -45,21 +45,25 @@ const uploadDogs = (dogData, callback) => {
 }
 
 const allFoundDogs = (callback) => {
-  Dog.find({ status: 'Found'}, (err, dogs) => {
-    if (err) {
-      console.error(err)
-    }
-    callback(err, dogs);
-  });
+  Dog.find({ status: 'Found'})
+    .sort({ date: -1 })
+    .exec((err, dogs) => {
+      if (err) {
+        console.error(err)
+      }
+      callback(err, dogs);
+    });
 }
 
 const allLostDogs = (callback) => {
-  Dog.find({ status: 'Lost'}, (err, dogs) => {
-    if (err) {
-      console.error(err)
-    }
-    callback(err, dogs);
-  });
+  Dog.find({ status: 'Lost'})
+    .sort({ date: -1 })
+    .exec((err, dogs) => {
+      if (err) {
+        console.error(err)
+      }
+      callback(err, dogs);
+    });
 }
 
 module.exports = { uploadDogs, allFoundDogs, allLostDogs }
