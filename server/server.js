@@ -5,22 +5,22 @@ const path = require("path");
 const cors = require("cors");
 const { getAACFoundData } = require("./scripts/austinAPI");
 const app = express();
-const getlostDogs = require("./scripts/lost-dog-set-interval");
+const { getLostDogs } = require("./scripts/lost-dog-set-interval.js");
 
 // app.set("view engine", "html");
 //commment test
 // open up CORS
-
 app.use(cors());
 
 app.use(logger("dev"));
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   setInterval(getAACFoundData, 1800000);
   next();
 });
-app.use(function(req, res, next) {
-  setInterval(getlostDogs.getLostDogs, 3600000);
+
+app.use((req, res, next) => {
+  setInterval(getLostDogs, 3600000);
   next();
 });
 
