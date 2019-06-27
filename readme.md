@@ -1,8 +1,8 @@
 
-*Lost and Hound*
+#Lost and Hound#
 
  
-#contributors:#
+*contributors:*
 - Jacob Nelsen-Epstein - https://github.com/CyberImpXIII
 - Surya Fotedar - https://github.com/suryafotedar
 - Hunter Mason - https://github.com/MasonHN
