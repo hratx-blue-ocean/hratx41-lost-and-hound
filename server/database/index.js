@@ -6,8 +6,6 @@ const mongoPass = process.env.MONGO_PASS;
 
 const connectionString = `mongodb+srv://${mongoUser}:${mongoPass}@sfcluster-msyg8.mongodb.net/lostandhound?retryWrites=true&w=majority`;
 
-// const connectionString = 'mongodb://localhost:27017/lostandhound'
-
 mongoose.connect(connectionString, {useNewUrlParser: true});
 
 var db = mongoose.connection;
@@ -31,21 +29,26 @@ const dogSchema = new mongoose.Schema({
     city: String,
     state: String,
     zip: String
-  }
+  },
+  status: String
 });
 
 const Dog = mongoose.model('Dog', dogSchema);
 
 const uploadDogs = (dogData, callback) => {
-  Dog.insertMany(dogData, (err) => {
-    if (err) throw err;
+  Dog.insertMany(dogData, { ordered: false }, (err) => {
+    if (err) {
+      console.error(err);
+    }
     callback(err);
   })
 }
 
 const allFoundDogs = (callback) => {
   Dog.find({ status: 'Found'}, (err, dogs) => {
-    if (err) throw err;
+    if (err) {
+      console.error(err)
+    }
     callback(err, dogs);
   });
 }
