@@ -53,4 +53,13 @@ const allFoundDogs = (callback) => {
   });
 }
 
-module.exports = { uploadDogs, allFoundDogs }
+const allLostDogs = (callback) => {
+  Dog.find({ status: 'Lost'}, (err, dogs) => {
+    if (err) {
+      console.error(err)
+    }
+    callback(err, dogs);
+  });
+}
+
+module.exports = { uploadDogs, allFoundDogs, allLostDogs }

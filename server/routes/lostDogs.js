@@ -1,13 +1,19 @@
 const router = require("express").Router();
-const { getLostDogs } = require("./../scripts/lost-my-doggie-scraper");
+const db = require('./../database');
 
 router.get("/", (req, res) => {
-  getLostDogs((err, dogs) => {
-    if (err) {
-      res.sendStatus(err);
-    }
-    res.send(dogs);
-  });
+  const lostDogParams = req.query;
+  if (!lostDogParams) {
+    res.sendStatus(500);
+  } else {
+    db.allLostDogs((err, dogs) => {
+      if (err) {
+        res.sendStatus(500);
+      } else {
+        res.status(200).json(dogs)
+      }
+    })
+  }
 });
 
 module.exports = router;
