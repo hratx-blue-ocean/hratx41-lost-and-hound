@@ -1,13 +1,19 @@
 @import './mixins.scss';
 
-.footer {
+footer {
   @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
   font-family: 'Nunito', sans-serif;
   position: fixed;
   bottom: 0;
-  height: 7%;
   width: 100%;
   background: $secondary-color;
   color: black;
   display: inline-block;
+
+  #footer-text {
+    width: 100%;
+    margin: auto;
+    vertical-align: middle;
+    font-size: .75rem;
+  }
 }
