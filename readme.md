@@ -17,7 +17,7 @@ Ken Marut - <https://github.com/friedpies>
 
 Chad Cramer - <https://github.com/Chadcramer>
 
-##Introduction
+Introduction
 ------------
 
 This project was a brief 1-week sprint where our team tried to complete an MVP for an external user (Louis Rangel). Louis envisioned a website that connected lost dogs and their owners. Our team attempted to create a simple, elegant environment to easily achieve this goal. 
