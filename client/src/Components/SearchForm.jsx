@@ -55,4 +55,3 @@ const SearchForm = props => {
   );
 };
 export default SearchForm;
-//

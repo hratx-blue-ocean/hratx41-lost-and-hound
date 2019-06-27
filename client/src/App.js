@@ -46,21 +46,28 @@ class App extends React.Component {
   }
 
   fetchHandler() {
-    if (this.state.action === "Found") {
-      axios.get("/api/found").then(response => {
-        console.log(response.data);
-        this.setState({
-          results: response.data
-        });
-      });
-    } else if (this.state.action === "Lost") {
-      axios.get("/api/lost").then(response => {
-        console.log(response.data);
-        this.setState({
-          results: response.data
-        });
-      });
-    }
+    this.setState(
+      {
+        results: []
+      },
+      () => {
+        if (this.state.action === "Found") {
+          axios.get("/api/found").then(response => {
+            console.log(response.data);
+            this.setState({
+              results: response.data
+            });
+          });
+        } else if (this.state.action === "Lost") {
+          axios.get("/api/lost").then(response => {
+            console.log(response.data);
+            this.setState({
+              results: response.data
+            });
+          });
+        }
+      }
+    );
   }
 
   setText(e) {
@@ -104,15 +111,10 @@ class App extends React.Component {
             action={this.state.action}
           />
         )}
-        {/* <Footer /> */}
-        {/* {this.state.results === [] ? null : (
-          <ResultsList results={this.state.results} />
-        )}
-      </div>
-        )} */}
+        <Footer />
       </>
     );
   }
 }
-
+//
 export default App;
