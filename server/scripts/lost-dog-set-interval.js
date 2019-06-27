@@ -1,9 +1,8 @@
 
 
-module.exports.getLostDogs = function () {
-
+let getLostDogs = function () {
   var Nightmare = require('nightmare');
-
+  const db = require('./../database');
 
   let nightmare = Nightmare({
     show: false
@@ -41,6 +40,7 @@ module.exports.getLostDogs = function () {
         let zip = address.split("\n")[1];
         let city = address.split(",")[0];
         return {
+          "address": null,
           zip,
           city,
           state: "TX",
@@ -75,11 +75,12 @@ module.exports.getLostDogs = function () {
         let dogObj = {};
         dogObj["name"] = allNames[i];
         dogObj["sex"] = allGenders[i];
-        dogObj["address"] = allAdresses[i];
-        dogObj["looks_like"] = allBreeds[i];
+        dogObj["location"] = allAdresses[i];
+        dogObj["looksLike"] = allBreeds[i];
         dogObj["color"] = allColors[i];
-        dogObj["date"] = allDates[i];
+        dogObj["date"] = Date(allDates[i]);
         dogObj["image"] = allImages[i];
+        dogObj["status"] = "Lost";
 
         resultArray.push(dogObj);
       }
@@ -89,11 +90,18 @@ module.exports.getLostDogs = function () {
     //end the Nightmare instance along with the Electron instance it wraps
     .end()
     //run the queue of commands specified, followed by logging the HREF
-    .then(function (result) {
-      console.log(result);
+    .then(function (results) {
+      //console.log(results);
+      db.uploadDogs(results, (err) => {
+        if (err) {
+          console.error(err);
+        }
+      });
     })
     //catch errors if they happen
     .catch(function (error) {
       console.error('an error has occurred: ' + error);
     });
 }
+
+module.exports = { getLostDogs }
