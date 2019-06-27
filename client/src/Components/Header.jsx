@@ -47,7 +47,7 @@ const Header = props => {
       <Button
         className="mr-sm-2"
         value="signout"
-        onClick={props.clickHandler}
+        onClick={window.signOut}
         variant="light"
       >
         sign out

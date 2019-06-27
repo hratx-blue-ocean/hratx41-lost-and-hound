@@ -6,16 +6,7 @@ const Result = props => {
   return (
     <div className="card-div">
       <Card className="dog-card">
-        {props.action === "Found" ? (
-          <Card.Img
-            variant="top"
-            src={`http://petharbor.com/get_image.asp?RES=Detail&ID=${
-              props.result.animal_id
-            }&LOCATION=ASTN`}
-          />
-        ) : (
-          <Card.Img variant="top" src={props.result.image} />
-        )}
+        <Card.Img variant="top" src={props.result.image} />
         <Card.Body>
           <ListGroup>
             {props.result.age ? (
@@ -26,7 +17,7 @@ const Result = props => {
             <ListGroup.Item>{props.result.sex}</ListGroup.Item>
             <ListGroup.Item>
               <a href={`http://localhost:8000/flyer?id=${props.result._id}`}>
-                Click
+                Click For More Information
               </a>
             </ListGroup.Item>
           </ListGroup>
