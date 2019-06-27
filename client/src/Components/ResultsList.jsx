@@ -1,10 +1,11 @@
 import React from "react";
 import Result from "./Result.jsx";
 import { Container, Row } from "react-bootstrap";
+import "../Styles/resultslist.scss";
 
 const ResultsList = props => {
   return (
-    <div className="mx-auto">
+    <div id="card-container" className="mx-auto">
       <Container>
         <Row>
           {props.results.map((result, index) => {

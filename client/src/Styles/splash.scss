@@ -17,8 +17,7 @@
 
   #action-selector {
     margin-top: 2%;
-    background-color: rgba(27, 27, 27, 0.2);
-    border-radius: 15px;
+    @include item-container;
     text-align: center;
     padding: 1%;
 

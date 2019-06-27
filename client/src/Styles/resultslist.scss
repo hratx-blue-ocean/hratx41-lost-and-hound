@@ -1,0 +1,7 @@
+@import './mixins.scss';
+
+#card-container {
+  @include item-container;
+  height: 200vh;
+  margin-top: 2%;
+}

@@ -1,10 +1,10 @@
 import React from "react";
 import { Card, Button, ListGroup } from "react-bootstrap";
-// import axios from "axios";
+import "../Styles/result.scss";
 
 const Result = props => {
   return (
-    <Card style={{ width: "33%" }}>
+    <Card>
       {props.action === "Found" ? (
         <Card.Img
           variant="top"
