@@ -29,9 +29,14 @@ class App extends React.Component {
   }
 
   splashPageClickHandler(e) {
-    this.setState({
-      action: e.target.value
-    });
+    this.setState(
+      {
+        action: e.target.value
+      },
+      () => {
+        this.fetchHandler();
+      }
+    );
   }
 
   homeRedirect() {
@@ -41,21 +46,28 @@ class App extends React.Component {
   }
 
   fetchHandler() {
-    if (this.state.action === "Found") {
-      axios.get("/api/found").then(response => {
-        console.log(response.data);
-        this.setState({
-          results: response.data
-        });
-      });
-    } else if (this.state.action === "Lost") {
-      axios.get("/api/lost").then(response => {
-        console.log(response.data);
-        this.setState({
-          results: response.data
-        });
-      });
-    }
+    this.setState(
+      {
+        results: []
+      },
+      () => {
+        if (this.state.action === "Found") {
+          axios.get("/api/found").then(response => {
+            console.log(response.data);
+            this.setState({
+              results: response.data
+            });
+          });
+        } else if (this.state.action === "Lost") {
+          axios.get("/api/lost").then(response => {
+            console.log(response.data);
+            this.setState({
+              results: response.data
+            });
+          });
+        }
+      }
+    );
   }
 
   setText(e) {
@@ -85,7 +97,10 @@ class App extends React.Component {
           homeRedirect={this.homeRedirect}
         />
         {this.state.action === "" ? (
-          <Splash clickHandler={this.splashPageClickHandler} />
+          <Splash
+            clickHandler={this.splashPageClickHandler}
+            fetch={this.fetchHandler}
+          />
         ) : this.state.action === "post" ? (
           <PostDog />
         ) : (
@@ -97,14 +112,9 @@ class App extends React.Component {
           />
         )}
         <Footer />
-        {/* {this.state.results === [] ? null : (
-          <ResultsList results={this.state.results} />
-        )}
-      </div>
-        )} */}
       </>
     );
   }
 }
-
+//
 export default App;

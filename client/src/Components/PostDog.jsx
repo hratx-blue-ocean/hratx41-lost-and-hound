@@ -33,30 +33,30 @@ class PostDog extends React.Component {
   render() {
     return (
       <Container>
-        <Card>
-          <Form>
-            <Form.Group>
-              <Form.Label>Email address</Form.Label>
-              <Form.Control onChange={this.setForm} id="email" type="text" />
-              <Form.Label>Zipcode</Form.Label>
-              <Form.Control
-                onChange={this.setForm}
-                id="zipcode"
-                type="number"
-              />
-              <Form.Label>Lost / Found Date</Form.Label>
-              <Form.Control onChange={this.setForm} id="date" type="date" />
-              <Form.Label>Color</Form.Label>
-              <Form.Control onChange={this.setForm} id="color" type="text" />
-              <Form.Label>Gender</Form.Label>
-              <Form.Control onChange={this.setForm} id="gender" as="select">
-                <option>Male</option>
-                <option>Female</option>
-              </Form.Control>
-            </Form.Group>
-            <Button onClick={this.postForm}>Submit</Button>
-          </Form>
-        </Card>
+        <Form>
+          <Form.Group>
+            <Form.Label>Email address</Form.Label>
+            <Form.Control onChange={this.setForm} id="email" type="text" />
+            <Form.Label>Zipcode</Form.Label>
+            <Form.Control onChange={this.setForm} id="zipcode" type="number" />
+            <Form.Label>Lost / Found Date</Form.Label>
+            <Form.Control onChange={this.setForm} id="date" type="date" />
+            <Form.Label>Color</Form.Label>
+            <Form.Control onChange={this.setForm} id="color" type="text" />
+            <Form.Label>Gender</Form.Label>
+            <Form.Control onChange={this.setForm} id="gender" as="select">
+              <option>Male</option>
+              <option>Female</option>
+            </Form.Control>
+            <Form.Label>Image URL</Form.Label>
+            <Form.Control
+              id="image"
+              type="text"
+              placeholder="Please use an imgur link or similar"
+            />
+          </Form.Group>
+          <Button onClick={this.postForm}>Submit</Button>
+        </Form>
       </Container>
     );
   }
