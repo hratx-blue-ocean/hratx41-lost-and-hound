@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
       if (err) {
         res.sendStatus(500);
       } else {
-        res.status(200).send(dogs)
+        res.status(200).json(dogs)
       }
     })
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, Container, Row, Col, Button } from "react-bootstrap";
 import ResultsList from "./ResultsList.jsx";
+import LoadingPage from "./loadingPage.jsx";
 const SearchForm = props => {
   const action = props.action;
   let formTitle = "";
@@ -10,6 +11,7 @@ const SearchForm = props => {
 
   return (
     <div>
+      {props.results.length === 0 ? <LoadingPage /> : null}
       <Container id="searchForm">
         <Row>
           <Col md={3}>
@@ -68,7 +70,7 @@ const SearchForm = props => {
             </Form>
           </Col>
           <Col md={9}>
-            {props.results === [] ? null : (
+            {props.results.length === 0 ? null : (
               <ResultsList results={props.results} action={props.action} />
             )}
           </Col>
@@ -77,5 +79,4 @@ const SearchForm = props => {
     </div>
   );
 };
-
 export default SearchForm;

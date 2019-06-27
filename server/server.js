@@ -14,7 +14,6 @@ app.use(cors());
 
 app.use(logger("dev"));
 
-
 app.use((req, res, next) => {
   setInterval(getAACFoundData, 1800000);
   next();
@@ -29,7 +28,7 @@ app.use((req, res, next) => {
 const { foundDogs, lostDogs } = require("./routes");
 app.use(express.static(path.join(__dirname, "../client/public")));
 app.get("/flyer", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/public/index.html"), function (
+  res.sendFile(path.join(__dirname, "../client/public/index.html"), function(
     err
   ) {
     if (err) {
@@ -50,7 +49,7 @@ app.use("/api/lost", lostDogs);
 // });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
@@ -58,7 +57,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   // res.render("error");
 });
-
-
 
 module.exports = app;

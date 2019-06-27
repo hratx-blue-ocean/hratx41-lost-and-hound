@@ -17,12 +17,13 @@ const Result = props => {
       )}
       <Card.Body>
         <ListGroup>
-          <ListGroup.Item>{props.result.age}</ListGroup.Item>
+          {props.result.age ? (
+            <ListGroup.Item>{props.result.age}</ListGroup.Item>
+          ) : null}
           <ListGroup.Item>{props.result.color}</ListGroup.Item>
           <ListGroup.Item>{props.result.looks_like}</ListGroup.Item>
           <ListGroup.Item>{props.result.sex}</ListGroup.Item>
         </ListGroup>
-        <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
   );
