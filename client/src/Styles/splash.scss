@@ -22,6 +22,8 @@
     padding: 1%;
 
     #splashButton {
+      &:hover {}
+
       @include shadow;
       height: 81px;
       width: 150px;
