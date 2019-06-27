@@ -1,6 +1,6 @@
 #Lost and Hound
 
-![](https://lh3.googleusercontent.com/AL7_u-eIOylhO6o-jzlAcig-NNfrS54EdLO9dbvocYr05Kt1cTCSzZXCpGorFPzZ9i4zBmuY4maGDRdJoHguZCMuV9My2eaCaXGHUeffBI5yoUuOnS0gALsCBMBlRuhPOwaM77q5)
+![](https://lh3.googleusercontent.com/AL7_u-eIOylhO6o-jzlAcig-NNfrS54EdLO9dbvocYr05Kt1cTCSzZXCpGorFPzZ9i4zBmuY4maGDRdJoHguZCMuV9My2eaCaXGHUeffBI5yoUuOnS0gALsCBMBlRuhPOwaM77q5 =250x250)
 
 ##Who are the contributors (names should link to their github or portfolio page)
 ------------------------------------------------------------------------------
