@@ -19,7 +19,7 @@ function AppRouter() {
         </nav> */}
 
         <Route exact path="/" component={App} />
-        <Route path="/flyer" render={() => <Flyer />} />
+        <Route path="/flyer" component={Flyer} />
       </div>
     </Router>
   );
