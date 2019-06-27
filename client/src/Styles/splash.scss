@@ -1,3 +1,5 @@
+@import './mixins.scss';
+
 .splashContainer {
   display: flex;
   flex-direction: column;
@@ -5,68 +7,30 @@
   margin-top: 6vh;
   font-size: 23px;
   font-weight: 900;
-  font-family: calibri, sans-serif;
-}
+  font-family: 'Nunito', sans-serif;
 
-.nav-link {
-  margin-left: 30px;
-  text-decoration: none;
-  color: crimson;
-}
+  #banner,
+  img,
+  #title {
+    // border: 1px solid;
+  }
 
-// nav bar "Lost and Hound" is clickable
-.navTitle:hover {
-  cursor: pointer;
-}
+  #action-selector {
+    margin-top: 2%;
+    @include item-container;
+    text-align: center;
+    padding: 1%;
 
-.header {
-  background: #00000038;
-  color: white;
-  display: flex;
-  justify-content: flex-end;
-  font-family: Calibri, sans-serif;
-  font-weight: 900;
-  font-size: 30px;
-  margin: 0;
-  height: 40px;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 2px;
-}
+    #splashButton {
+      &:hover {}
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  height: 220px;
-  width: 100%;
-  background: #333;
-  display: flex;
-  color: white;
-
-  display: inline-block;
-}
-
-.splashButton {
-  color: white;
-  height: 81px;
-  width: 150px;
-  margin: 30px;
-  border-radius: 5px;
-  font-family: calibri, sans-serif;
-  font-weight: 900;
-  font-size: 28px;
-  background: #00000038;
-}
-
-.splashButton:hover {
-  // opacity: 0.5;
-  background: black;
-  font-size: 29px;
-}
-
-button:focus {
-  outline: 0;
-}
-
-.googleSign {
-  text-transform: lowercase;
+      @include shadow;
+      height: 81px;
+      width: 150px;
+      margin: 30px;
+      border-radius: 5px;
+      font-weight: 900;
+      font-size: 1.6rem;
+    }
+  }
 }

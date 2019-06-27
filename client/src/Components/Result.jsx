@@ -1,10 +1,11 @@
 import React from "react";
 import { Card, Button, ListGroup } from "react-bootstrap";
-// import axios from "axios";
+import "../Styles/result.scss";
 
 const Result = props => {
   return (
-    <Card style={{ width: "33%" }}>
+    <div className="card-div">
+    <Card className="dog-card">
       {props.action === "Found" ? (
         <Card.Img
           variant="top"
@@ -26,6 +27,7 @@ const Result = props => {
         </ListGroup>
       </Card.Body>
     </Card>
+    </div>
   );
 };
 //
