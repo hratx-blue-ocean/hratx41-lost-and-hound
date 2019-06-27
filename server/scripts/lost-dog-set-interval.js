@@ -68,13 +68,14 @@ let getLostDogs = function() {
 			//build result array
 			let resultArray = [];
 			for (let i = 0; i < allDates.length; i++) {
-				let dogObj = {};
+        let dogObj = {};
+        let date = new Date(allDates[i]);
 				dogObj['name'] = allNames[i];
 				dogObj['sex'] = allGenders[i].slice(1);
 				dogObj['location'] = allAdresses[i];
 				dogObj['looksLike'] = allBreeds[i];
 				dogObj['color'] = allColors[i];
-				dogObj['date'] = Date(allDates[i]);
+				dogObj['date'] = date.toISOString();
 				dogObj['image'] = allImages[i];
 				dogObj['status'] = 'Lost';
 
