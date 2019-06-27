@@ -3,12 +3,12 @@
 
  
 #contributors:#
--Jacob Nelsen-Epstein - https://github.com/CyberImpXIII
--Surya Fotedar - https://github.com/suryafotedar
--Hunter Mason - https://github.com/MasonHN
--Eric Anthony - https://github.com/anthon78
--Ken Marut - https://github.com/friedpies
--Chad Cramer - https://github.com/Chadcramer
+- Jacob Nelsen-Epstein - https://github.com/CyberImpXIII
+- Surya Fotedar - https://github.com/suryafotedar
+- Hunter Mason - https://github.com/MasonHN
+- Eric Anthony - https://github.com/anthon78
+- Ken Marut - https://github.com/friedpies
+- Chad Cramer - https://github.com/Chadcramer
 Introduction
 This project was a brief 1-week sprint where our team tried to complete an MVP for an external user (Louis Rangel). Louis envisioned a website that connected lost dogs and their owners. Our team attempted to create a simple, elegant environment to easily achieve this goal. 
 Add any additional content here pertaining to timeline, any personal goals, etc
