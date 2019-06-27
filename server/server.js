@@ -3,9 +3,9 @@ const logger = require("morgan");
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
-const { getAACFoundData } = require("./scripts/austinAPI");
 const app = express();
 const { getLostDogs } = require("./scripts/lost-dog-set-interval.js");
+const { getPHFoundDogs } = require("./scripts/petHarborFoundDogsScraper");
 
 // app.set("view engine", "html");
 //commment test
@@ -15,7 +15,7 @@ app.use(cors());
 app.use(logger("dev"));
 
 app.use((req, res, next) => {
-  setInterval(getAACFoundData, 1800000);
+  setInterval(getPHFoundDogs, 4000000);
   next();
 });
 
@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 });
 
 // You can place your routes here, feel free to refactor:
-const { foundDogs, lostDogs, flyer } = require("./routes");
+const { foundDogs, lostDogs } = require("./routes");
 app.use(express.static(path.join(__dirname, "../client/public")));
 app.get("/flyer", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/public/index.html"), function(
@@ -39,7 +39,6 @@ app.get("/flyer", (req, res) => {
 });
 app.use("/api/found", foundDogs);
 app.use("/api/lost", lostDogs);
-app.use("/api/dog", flyer);
 
 // app.get("/", (req, res) => {
 //   res.send("HELLO");
