@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { uploadDogs } = require('./../database');
+const db = require('./../database');
 
 const getAACFoundData = () => {
 	let currDate = '2019-05-25T00:00:00.000';
@@ -13,8 +13,7 @@ const getAACFoundData = () => {
 	axios
 		.get(process.env.AAC_URL, { params: queryParams })
 		.then(dogResults => {
-      // console.log(dogResults);
-      const dogData = dogResults.data.map((dog) => {
+      let dogData = dogResults.data.map((dog) => {
         return {
           image: 'http://petharbor.com/get_image.asp?RES=Detail&LOCATION=ASTN&ID=' + dog.animal_id,
           name: null,
@@ -24,11 +23,12 @@ const getAACFoundData = () => {
           sex: dog.sex,
           location: JSON.parse(dog.location['human_address']),
           status: 'Found'
-        }
+        };
       });
-      console.log(dogData);
-			uploadDogs(dogData, (err) => {
-        if (err) throw err;
+			db.uploadDogs(dogData, (err) => {
+        if (err) {
+          console.error(err);
+        }
       });
 		})
 		.catch(err => {
