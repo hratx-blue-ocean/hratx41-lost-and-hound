@@ -5,25 +5,25 @@ const path = require("path");
 const cors = require("cors");
 const { getAACFoundData } = require("./scripts/austinAPI");
 const app = express();
-const { getlostDogs } = require("./scripts/lost-dog-set-interval");
+const { getLostDogs } = require("./scripts/lost-dog-set-interval.js");
 
 // app.set("view engine", "html");
 //commment test
 // open up CORS
-
 app.use(cors());
 
 app.use(logger("dev"));
+
 
 app.use((req, res, next) => {
   setInterval(getAACFoundData, 1800000);
   next();
 });
 
-// app.use((req, res, next) => {
-//   setInterval(getlostDogs, 3600000);
-//   next();
-// });
+app.use((req, res, next) => {
+  setInterval(getLostDogs, 3600000);
+  next();
+});
 
 // You can place your routes here, feel free to refactor:
 const { foundDogs, lostDogs } = require("./routes");
@@ -58,5 +58,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   // res.render("error");
 });
+
+
 
 module.exports = app;
