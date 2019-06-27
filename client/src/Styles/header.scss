@@ -1,0 +1,18 @@
+@import './mixins.scss';
+
+#nav {
+  z-index: 99;
+  @include shadow;
+  opacity: .86;
+
+  .navbar-nav {
+
+    .nav-link {
+      margin: auto;
+    }
+  }
+
+  .navTitle {}
+
+  #links {}
+}

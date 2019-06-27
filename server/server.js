@@ -2,26 +2,44 @@ const createError = require("http-errors");
 const logger = require("morgan");
 const express = require("express");
 const path = require("path");
+const cors = require("cors");
 const app = express();
-
+const { getLostDogs } = require('./scripts/lost-dog-set-interval.js');
+const { getPHFoundDogs } = require('./scripts/petHarborFoundDogsScraper');
+const { getPHLostDogs } = require('./scripts/petHarborLostDogsScraper');
 // app.set("view engine", "html");
 //commment test
 // open up CORS
-app.use((_, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+app.use(cors());
 
 app.use(logger("dev"));
 
+app.use((req, res, next) => {
+  // getPHLostDogs();
+  // getLostDogs();
+  // getPHFoundDogs();
+  setInterval(getPHLostDogs, 3654321)
+  setInterval(getPHFoundDogs, 3867530);
+	setInterval(getLostDogs, 3600000);
+	next();
+});
+
 // You can place your routes here, feel free to refactor:
-const { example } = require("./routes");
+const { foundDogs, lostDogs, flyer } = require("./routes");
 app.use(express.static(path.join(__dirname, "../client/public")));
-app.use("/api/example", example);
+app.get("/flyer", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/public/index.html"), function(
+    err
+  ) {
+    if (err) {
+      console.log(err);
+      res.status(500).send(err);
+    }
+  });
+});
+app.use("/api/found", foundDogs);
+app.use("/api/lost", lostDogs);
+app.use("/api/dog", flyer);
 
 // app.get("/", (req, res) => {
 //   res.send("HELLO");
@@ -38,7 +56,7 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get("env") === "development" ? err : {};
   // render the error page
   res.status(err.status || 500);
-  res.render("error");
+  // res.render("error");
 });
 
 module.exports = app;

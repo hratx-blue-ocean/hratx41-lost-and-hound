@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <link rel="shortcut icon" href="./favicon.ico" />
-  <meta 
-    name="viewport" 
-    content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-  />
-  <meta name="theme-color" content="#000000" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <title>Blue Ocean</title>
-</head>
-<body>
-  <div id="root"></div>
-  <script src="./bundle.js"></script>
-</body>
+  <head>
+    <meta property="og:url" content="https://localhost:8000/flyer.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Doggie Flyer" />
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta name="google-signin-scope" content="profile email" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="google-signin-client_id"
+      content="193297728927-4ech6639cc6223g9jtmsqv0ukc1p8k8g.apps.googleusercontent.com"
+    />
+    <link rel="manifest" href="./manifest.json" />
+    <title>Blue Ocean</title>
+  </head>
+  <body>
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log("Full Name: " + profile.getName());
+        console.log("Given Name: " + profile.getGivenName());
+        console.log("Family Name: " + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      }
+    </script>
+    <script>
+      signOut = () => {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function() {
+          console.log("User signed out.");
+        });
+      };
+    </script>
+    <div id="root"></div>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="./bundle.js"></script>
+  </body>
 </html>

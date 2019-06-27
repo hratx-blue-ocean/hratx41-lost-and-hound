@@ -1,0 +1,33 @@
+@import './mixins.scss';
+
+#banner {
+  margin-top: 2%;
+  display: grid;
+  width: 65%;
+  max-width: 1000px;
+  grid-template-columns: 1fr 3fr;
+  justify-content: center;
+
+  #logo {
+    width: 100%;
+    @include shadow;
+  }
+
+  #title {
+    text-align: center;
+
+    #company-name {
+      @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+      font-family: 'Pacifico', cursive;
+      font-size: 7.5rem;
+      @include shadow;
+      margin: auto;
+    }
+
+    #sub-title {
+      @include shadow;
+    }
+
+  }
+
+}

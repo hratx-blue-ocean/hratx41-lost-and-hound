@@ -23,10 +23,21 @@
   color: #61dafb;
 }
 
+body {
+  margin: 0;
+  background-attachment: fixed;
+  background-image: url(http://localhost:8000/assets/bone45.png);
+  background-repeat: repeat;
+  background-size: 50px;
+  @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+  font-family: 'Nunito', sans-serif;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

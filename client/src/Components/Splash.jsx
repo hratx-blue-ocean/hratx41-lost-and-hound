@@ -1,34 +1,39 @@
 import React from "react";
 import "../Styles/splash.scss";
-import { Container } from "react-bootstrap";
-// import Lost from "./Lost.jsx";
-// import Found from "./Found.jsx";
+import Banner from "./Banner.jsx";
+import { Button } from "react-bootstrap";
 
 const Splash = props => {
   return (
     <>
-      <Container>
-        <div id="centerModal">
-          I<br />
-          <button
-          // onClick={() => {
-          //   props.setPageType(<Lost />);
-          // }}
-          >
-            Lost
-          </button>
-          <button
-          // onClick={() => {
-          //   props.setPageType(<Found />);
-          // }}
-          >
-            Found
-          </button>
-          <br />A DOG
+      <div className="splashContainer">
+        <Banner />
+        <div id="action-selector">
+          <h3>I</h3>
+          <div>
+            <Button
+              id="splashButton"
+              onClick={props.clickHandler}
+              value="Lost"
+              variant="light"
+            >
+              lost
+            </Button>
+            <Button
+              id="splashButton"
+              onClick={props.clickHandler}
+              value="Found"
+              variant="light"
+            >
+              found
+            </Button>
+          </div>
+          <h3>a dog</h3>
         </div>
-      </Container>
+      </div>
     </>
   );
 };
 
 export default Splash;
+//

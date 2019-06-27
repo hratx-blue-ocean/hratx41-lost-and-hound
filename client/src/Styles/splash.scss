@@ -1,22 +1,36 @@
-body {
-  background-color: pink;
-}
+@import './mixins.scss';
 
-#centerModal {
-  //   position: absolute;
-  //   top: 30%;
-  //   left: 35%;
-  //   align-content: center;
-  //   position: absolute;
+.splashContainer {
   display: flex;
-  justify-content: center;
-  font-size: 28px;
-}
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6vh;
+  font-size: 23px;
+  font-weight: 900;
+  font-family: 'Nunito', sans-serif;
 
-button {
-  height: 200px;
-  width: 200px;
-  margin: 30px;
-  border-radius: 25%;
-  font-size: 28px;
+  #banner,
+  img,
+  #title {
+    // border: 1px solid;
+  }
+
+  #action-selector {
+    margin-top: 2%;
+    @include item-container;
+    text-align: center;
+    padding: 1%;
+
+    #splashButton {
+      &:hover {}
+
+      @include shadow;
+      height: 81px;
+      width: 150px;
+      margin: 30px;
+      border-radius: 5px;
+      font-weight: 900;
+      font-size: 1.6rem;
+    }
+  }
 }
