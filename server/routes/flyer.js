@@ -14,7 +14,6 @@ router.get("/", (req, res) => {
         res.send(dog);
       }
     });
-    // res.send(req.query);
   }
 });
 

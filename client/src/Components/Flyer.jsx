@@ -58,9 +58,7 @@ class Flyer extends React.Component {
                 </ListGroup.Item>
               ) : null}
               <ListGroup.Item>
-                {this.state.doggieData.location.city +
-                  ", " +
-                  this.state.doggieData.location.state +
+                {this.state.doggieData.location.address +
                   ", " +
                   this.state.doggieData.location.zip}
               </ListGroup.Item>
