@@ -24,9 +24,9 @@ const Splash = props => {
         </div>
         <h3>A DOG</h3>
       </div>
-      {/* <div className="footer">Pawter Placeholder</div> */}
     </>
   );
 };
 
 export default Splash;
+//

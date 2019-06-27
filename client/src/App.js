@@ -29,9 +29,14 @@ class App extends React.Component {
   }
 
   splashPageClickHandler(e) {
-    this.setState({
-      action: e.target.value
-    });
+    this.setState(
+      {
+        action: e.target.value
+      },
+      () => {
+        this.fetchHandler();
+      }
+    );
   }
 
   homeRedirect() {
@@ -85,7 +90,10 @@ class App extends React.Component {
           homeRedirect={this.homeRedirect}
         />
         {this.state.action === "" ? (
-          <Splash clickHandler={this.splashPageClickHandler} />
+          <Splash
+            clickHandler={this.splashPageClickHandler}
+            fetch={this.fetchHandler}
+          />
         ) : this.state.action === "post" ? (
           <PostDog />
         ) : (
@@ -96,7 +104,7 @@ class App extends React.Component {
             action={this.state.action}
           />
         )}
-        <Footer />
+        {/* <Footer /> */}
         {/* {this.state.results === [] ? null : (
           <ResultsList results={this.state.results} />
         )}

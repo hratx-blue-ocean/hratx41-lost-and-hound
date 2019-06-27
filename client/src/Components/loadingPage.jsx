@@ -5,8 +5,8 @@ const LoadingPage = props => {
   return (
     <>
       <div id="loading-opacity-layer" />
-      <div id="loading-div" class="mx-auto my-auto">
-        <div class="lds-spinner">
+      <div id="loading-div" className="mx-auto my-auto">
+        <div className="lds-spinner">
           <div />
           <div />
           <div />
