@@ -43,24 +43,6 @@ const uploadDogs = (dogData, callback) => {
   });
 };
 
-const allFoundDogs = callback => {
-  Dog.find({ status: "Found" }, (err, dogs) => {
-    if (err) {
-      console.error(err);
-    }
-    callback(err, dogs);
-  });
-};
-
-const allLostDogs = callback => {
-  Dog.find({ status: "Lost" }, (err, dogs) => {
-    if (err) {
-      console.error(err);
-    }
-    callback(err, dogs);
-  });
-};
-
 const oneDog = (id, callback) => {
   console.log("database");
   Dog.findOne({ _id: id }, (err, dog) => {
@@ -70,6 +52,27 @@ const oneDog = (id, callback) => {
     }
     callback(null, dog);
   });
+};
+const allFoundDogs = callback => {
+  Dog.find({ status: "Found" })
+    .sort({ date: -1 })
+    .exec((err, dogs) => {
+      if (err) {
+        console.error(err);
+      }
+      callback(err, dogs);
+    });
+};
+
+const allLostDogs = callback => {
+  Dog.find({ status: "Lost" })
+    .sort({ date: -1 })
+    .exec((err, dogs) => {
+      if (err) {
+        console.error(err);
+      }
+      callback(err, dogs);
+    });
 };
 
 module.exports = { uploadDogs, allFoundDogs, allLostDogs, oneDog };
