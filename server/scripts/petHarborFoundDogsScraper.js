@@ -109,13 +109,8 @@ const getPHFoundDogs = () => {
 				else if (allAddresses[i].includes('Harker Heights Pet Adoption Center')) zip = '76548';
 				else if (allAddresses[i].includes('Pflugerville Animal Welfare Services')) zip = '78660';
 
-<<<<<<< HEAD
-        let dogObj = {};
-        let date = new Date(allDates[i]);
-=======
 				let dogObj = {};
 				let date = new Date(allDates[i]);
->>>>>>> develop
 				dogObj['name'] = allNames[i];
 				dogObj['sex'] = allGenders[i];
 				dogObj['looksLike'] = allBreeds[i];
