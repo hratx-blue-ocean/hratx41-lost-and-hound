@@ -9,7 +9,7 @@
     "server:dev": "nodemon ./server/bin/www",
     "lint:client": "cd ./client && ./node_modules/.bin/eslint \"src/**/*.{js,jsx}\" && echo 'Your code has passed the linting guidelines' || echo 'Please fix the errors listed above'",
     "lint:server": "cd ./server && ../node_modules/.bin/eslint \"routes/**/*.js\" 2>/dev/null && echo 'Your code has passed the linting guidelines' || echo 'Please fix the errors listed above'",
-    "test": "jest"
+    "test": "cd ./client && npm test"
   },
   "repository": {
     "type": "git",
@@ -21,9 +21,13 @@
     "url": "https://github.com/selder18/blue-ocean-rewrite/issues"
   },
   "homepage": "https://github.com/selder18/blue-ocean-rewrite#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
+  },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.8.0",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^5.0.0",
@@ -37,7 +41,11 @@
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.5.0",
     "eslint-plugin-standard": "^4.0.0",
-    "jest": "^24.8.0"
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.8.0",
+    "jest-axe": "^3.1.1",
+    "jest-dom": "^3.5.0",
+    "react-testing-library": "^8.0.1"
   },
   "config": {
     "commitizen": {

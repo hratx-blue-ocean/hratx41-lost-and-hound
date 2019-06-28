@@ -5,6 +5,8 @@ import SearchForm from "./Components/SearchForm.jsx";
 import Footer from "./Components/Footer.jsx";
 import Header from "./Components/Header.jsx";
 import PostDog from "./Components/PostDog.jsx";
+import About from "./Components/About.jsx";
+import Resources from "./Components/Resources.jsx";
 import "./App.scss";
 
 class App extends React.Component {
@@ -90,27 +92,62 @@ class App extends React.Component {
   }
 
   render() {
+    const renderPage = action => {
+      switch (action) {
+        case "":
+          return (
+            <Splash
+              clickHandler={this.splashPageClickHandler}
+              fetch={this.fetchHandler}
+            />
+          );
+
+        case "Lost":
+          return (
+            <SearchForm
+              results={this.state.results}
+              text={this.setText}
+              fetch={this.fetchHandler}
+              action={this.state.action}
+            />
+          );
+
+        case "Found":
+          return (
+            <SearchForm
+              results={this.state.results}
+              text={this.setText}
+              fetch={this.fetchHandler}
+              action={this.state.action}
+            />
+          );
+
+        case "resources":
+          return <Resources />;
+
+        case "about":
+          return <About />;
+
+        case "post":
+          return <PostDog />;
+
+        default:
+          return (
+            <Splash
+              clickHandler={this.splashPageClickHandler}
+              fetch={this.fetchHandler}
+            />
+          );
+      }
+    };
+
     return (
       <>
         <Header
           clickHandler={this.splashPageClickHandler}
           homeRedirect={this.homeRedirect}
         />
-        {this.state.action === "" ? (
-          <Splash
-            clickHandler={this.splashPageClickHandler}
-            fetch={this.fetchHandler}
-          />
-        ) : this.state.action === "post" ? (
-          <PostDog />
-        ) : (
-          <SearchForm
-            results={this.state.results}
-            text={this.setText}
-            fetch={this.fetchHandler}
-            action={this.state.action}
-          />
-        )}
+        {renderPage(this.state.action)}
         <Footer />
       </>
     );

@@ -6,9 +6,7 @@ const Resources = props => {
   return (
     <div className="jumbotron">
       <h1 className="display-4">Resources</h1>
-      <p className="lead">
-      How to reunite with your best pal:
-      </p>
+      <p className="lead">How to reunite with your best pal:</p>
       <hr className="my-4" />
       <h4>Contact local animal shelters and animal control agencies</h4>
       <p>
@@ -61,7 +59,5 @@ const Resources = props => {
     </div>
   );
 };
-
-export default Resources;
 
 export default Resources;
