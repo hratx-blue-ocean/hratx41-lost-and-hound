@@ -8,6 +8,12 @@
     "test": "jest",
     "server": "webpack-dev-server --mode development --open --hot"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    }
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {

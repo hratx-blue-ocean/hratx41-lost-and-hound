@@ -64,11 +64,21 @@ const allLostDogs = callback => {
       callback(err, dogs);
     });
 };
+
 const oneDog = (id, callback) => {
-  console.log("database");
   Dog.findOne({ _id: id }, (err, dog) => {
     callback(null, dog);
   });
 };
 
-module.exports = { uploadDogs, allFoundDogs, allLostDogs, oneDog };
+const insertDog = (dogData, callback) => {
+  Dog.create(dogData, (err) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null);
+    }
+  })
+}
+
+module.exports = { uploadDogs, allFoundDogs, allLostDogs, oneDog, insertDog };

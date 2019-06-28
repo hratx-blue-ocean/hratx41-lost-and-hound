@@ -5,8 +5,12 @@ import SearchForm from "./Components/SearchForm.jsx";
 import Footer from "./Components/Footer.jsx";
 import Header from "./Components/Header.jsx";
 import PostDog from "./Components/PostDog.jsx";
+import About from "./Components/About.jsx";
+import Resources from "./Components/Resources.jsx";
+import { Button } from "react-bootstrap";
 import "./App.scss";
 
+// const GOOGLE_BUTTON_ID = "google-sign-in-button";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -52,19 +56,27 @@ class App extends React.Component {
       },
       () => {
         if (this.state.action === "Found") {
-          axios.get("/api/found").then(response => {
-            console.log(response.data);
-            this.setState({
-              results: response.data
+          axios
+            .get(
+              "http://ec2-3-130-116-160.us-east-2.compute.amazonaws.com/api/found"
+            )
+            .then(response => {
+              console.log(response.data);
+              this.setState({
+                results: response.data
+              });
             });
-          });
         } else if (this.state.action === "Lost") {
-          axios.get("/api/lost").then(response => {
-            console.log(response.data);
-            this.setState({
-              results: response.data
+          axios
+            .get(
+              "http://ec2-3-130-116-160.us-east-2.compute.amazonaws.com/api/lost"
+            )
+            .then(response => {
+              console.log(response.data);
+              this.setState({
+                results: response.data
+              });
             });
-          });
         }
       }
     );
@@ -90,31 +102,69 @@ class App extends React.Component {
   }
 
   render() {
+    const renderPage = action => {
+      switch (action) {
+        case "":
+          return (
+            <>
+              <Splash
+                clickHandler={this.splashPageClickHandler}
+                fetch={this.fetchHandler}
+              />
+            </>
+          );
+
+        case "Lost":
+          return (
+            <SearchForm
+              results={this.state.results}
+              text={this.setText}
+              fetch={this.fetchHandler}
+              action={this.state.action}
+            />
+          );
+
+        case "Found":
+          return (
+            <SearchForm
+              results={this.state.results}
+              text={this.setText}
+              fetch={this.fetchHandler}
+              action={this.state.action}
+            />
+          );
+
+        case "resources":
+          return <Resources />;
+
+        case "about":
+          return <About />;
+
+        case "post":
+          return <PostDog />;
+
+        default:
+          return (
+            <Splash
+              clickHandler={this.splashPageClickHandler}
+              fetch={this.fetchHandler}
+            />
+          );
+      }
+    };
+
     return (
       <>
         <Header
           clickHandler={this.splashPageClickHandler}
           homeRedirect={this.homeRedirect}
+          signOut={this.signOut}
         />
-        {this.state.action === "" ? (
-          <Splash
-            clickHandler={this.splashPageClickHandler}
-            fetch={this.fetchHandler}
-          />
-        ) : this.state.action === "post" ? (
-          <PostDog />
-        ) : (
-          <SearchForm
-            results={this.state.results}
-            text={this.setText}
-            fetch={this.fetchHandler}
-            action={this.state.action}
-          />
-        )}
+        {renderPage(this.state.action)}
         <Footer />
       </>
     );
   }
 }
-//
+
 export default App;

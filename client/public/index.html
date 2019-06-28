@@ -18,23 +18,38 @@
       content="193297728927-4ech6639cc6223g9jtmsqv0ukc1p8k8g.apps.googleusercontent.com"
     />
     <link rel="manifest" href="./manifest.json" />
-    <title>Blue Ocean</title>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <title>Lost and Hound</title>
   </head>
+
   <body>
     <script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log("Full Name: " + profile.getName());
-        console.log("Given Name: " + profile.getGivenName());
-        console.log("Family Name: " + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
 
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
       }
     </script>
     <script>
@@ -46,7 +61,6 @@
       };
     </script>
     <div id="root"></div>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="./bundle.js"></script>
   </body>
 </html>

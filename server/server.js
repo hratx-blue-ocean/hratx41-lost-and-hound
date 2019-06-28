@@ -4,9 +4,7 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const app = express();
-const { getLostDogs } = require('./scripts/lost-dog-set-interval.js');
-const { getPHFoundDogs } = require('./scripts/petHarborFoundDogsScraper');
-const { getPHLostDogs } = require('./scripts/petHarborLostDogsScraper');
+const bodyParser = require('body-parser');
 // app.set("view engine", "html");
 //commment test
 // open up CORS
@@ -14,18 +12,9 @@ app.use(cors());
 
 app.use(logger("dev"));
 
-app.use((req, res, next) => {
-  // getPHLostDogs();
-  // getLostDogs();
-  // getPHFoundDogs();
-  setInterval(getPHLostDogs, 3654321)
-  setInterval(getPHFoundDogs, 3867530);
-	setInterval(getLostDogs, 3600000);
-	next();
-});
 
 // You can place your routes here, feel free to refactor:
-const { foundDogs, lostDogs, flyer } = require("./routes");
+const { foundDogs, lostDogs, flyer, dog } = require("./routes");
 app.use(express.static(path.join(__dirname, "../client/public")));
 app.get("/flyer", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/public/index.html"), function(
@@ -40,7 +29,7 @@ app.get("/flyer", (req, res) => {
 app.use("/api/found", foundDogs);
 app.use("/api/lost", lostDogs);
 app.use("/api/dog", flyer);
-
+app.use("/api/dog", bodyParser.json(), dog);
 // app.get("/", (req, res) => {
 //   res.send("HELLO");
 // });
