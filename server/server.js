@@ -4,9 +4,6 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const app = express();
-const { getLostDogs } = require('./scripts/lost-dog-set-interval.js');
-const { getPHFoundDogs } = require('./scripts/petHarborFoundDogsScraper');
-const { getPHLostDogs } = require('./scripts/petHarborLostDogsScraper');
 // app.set("view engine", "html");
 //commment test
 // open up CORS
@@ -14,15 +11,6 @@ app.use(cors());
 
 app.use(logger("dev"));
 
-app.use((req, res, next) => {
-  // getPHLostDogs();
-  // getLostDogs();
-  // getPHFoundDogs();
-  setInterval(getPHLostDogs, 3654321)
-  setInterval(getPHFoundDogs, 3867530);
-	setInterval(getLostDogs, 3600000);
-	next();
-});
 
 // You can place your routes here, feel free to refactor:
 const { foundDogs, lostDogs, flyer } = require("./routes");
