@@ -23,7 +23,11 @@ class Flyer extends React.Component {
   }
   componentWillMount() {
     axios
-      .get(`http://localhost:8000/api/dog${this.props.location.search}`)
+      .get(
+        `http://ec2-3-130-116-160.us-east-2.compute.amazonaws.com/api/dog${
+          this.props.location.search
+        }`
+      )
       .then(response =>
         this.setState(
           {
