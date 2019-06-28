@@ -1,4 +1,4 @@
-@import './mixins.scss';
+@import "./mixins.scss";
 
 $radius: 15px;
 
@@ -14,5 +14,23 @@ $radius: 15px;
     img {
       border-radius: $radius $radius 0 0;
     }
+  }
+}
+
+.card-img-top {
+  width: 100%;
+  height: 29vh !important;
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 1200px) {
+  .card-div {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .card-div {
+    width: 1000%;
   }
 }
