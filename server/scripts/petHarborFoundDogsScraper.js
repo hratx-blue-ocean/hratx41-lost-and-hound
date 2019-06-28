@@ -21,12 +21,12 @@ const getPHFoundDogs = () => {
 		//wait 10 seconds to ensure page loads. HACKY
 		//execute javascript on the page
 		//here, the function is getting the HREF of the first search result
-		.evaluate(function() {
+		.evaluate(function () {
 			//get names
 			// let allNames = document.querySelectorAll('.info h4');
 			// allNames = [...allNames];
 			// allNames = allNames.map(elem => elem.innerHTML);
-			let allNames = document.querySelectorAll('tbody tr td:nth-of-type(2)');
+			let allNames = document.querySelectorAll('.ResultsTable tbody tr td:nth-of-type(2)');
 			allNames = [...allNames];
 			allNames = allNames.map(elem => elem.innerHTML);
 
@@ -34,7 +34,7 @@ const getPHFoundDogs = () => {
 			// let allGenders = document.querySelectorAll('.info h6:first-of-type');
 			// allGenders = [...allGenders];
 			// allGenders = allGenders.map(elem => elem.innerText.split(" ")[1]);
-			let allGenders = document.querySelectorAll('tbody tr td:nth-of-type(3)');
+			let allGenders = document.querySelectorAll('.ResultsTable tbody tr td:nth-of-type(3)');
 			allGenders = [...allGenders];
 			allGenders = allGenders.map(elem => elem.innerHTML);
 
@@ -51,7 +51,7 @@ const getPHFoundDogs = () => {
 			//     state: "TX",
 			//   }
 			// });
-			let allAddresses = document.querySelectorAll('tbody tr td:nth-of-type(8)');
+			let allAddresses = document.querySelectorAll('.ResultsTable tbody tr td:nth-of-type(8)');
 			allAddresses = [...allAddresses];
 			allAddresses = allAddresses.map(elem => elem.innerHTML);
 
@@ -59,7 +59,7 @@ const getPHFoundDogs = () => {
 			// let allBreeds = document.querySelectorAll('.custom li:first-of-type');
 			// allBreeds = [...allBreeds];
 			// allBreeds = allBreeds.map(elem => elem.innerHTML.trim());
-			let allBreeds = document.querySelectorAll('tbody tr td:nth-of-type(5)');
+			let allBreeds = document.querySelectorAll('.ResultsTable tbody tr td:nth-of-type(5)');
 			allBreeds = [...allBreeds];
 			allBreeds = allBreeds.map(elem => elem.innerHTML);
 
@@ -67,7 +67,7 @@ const getPHFoundDogs = () => {
 			// let allColors = document.querySelectorAll('.custom li:nth-of-type(2)');
 			// allColors = [...allColors];
 			// allColors = allColors.map(elem => elem.innerHTML.split(", ").join("/"));
-			let allColors = document.querySelectorAll('tbody tr td:nth-of-type(4)');
+			let allColors = document.querySelectorAll('.ResultsTable tbody tr td:nth-of-type(4)');
 			allColors = [...allColors];
 			allColors = allColors.map(elem => elem.innerHTML);
 
@@ -75,7 +75,7 @@ const getPHFoundDogs = () => {
 			// let allColors = document.querySelectorAll('tbody tr td:nth-of-type(4)');
 			// allColors = [...allColors];
 			// allColors = allColors.map(elem => elem.innerHTML);
-			let allDates = document.querySelectorAll('tbody tr td:nth-of-type(7)');
+			let allDates = document.querySelectorAll('.ResultsTable tbody tr td:nth-of-type(7)');
 			allDates = [...allDates];
 			allDates = allDates.map(elem => elem.innerHTML);
 
@@ -83,7 +83,7 @@ const getPHFoundDogs = () => {
 			// let allImages = document.querySelectorAll('.img-responsive');
 			// allImages = [...allImages];
 			// allImages = allImages.map(elem => elem.src)
-			let allImages = document.querySelectorAll('tbody tr td:nth-of-type(1) a');
+			let allImages = document.querySelectorAll('.ResultsTable tbody tr td:nth-of-type(1) a');
 			allImages = [...allImages];
 			allImages = allImages.map(elem => elem.href);
 			allImages = allImages.map(
@@ -107,8 +107,13 @@ const getPHFoundDogs = () => {
 				else if (allAddresses[i].includes('Harker Heights Pet Adoption Center')) zip = '76548';
 				else if (allAddresses[i].includes('Pflugerville Animal Welfare Services')) zip = '78660';
 
+<<<<<<< HEAD
         let dogObj = {};
         let date = new Date(allDates[i]);
+=======
+				let dogObj = {};
+				let date = new Date(allDates[i]);
+>>>>>>> develop
 				dogObj['name'] = allNames[i];
 				dogObj['sex'] = allGenders[i];
 				dogObj['looksLike'] = allBreeds[i];
@@ -129,13 +134,13 @@ const getPHFoundDogs = () => {
 		//end the Nightmare instance along with the Electron instance it wraps
 		.end()
 		//run the queue of commands specified, followed by logging the HREF
-		.then(function(result) {
+		.then(function (result) {
 			db.uploadDogs(result, err => {
 				if (err) console.error(err);
 			});
 		})
 		//catch errors if they happen
-		.catch(function(error) {
+		.catch(function (error) {
 			console.error('an error has occurred: ' + error);
 		});
 };

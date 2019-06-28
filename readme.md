@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 **Lost and Hound**
 
@@ -89,6 +90,58 @@ You can also input a lost or found dog to add to our personal database and they 
 
 ## Technical Challenges and research that you anticipated
 
+=======
+# Lost and Hound
+
+![](https://lh3.googleusercontent.com/AL7_u-eIOylhO6o-jzlAcig-NNfrS54EdLO9dbvocYr05Kt1cTCSzZXCpGorFPzZ9i4zBmuY4maGDRdJoHguZCMuV9My2eaCaXGHUeffBI5yoUuOnS0gALsCBMBlRuhPOwaM77q5)
+
+*Contributors*
+------------------------------------------------------------------------------
+
+[Jacob Nelsen-Epstein](https://github.com/CyberImpXIII)
+
+[Surya Fotedar](https://github.com/suryafotedar)
+
+[Hunter Mason](https://github.com/MasonHN)
+
+[Eric Anthony](https://github.com/anthon78)
+
+[Ken Marut](https://github.com/friedpies)
+
+[Chad Cramer](https://github.com/Chadcramer)
+
+*Introduction*
+------------
+
+This project was a brief 1-week sprint where our team tried to complete an MVP for an external user (Louis Rangel). Louis envisioned a website that connected lost dogs and their owners. Our team attempted to create a simple, elegant environment to easily achieve this goal. 
+
+-   Add any additional content here pertaining to timeline, any personal goals, etc
+
+## What does the app do?
+
+* What problem does it solve? Who uses it?
+
+It solves the problem of local resources for finding lost dogs and their owners being spread out across too many places.  People who find or lose dogs use it.
+
+* Why was it built?
+
+It was built in order to more easily facilitate reuniting a lost dog with their owner
+
+* User Inputs and Outputs
+
+The user inputs whether they've lost or found a dog and receives a list of dogs that have been found or lost depending on which they choose.
+
+* 
+
+You can also input a lost or found dog to add to our personal database and they will then show up on subsequent searches.
+
+## Tech stack ( you can include logos)
+
+<img src="https://lh3.googleusercontent.com/ZIHOUCCxFaB7NirPhEX4K8cyTPIMvxvdJxpuhjb_qJ_dk-z7qEgD8riaR0ODXzXQZYn23zHpFiwGzxTDT88FTLeUMoPqlIjyLKoL1am8MH5pCoJExjL8SUC8uaeeiAjvQB0_vym6" width="100"/><img src="https://lh3.googleusercontent.com/xcong6Yn8NoueMYWPhEfO76dw0Nt70kiDVOCOygTFEQWpysHxcT-5jYzq9XWIgD3lvCGnGrjlhddm7WEOw9V1FlHivqFjZCXF9IDsfd7uQ2SxlI80roSJcnHvb0O7POvlYOPNvRG" width="100" /><img src="https://lh5.googleusercontent.com/vMTp0AyoPyuTKcvkRNp3SfS9KLkAiBrL_2b3SBwgIOv9z4VvyTD2lHs47h1jmEsk2olzAWIJXyg0HBLTGnjJzWkCFV_Z0B6LFqVOz5dewjLykbC4eRjwZHTOnmBqeXhJccAnc512" width="100" /><img src="https://lh5.googleusercontent.com/_RcI-sgNRX5J0olXzRycjQN3tysoTXbH8kXRfE0AtBY8KkDrINApsrfZGAkczZYGwKTPZlYdJXQyKmWO4zFzvON9Op6Ovcu0GQxwabxWfGJH__oRB6YCC-qD_3b2yj_efkprD8UP" width="100" /><img src="https://lh5.googleusercontent.com/rdAoVdYKOCnmtev6t7DJrEY7mG4iYsRPqeTH0Z-OrlsVmiea3q5SMtOGNSa7HzJcyxcIcelTacG5gPNgyBoIviiNcLbohQAicvpldcfM32Klb_ewouDRd67OtYhUAU1CEZB4rBqB" width="100" /><img src="https://lh6.googleusercontent.com/tKlT8lGB2bTDqSilr_a2y8vaO-QBUdcUIYASnslf-RAKTxUEiEBq-_gTVBP0irIP1ZWNuSvp1fouOJrQBXUr0joVmBZzNyOec4jBpOyVogPZMOYhPH6YQwYOiLdZnfuaDnFel9rn" width="100" /><img src="https://lh5.googleusercontent.com/pqPRWyCMu39CU4GAERH3XI0fri2uJzMteIV5t-4qAG566IJWdXRABxLjV1jwdVvID-NvFw3USgyM8FXC5w_yAimYz4FY1gVEm96Yd2JQZh-pYl33lHpbOI7-3-uTixqgX1XHRker" width="100" />
+
+## Technical Challenges and research that you anticipated
+
+>>>>>>> develop
 * Why, what was the plan to overcome those challenges?
 
 We expected getting and formatting the data to be the biggest challenge.  
@@ -109,7 +162,10 @@ Sometimes you just can not legally scrape a website and there is no way around i
 
 * What were the user stories /  what was MVP (mention Minimal Viable Product)
 
+<<<<<<< HEAD
 >>>>>>> 9907fdced2530044ae9842cde070b95217f70623
+=======
+>>>>>>> develop
 -As a user I should be able to specify if I have lost or found a dog so that I can be directed to the appropriate search page
 
 -As a user I should be able to select a lost/found dog's lost/found date so that I can retrieve the appropriate data matching that description
@@ -132,6 +188,7 @@ Sometimes you just can not legally scrape a website and there is no way around i
 
 -As a user, if my search query is taking longer than 1 second, I should see visual feedback of my search result so that I can know that the website is working
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 MVP -  
 The MVP was to have an interactive search that allowed the display of lost or found dogs from other sources. Find a list of lost/found dogs based on location. Be able to sort by description/categories/most recent. Kust resources per location. Organize info by photo/description/id. Webscraper for facebook, craigslist, reddit, austin pets. 
@@ -174,6 +231,8 @@ What additional features do you plan to add, how do you plan to implement those 
 Include use of Facebook Groups API to allow for more lost and found doggie data to be scraped from local groups.
 * Additional dev ops considerations?
 =======
+=======
+>>>>>>> develop
 MVP -  
 
 The MVP was to have an interactive search that allowed the display of lost or found dogs from other sources. Find a list of lost/found dogs based on location. Be able to sort by description/categories/most recent. Kust resources per location. Organize info by photo/description/id. Webscraper for facebook, craigslist, reddit, austin pets.
@@ -245,5 +304,8 @@ Include use of Facebook Groups API to allow for more lost and found doggie data 
 
 * Additional dev ops considerations?
 
+<<<<<<< HEAD
 >>>>>>> 9907fdced2530044ae9842cde070b95217f70623
+=======
+>>>>>>> develop
 * UI/UX additions?
