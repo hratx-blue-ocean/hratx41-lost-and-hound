@@ -1,11 +1,11 @@
 import React from "react";
 import { render } from "react-testing-library";
 
-import Footer from "../Components/Footer";
+import PostDog from "../Components/PostDog";
 
-describe("Footer", () => {
+describe("PostDog", () => {
   it("should render without crashing", () => {
-    const { container } = render(<Footer />);
+    const { container } = render(<PostDog />);
 
     expect(container).toBeTruthy();
   });

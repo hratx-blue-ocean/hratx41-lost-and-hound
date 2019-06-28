@@ -1,11 +1,11 @@
 import React from "react";
 import { render } from "react-testing-library";
 
-import Footer from "../Components/Footer";
+import About from "../Components/About";
 
-describe("Footer", () => {
+describe("About", () => {
   it("should render without crashing", () => {
-    const { container } = render(<Footer />);
+    const { container } = render(<About />);
 
     expect(container).toBeTruthy();
   });
