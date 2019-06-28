@@ -37,6 +37,7 @@ class PostDog extends React.Component {
         state: this.state.postData.state,
         zip: this.state.postData.zip
       },
+      name: this.state.postData.name,
       status: this.state.postData.status,
       looksLike: this.state.postData.looksLike,
       image: this.state.postData.image
@@ -79,6 +80,8 @@ class PostDog extends React.Component {
           <Form.Group>
             <Form.Label>Lost / Found Date</Form.Label>
             <Form.Control onChange={this.setForm} id="date" type="date" />
+            <Form.Label>Name</Form.Label>
+            <Form.Control onChange={this.setForm} id="name" type="text" />
             <Form.Label>Color</Form.Label>
             <Form.Control onChange={this.setForm} id="color" type="text" />
             <Form.Label>Breed</Form.Label>
