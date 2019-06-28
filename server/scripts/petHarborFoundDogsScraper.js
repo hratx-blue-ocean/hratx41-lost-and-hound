@@ -92,6 +92,8 @@ const getPHFoundDogs = () => {
 					elem.slice(elem.indexOf('?') + 1, elem.indexOf('&searchtype'))
 			);
 
+
+
 			//build result array
 			let resultArray = [];
 			for (let i = 0; i < allDates.length; i++) {
@@ -123,7 +125,22 @@ const getPHFoundDogs = () => {
 
 				resultArray.push(dogObj);
 			}
+
+
 			resultArray = resultArray.slice(1);
+
+			for (let i = 0; i < resultArray.length - 1; i++) {
+				// resultArray[i].image = resultArray[i + 1].image;
+				resultArray[i].name = resultArray[i + 1].name;
+				resultArray[i].sex = resultArray[i + 1].sex;
+				resultArray[i].looksLike = resultArray[i + 1].looksLike;
+				resultArray[i].color = resultArray[i + 1].color;
+				resultArray[i].status = resultArray[i + 1].status;
+				resultArray[i].location = resultArray[i + 1].location;
+
+			}
+			resultArray.pop();
+
 			return resultArray;
 		})
 		//end the Nightmare instance along with the Electron instance it wraps
