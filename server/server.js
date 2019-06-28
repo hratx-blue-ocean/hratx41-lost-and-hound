@@ -4,6 +4,7 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const app = express();
+const bodyParser = require('body-parser');
 // app.set("view engine", "html");
 //commment test
 // open up CORS
@@ -13,7 +14,7 @@ app.use(logger("dev"));
 
 
 // You can place your routes here, feel free to refactor:
-const { foundDogs, lostDogs, flyer } = require("./routes");
+const { foundDogs, lostDogs, flyer, dog } = require("./routes");
 app.use(express.static(path.join(__dirname, "../client/public")));
 app.get("/flyer", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/public/index.html"), function(
@@ -28,7 +29,7 @@ app.get("/flyer", (req, res) => {
 app.use("/api/found", foundDogs);
 app.use("/api/lost", lostDogs);
 app.use("/api/dog", flyer);
-
+app.use("/api/dog", bodyParser.json(), dog);
 // app.get("/", (req, res) => {
 //   res.send("HELLO");
 // });
