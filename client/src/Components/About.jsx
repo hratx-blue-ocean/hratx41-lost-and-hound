@@ -1,5 +1,6 @@
 import React from "react";
 import "../Styles/splash.scss";
+import "../Styles/about.scss";
 
 let picture = () => {
   window.open = "http://google.com";
@@ -7,7 +8,7 @@ let picture = () => {
 
 const About = props => {
   return (
-    <div className="jumbotron">
+    <div className="jumbotron" id="about-container">
       <h3 className="mission">Our Mission</h3>
       <h6 className="mission">"Empower dogs"</h6>
       <h1 className="display-4">About</h1>

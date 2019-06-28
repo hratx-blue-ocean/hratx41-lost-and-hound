@@ -16,17 +16,16 @@
   }
 
   #action-selector {
+    background-color: $applecore;
     margin-top: 2%;
     @include item-container;
     text-align: center;
-    padding: 1%;
 
     #splashButton {
       &:hover {}
 
       @include shadow;
       height: 81px;
-      width: 150px;
       margin: 30px;
       border-radius: 5px;
       font-weight: 900;

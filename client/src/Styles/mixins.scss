@@ -10,12 +10,17 @@ $color-3: #86D8FF;
 $color-4: #B37C3B;
 $color-5: #FFC887;
 
+$blueberry: #6B7A8F;
+$apricot: #F7882F;
+$citrus: #F7C331;
+$applecore: #DCC7AA;
+
+
 @mixin shadow {
   filter: drop-shadow(2px 2px 2px grey);
 }
 
 @mixin item-container {
-  background-color: $secondary-color;
   // opacity: .7;
   border-radius: 20px;
 }

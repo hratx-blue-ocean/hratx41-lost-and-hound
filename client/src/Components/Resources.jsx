@@ -1,10 +1,10 @@
 import React from "react";
 import "../Styles/splash.scss";
-import { Container, Row } from "react-bootstrap";
+import "../Styles/resources.scss";
 
 const Resources = props => {
   return (
-    <div className="jumbotron">
+    <div className="jumbotron" id="resources-container">
       <h1 className="display-4">Resources</h1>
       <p className="lead">How to reunite with your best pal:</p>
       <hr className="my-4" />

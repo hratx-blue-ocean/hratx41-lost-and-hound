@@ -9,12 +9,19 @@
   justify-content: center;
 
   #logo {
-    width: 100%;
     @include shadow;
+    stroke: $blueberry;
+    stroke-width: 5;
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+    animation: offset .7s linear forwards, fill-it 1.0s .7s linear forwards;
+    // animation: fill-it 1.0s 1.0s linear forwards;
   }
 
   #title {
     text-align: center;
+    color: $blueberry;
+    margin: auto;
 
     #company-name {
       @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
@@ -30,4 +37,20 @@
 
   }
 
+}
+
+@keyframes offset {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill-it {
+  0% {
+    fill: rbga(0, 0, 0, 0);
+  }
+
+  100% {
+    fill: $blueberry;
+  }
 }
