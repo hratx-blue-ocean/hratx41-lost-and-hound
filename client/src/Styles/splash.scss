@@ -4,32 +4,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 10%;
   margin-top: 6vh;
   font-size: 23px;
   font-weight: 900;
   font-family: 'Nunito', sans-serif;
 
-  #banner,
-  img,
-  #title {
+  #banner {
     // border: 1px solid;
   }
+}
 
-  #action-selector {
-    background-color: $applecore;
-    margin-top: 2%;
-    @include item-container;
-    text-align: center;
+#action-selector {
+  background-color: $applecore;
+  @include item-container;
+  text-align: center;
+  width: 25%;
+  margin: 7% auto;
 
-    #splashButton {
-      &:hover {}
+  #splashButton {
+    @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+    font-family: 'Nunito', sans-serif;
 
-      @include shadow;
-      height: 81px;
-      margin: 30px;
-      border-radius: 5px;
-      font-weight: 900;
-      font-size: 1.6rem;
-    }
+    &:hover {}
+
+    @include shadow;
+    height: 81px;
+    margin: 30px;
+    border-radius: 5px;
+    font-weight: 900;
+    font-size: 1.6rem;
   }
 }
