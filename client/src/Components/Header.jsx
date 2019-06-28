@@ -5,7 +5,7 @@ import "../Styles/header.scss";
 
 const Header = props => {
   return (
-    <Navbar id="nav" sticky="top" bg="light" expand="lg">
+    <Navbar id="nav" sticky="top" expand="lg">
       <Navbar.Brand className="navTitle" onClick={props.homeRedirect}>
         <img alt="logo" src="./assets/logo.png" width="40" />
       </Navbar.Brand>

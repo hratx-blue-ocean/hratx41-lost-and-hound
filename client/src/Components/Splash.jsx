@@ -9,7 +9,6 @@ const Splash = props => {
       <div className="splashContainer">
         <Banner />
         <div id="action-selector">
-          <h3>I</h3>
           <div>
             <Button
               id="splashButton"
@@ -17,7 +16,7 @@ const Splash = props => {
               value="Lost"
               variant="light"
             >
-              lost
+              I lost my dog
             </Button>
             <Button
               id="splashButton"
@@ -25,10 +24,9 @@ const Splash = props => {
               value="Found"
               variant="light"
             >
-              found
+              I found a dog
             </Button>
           </div>
-          <h3>a dog</h3>
         </div>
       </div>
     </>

@@ -4,6 +4,7 @@
   z-index: 99;
   @include shadow;
   opacity: .86;
+  background-color: $applecore;
 
   .navbar-nav {
 
@@ -15,4 +16,9 @@
   .navTitle {}
 
   #links {}
+
+  button {
+    background-color: $applecore;
+    border: none;
+  }
 }

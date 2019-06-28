@@ -9,10 +9,11 @@
   font-weight: 900;
   font-family: 'Nunito', sans-serif;
 
-  #banner,
-  img,
+
   #title {
-    // border: 1px solid;
+    margin: auto;
+    color: $blueberry;
+    // @include shadow;
   }
 
   #action-selector {
@@ -20,13 +21,16 @@
     @include item-container;
     text-align: center;
     padding: 1%;
+    @include shadow;
 
     #splashButton {
-      &:hover {}
+      &:hover {
+        background-color: $citrus;
+      }
 
       @include shadow;
       height: 81px;
-      width: 150px;
+      // width: 150px;
       margin: 30px;
       border-radius: 5px;
       font-weight: 900;

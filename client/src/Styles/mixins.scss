@@ -4,18 +4,17 @@ $secondary-color: rgba(160, 160, 160, .6);
 $primary-text: black;
 $secondary-text: darkgrey;
 
-$color-nav: #4D92B3;
-$color-2: #A1E1FF;
-$color-3: #86D8FF;
-$color-4: #B37C3B;
-$color-5: #FFC887;
+$blueberry: #6B7A8F;
+$apricot: #F7882F;
+$citrus: #F7C331;
+$applecore: #DCC7AA;
 
 @mixin shadow {
-  filter: drop-shadow(2px 2px 2px grey);
+  filter: drop-shadow(2px 2px 2px);
 }
 
 @mixin item-container {
-  background-color: $secondary-color;
+  background-color: $blueberry;
   // opacity: .7;
   border-radius: 20px;
 }
