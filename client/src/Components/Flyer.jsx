@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Card, ListGroup, Container } from "react-bootstrap";
-import Header from "./Header.jsx";
+import { Card, ListGroup, Container, Navbar, Button } from "react-bootstrap";
 class Flyer extends React.Component {
   constructor(props) {
     super(props);
@@ -39,7 +38,11 @@ class Flyer extends React.Component {
   render() {
     return (
       <>
-        <Header />
+        <Navbar id="nav" sticky="top" bg="light" expand="lg">
+          <Navbar.Brand className="navTitle" href={`http://localhost:8000/`}>
+            <img alt="logo" src="./assets/logo.png" width="40" />
+          </Navbar.Brand>
+        </Navbar>
         <Container className="mx-auto">
           <Card style={{ maxWidth: "30vw" }} className="text-center">
             <Card.Body>
