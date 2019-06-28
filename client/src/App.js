@@ -7,8 +7,10 @@ import Header from "./Components/Header.jsx";
 import PostDog from "./Components/PostDog.jsx";
 import About from "./Components/About.jsx";
 import Resources from "./Components/Resources.jsx";
+import { Button } from "react-bootstrap";
 import "./App.scss";
 
+// const GOOGLE_BUTTON_ID = "google-sign-in-button";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -96,10 +98,13 @@ class App extends React.Component {
       switch (action) {
         case "":
           return (
-            <Splash
-              clickHandler={this.splashPageClickHandler}
-              fetch={this.fetchHandler}
-            />
+            <>
+              {/* <div id={GOOGLE_BUTTON_ID} /> */}
+              <Splash
+                clickHandler={this.splashPageClickHandler}
+                fetch={this.fetchHandler}
+              />
+            </>
           );
 
         case "Lost":
@@ -146,6 +151,7 @@ class App extends React.Component {
         <Header
           clickHandler={this.splashPageClickHandler}
           homeRedirect={this.homeRedirect}
+          signOut={this.signOut}
         />
         {renderPage(this.state.action)}
         <Footer />
@@ -153,5 +159,5 @@ class App extends React.Component {
     );
   }
 }
-//
+
 export default App;
