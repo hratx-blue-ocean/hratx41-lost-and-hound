@@ -1,6 +1,12 @@
 # Lost and Hound
 ![](https://lh3.googleusercontent.com/AL7_u-eIOylhO6o-jzlAcig-NNfrS54EdLO9dbvocYr05Kt1cTCSzZXCpGorFPzZ9i4zBmuY4maGDRdJoHguZCMuV9My2eaCaXGHUeffBI5yoUuOnS0gALsCBMBlRuhPOwaM77q5)
- 
+
+### About
+*Lost and Hound* is a web app that aims to reconnect lost dogs with their owners. The app aggregates disparate sources of lost dog data and displays it on a single page so that owners don't have to search across multiple websites. Additionally, the app helps *finders* of lost dogs connect with their owners.
+
+A user first selects whether they have either lost or found a dog, and then is presented with an up-to-date list of dogs matching their particular search. The user is then able to filter the results by location and description. If a user finds a match, they are able to contact the original poster and/or share a "flyer" via Facebook.
+
+*Lost and Found* also has its own database where users can post both lost and found dogs which will be included in the search results.
 
 ### Contributors
 [Jacob Nelsen-Epstein](https://github.com/CyberImpXIII)
@@ -15,15 +21,9 @@
 
 [Chad Cramer](https://github.com/Chadcramer)
 
-### About the App
-*Lost and Hound* is a web app that aims to reconnect lost dogs with their owners. The app aggregates disparate sources of lost dog data and displays it on a single page so that owners don't have to search across multiple websites. Additionally, the app helps *finders* of lost dogs connect with their owners.
-
-To use the app, a user first selects whether they have either lost or found a dog, and then is presented with an up-to-date  list of dogs matching their particular search. The user is then able to filter the results by location and description. If a user finds a match, they are able to contact the original poster and/or share a "flyer" via Facebook.
-
-*Lost and Found* also has its own database where users can post both lost and found dogs which will be included in the search results.
 
 ### Tech Stack 
-*Lost and Hound* was built primarily with ReactJS on the front end and Node/Express on the backend. Other technologies used are listed below: 
+*Lost and Hound* was built primarily with ReactJS on the front end and Node/Express on the backend. Other key technologies used are listed below: 
 
 <img src="https://lh3.googleusercontent.com/ZIHOUCCxFaB7NirPhEX4K8cyTPIMvxvdJxpuhjb_qJ_dk-z7qEgD8riaR0ODXzXQZYn23zHpFiwGzxTDT88FTLeUMoPqlIjyLKoL1am8MH5pCoJExjL8SUC8uaeeiAjvQB0_vym6" width="100"/>
 <img src="https://lh3.googleusercontent.com/xcong6Yn8NoueMYWPhEfO76dw0Nt70kiDVOCOygTFEQWpysHxcT-5jYzq9XWIgD3lvCGnGrjlhddm7WEOw9V1FlHivqFjZCXF9IDsfd7uQ2SxlI80roSJcnHvb0O7POvlYOPNvRG" width="100" />
@@ -42,7 +42,7 @@ Some unexpected challenges we ran into while building this app were
 It was common for website/robots.txt files to prohibit web scraping, which initially was our plan for generating data on lost dogs. Sometimes you just can not legally scrape a website and there is no way around it. In some cases you may need to be granted permission, but either way it is very important to first check out a websites robots.txt page and understand their parameters.
 
 # Client Deliverables
-Our team strived to meet the expectations of our primary user by organizing deliverables into specific user stories. Some key user stories are listed below:
+Our team strived to meet the expectations of our primary user by organizing deliverables into user stories listed below:
 
 #### User Stories
 * As a user I should be able to select a lost/found dog's lost/found date so that I can retrieve the appropriate data matching that description
@@ -69,17 +69,12 @@ Our team strived to meet the expectations of our primary user by organizing deli
 The MVP of the app aimed to have an interactive search that allowed the display of lost or found dogs from other sources and then find a list of lost/found dogs based on location. Additionally, being able to sort by description/categories/most recent was a main goal.
 
 ### How the App Works:
-***Tree
 
 ***GIF
 
-What research was required?
-Appropriate Api’s for finding the correct data.
-Scraping and its usefulness for finding relevant data
-Sorting methods
-Determining area and distance
-Workflow and Key lessons from your team - specifically those related to: Agile, CI/CD, testing, working with external stakeholders, ticketing, and user stories.
-* Your git workflow, style guides, commit guides, etc
+### Git Workflow
+
+
 We had a master, develop, and personal feature branches. The master branch stores the official release history, and the develop branch serves as an integration branch for features. Develop contains a complete history of the project, where master contains an abridged version. Our developers continuously need to pull to their develop branch and then merge that with their feature branch to stay up to date and minimize conflicts. Each new feature should reside in its own branch, which can be pushed to the develop branch upon completion. Features should never interact directly with the master branch, they strictly merge with the develop branch.  
 * What did you learn from the process
 Using a dedicated branch to prepare releases makes it possible for one team to polish the current release while another team continues working on features for the next release. It also creates well-defined phases of development. Git workflow is great for agile development, allowing large teams to constantly develop independently and come together with ease as a whole. 

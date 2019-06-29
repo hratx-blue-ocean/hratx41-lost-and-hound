@@ -1,5 +1,6 @@
 import React from "react";
-import { Form, Button, Container, Col } from "react-bootstrap";
+import { Form, Button, Container, Col, Row } from "react-bootstrap";
+import "../Styles/post.scss";
 import axios from "axios";
 class PostDog extends React.Component {
   constructor(props) {
@@ -49,65 +50,82 @@ class PostDog extends React.Component {
   }
   render() {
     return (
-      <Container>
-        <Form>
-          <Form.Group>
-            <Form.Label>Address</Form.Label>
-            <Form.Control
-              onChange={this.setForm}
-              id="address"
-              type="text"
-              placeholder="1234 Main St"
-            />
-          </Form.Group>
+      <Container id="post-container">
+        <Row>
+          <Col xs={1} />
+          <Col xs={10}>
+            <h2>Post a Lost/Found Dog</h2>
+            <Form>
+              <Form.Group>
+                <Form.Label>address</Form.Label>
+                <Form.Control
+                  onChange={this.setForm}
+                  id="address"
+                  type="text"
+                  placeholder="1234 Main St"
+                />
+              </Form.Group>
 
-          <Form.Row>
-            <Form.Group as={Col}>
-              <Form.Label>City</Form.Label>
-              <Form.Control onChange={this.setForm} id="city" type="text" />
-            </Form.Group>
+              <Form.Row>
+                <Form.Group as={Col}>
+                  <Form.Label>city</Form.Label>
+                  <Form.Control onChange={this.setForm} id="city" type="text" />
+                </Form.Group>
 
-            <Form.Group as={Col}>
-              <Form.Label>State</Form.Label>
-              <Form.Control onChange={this.setForm} id="state" type="text" />
-            </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>state</Form.Label>
+                  <Form.Control
+                    onChange={this.setForm}
+                    id="state"
+                    type="text"
+                  />
+                </Form.Group>
 
-            <Form.Group as={Col}>
-              <Form.Label>Zip</Form.Label>
-              <Form.Control onChange={this.setForm} id="zip" type="text" />
-            </Form.Group>
-          </Form.Row>
-          <Form.Group>
-            <Form.Label>Lost / Found Date</Form.Label>
-            <Form.Control onChange={this.setForm} id="date" type="date" />
-            <Form.Label>Name</Form.Label>
-            <Form.Control onChange={this.setForm} id="name" type="text" />
-            <Form.Label>Color</Form.Label>
-            <Form.Control onChange={this.setForm} id="color" type="text" />
-            <Form.Label>Breed</Form.Label>
-            <Form.Control onChange={this.setForm} id="looksLike" type="text" />
-            <Form.Label>Gender</Form.Label>
-            <Form.Control onChange={this.setForm} id="sex" as="select">
-              <option>Select</option>
-              <option>Male</option>
-              <option>Female</option>
-            </Form.Control>
-            <Form.Label>Lost / Found</Form.Label>
-            <Form.Control onChange={this.setForm} id="status" as="select">
-              <option>Select</option>
-              <option>Lost</option>
-              <option>Found</option>
-            </Form.Control>
-            <Form.Label>Image URL</Form.Label>
-            <Form.Control
-              onChange={this.setForm}
-              id="image"
-              type="text"
-              placeholder="Please use an imgur link or similar"
-            />
-          </Form.Group>
-          <Button onClick={this.postForm}>Submit</Button>
-        </Form>
+                <Form.Group as={Col}>
+                  <Form.Label>zip</Form.Label>
+                  <Form.Control onChange={this.setForm} id="zip" type="text" />
+                </Form.Group>
+              </Form.Row>
+              <Form.Group>
+                <Form.Label>lost / found Date</Form.Label>
+                <Form.Control onChange={this.setForm} id="date" type="date" />
+                <Form.Label>name</Form.Label>
+                <Form.Control onChange={this.setForm} id="name" type="text" />
+                <Form.Label>color</Form.Label>
+                <Form.Control onChange={this.setForm} id="color" type="text" />
+                <Form.Label>breed</Form.Label>
+                <Form.Control
+                  onChange={this.setForm}
+                  id="looksLike"
+                  type="text"
+                />
+                <Form.Label>gender</Form.Label>
+                <Form.Control onChange={this.setForm} id="sex" as="select">
+                  <option>select</option>
+                  <option>sale</option>
+                  <option>female</option>
+                </Form.Control>
+                <Form.Label>lost / found</Form.Label>
+                <Form.Control onChange={this.setForm} id="status" as="select">
+                  <option>select</option>
+                  <option>lost</option>
+                  <option>found</option>
+                </Form.Control>
+                <Form.Label>image URL</Form.Label>
+                <Form.Control
+                  onChange={this.setForm}
+                  id="image"
+                  type="text"
+                  placeholder="Please use an imgur link or similar"
+                />
+              </Form.Group>
+              <Button className="mx-auto" onClick={this.postForm}>
+                submit
+              </Button>
+            </Form>
+          </Col>
+          <Col xs={1} />
+        </Row>
       </Container>
     );
   }
