@@ -57,7 +57,7 @@ const SearchForm = props => {
                   {" "}
                   {action === "Lost"
                     ? "what color is your dog?"
-                    : "what color this dog?"}
+                    : "what color is this dog?"}
                 </Form.Label>
                 <Form.Control
                   onChange={e => {

@@ -6,10 +6,7 @@ const Footer = props => {
     <>
       <footer className="page-footer font-small blue">
         <div id="footer-text" className="footer-copyright text-center">
-          © 2019 pawpyright:
-          <a href="https://mdbootstrap.com/education/bootstrap/">
-            &nbsp;lost and hound
-          </a>
+          © 2019 pawpyright
         </div>
       </footer>
     </>
