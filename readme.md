@@ -16,17 +16,15 @@
 [Chad Cramer](https://github.com/Chadcramer)
 
 ### About the App
-This project was a brief 1-week sprint where our team tried to complete an MVP for an external user (Louis Rangel). Louis envisioned a website that connected lost dogs and their owners. Our team attempted to create a simple, elegant environment to easily achieve this goal.
+*Lost and Hound* is a web app that aims to reconnect lost dogs with their owners. The app aggregates disparate sources of lost dog data and displays it on a single page so that owners don't have to search across multiple websites. Additionally, the app helps *finders* of lost dogs connect with their owners.
 
-It solves the problem of local resources for finding lost dogs and their owners being spread out across too many places.  People who find or lose dogs use it.
+To use the app, a user first selects whether they have either lost or found a dog, and then is presented with an up-to-date  list of dogs matching their particular search. The user is then able to filter the results by location and description. If a user finds a match, they are able to contact the original poster and/or share a "flyer" via Facebook.
 
-It was built in order to more easily facilitate reuniting a lost dog with their owner.
-
-The user inputs whether they’ve lost or found a dog and receives a list of dogs that have been found or lost depending on which they choose.
-* 
-You can also input a lost or found dog to add to our personal database and they will then show up on subsequent searches.
+*Lost and Found* also has its own database where users can post both lost and found dogs which will be included in the search results.
 
 ### Tech Stack 
+*Lost and Hound* was built primarily with ReactJS on the front end and Node/Express on the backend. Other technologies used are listed below: 
+
 <img src="https://lh3.googleusercontent.com/ZIHOUCCxFaB7NirPhEX4K8cyTPIMvxvdJxpuhjb_qJ_dk-z7qEgD8riaR0ODXzXQZYn23zHpFiwGzxTDT88FTLeUMoPqlIjyLKoL1am8MH5pCoJExjL8SUC8uaeeiAjvQB0_vym6" width="100"/>
 <img src="https://lh3.googleusercontent.com/xcong6Yn8NoueMYWPhEfO76dw0Nt70kiDVOCOygTFEQWpysHxcT-5jYzq9XWIgD3lvCGnGrjlhddm7WEOw9V1FlHivqFjZCXF9IDsfd7uQ2SxlI80roSJcnHvb0O7POvlYOPNvRG" width="100" />
 <img src="https://lh5.googleusercontent.com/vMTp0AyoPyuTKcvkRNp3SfS9KLkAiBrL_2b3SBwgIOv9z4VvyTD2lHs47h1jmEsk2olzAWIJXyg0HBLTGnjJzWkCFV_Z0B6LFqVOz5dewjLykbC4eRjwZHTOnmBqeXhJccAnc512" width="100" />
@@ -37,11 +35,16 @@ You can also input a lost or found dog to add to our personal database and they 
 
   	
 ### Technical Challenges/Research
-Challenges that were unexpected
+Some unexpected challenges we ran into while building this app were 
+- Getting data from different websites to match the same schema
+- Jest -> configuration, snapshots, writing good quality tests
 
-* It was common for website/robots.txt files to prohibit web scraping, which initially was our plan for generating data on lost dogs. Sometimes you just can not legally scrape a website and there is no way around it. In some cases you may need to be granted permission, but either way it is very important to first check out a websites robots.txt page and understand their parameters. 
+It was common for website/robots.txt files to prohibit web scraping, which initially was our plan for generating data on lost dogs. Sometimes you just can not legally scrape a website and there is no way around it. In some cases you may need to be granted permission, but either way it is very important to first check out a websites robots.txt page and understand their parameters.
 
-### User Stories
+# Client Deliverables
+Our team strived to meet the expectations of our primary user by organizing deliverables into specific user stories. Some key user stories are listed below:
+
+#### User Stories
 * As a user I should be able to select a lost/found dog's lost/found date so that I can retrieve the appropriate data matching that description
 
 * As a user I should be able to select a lost/found dog's size so that I can retrieve the appropriate data matching that description
@@ -62,11 +65,10 @@ Challenges that were unexpected
 
 * As a user, if my search query is taking longer than 1 second, I should see visual feedback of my search result so that I can know that the website is working
 
-## MVP
-The MVP was to have an interactive search that allowed the display of lost or found dogs from other sources. Find a list of lost/found dogs based on location. Be able to sort by description/categories/most recent. Kust resources per location. Organize info by photo/description/id. Webscraper for facebook, craigslist, reddit, austin pets.
+## Minimum Viable Product (MVP)
+The MVP of the app aimed to have an interactive search that allowed the display of lost or found dogs from other sources and then find a list of lost/found dogs based on location. Additionally, being able to sort by description/categories/most recent was a main goal.
 
-
-### How does the app work?
+### How the App Works:
 ***GIF
 
 What research was required?
