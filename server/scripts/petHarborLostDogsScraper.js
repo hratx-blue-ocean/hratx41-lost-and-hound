@@ -20,7 +20,7 @@ const getPHLostDogs = () => {
 		//wait 10 seconds to ensure page loads. HACKY
 		//execute javascript on the page
 		//here, the function is getting the HREF of the first search result
-		.evaluate(function() {
+		.evaluate(function () {
 			//get names
 			// let allNames = document.querySelectorAll('.info h4');
 			// allNames = [...allNames];
@@ -80,6 +80,8 @@ const getPHLostDogs = () => {
 			let allImages = document.querySelectorAll('tbody tr td:nth-of-type(1) a');
 			allImages = [...allImages];
 			allImages = allImages.map(elem => elem.href);
+			//get image and image url
+			let allImageUrls = allImages;
 			allImages = allImages.map(
 				elem =>
 					'https://petharbor.com/get_image.asp?RES=Detail&' +
@@ -95,8 +97,8 @@ const getPHLostDogs = () => {
 				// harker heights
 				// pflugerville
 
-        let dogObj = {};
-        let date = new Date(allDates[i]);
+				let dogObj = {};
+				let date = new Date(allDates[i]);
 				dogObj['name'] = null;
 				dogObj['sex'] = allGenders[i];
 				dogObj['looksLike'] = allBreeds[i];
@@ -107,6 +109,7 @@ const getPHLostDogs = () => {
 				dogObj['location'] = {
 					city: allCities[i],
 				};
+				dogObj['infoURL'] = allImageUrls[i];
 
 				resultArray.push(dogObj);
 			}
@@ -126,13 +129,13 @@ const getPHLostDogs = () => {
 		//end the Nightmare instance along with the Electron instance it wraps
 		.end()
 		//run the queue of commands specified, followed by logging the HREF
-		.then(function(result) {
+		.then(function (result) {
 			db.uploadDogs(result, err => {
 				if (err) console.error(err);
 			});
 		})
 		//catch errors if they happen
-		.catch(function(error) {
+		.catch(function (error) {
 			console.error('an error has occurred: ' + error);
 		});
 };
