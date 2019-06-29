@@ -280,4 +280,4 @@ const getPHFoundDogs = () => {
 		});
 };
 
-module.exports = { getPHFoundDogs };
+ module.exports = { getPHFoundDogs };
