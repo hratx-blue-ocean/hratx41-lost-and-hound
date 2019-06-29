@@ -13,8 +13,7 @@ module.exports = {
       ref: "origin/master",
       repo: "git@github.com:hratx-blue-ocean/hratx41-lost-and-hound.git",
       path: "/home/ubuntu/Lost-And-Hound",
-      "post-deploy":
-        "npm run setup && cd ./client && npm run-script build && pm2 startOrRestart ecosystem.config.js"
+      "post-deploy": "npm run setup && pm2 startOrRestart ecosystem.config.js"
     }
   }
 };

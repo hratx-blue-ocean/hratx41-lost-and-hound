@@ -4,14 +4,14 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const app = express();
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
+const compression = require("compression");
 // app.set("view engine", "html");
 //commment test
 // open up CORS
 app.use(cors());
-
+app.use(compression());
 app.use(logger("dev"));
-
 
 // You can place your routes here, feel free to refactor:
 const { foundDogs, lostDogs, flyer, dog } = require("./routes");

@@ -1,10 +1,18 @@
 {
-  "short_name": "Blue Ocean",
-  "icons": [{
-    "src": "favicon.ico",
-    "sizes": "64x64 32x32 24x24 16x16",
-    "type": "image/x-icon"
-  }],
+  "short_name": "Lost and Hound",
+  "name": "Lost and Hound",
+  "icons": [
+    {
+      "src": "./assets/favion.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "./assets/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
