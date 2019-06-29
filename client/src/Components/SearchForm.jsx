@@ -5,7 +5,7 @@ import LoadingPage from "./loadingPage.jsx";
 const SearchForm = props => {
   const action = props.action;
   let formTitle = "";
-  if (action === "Lost") {
+  if (action === "Found") {
     formTitle = "enter details for the dog that you lost";
   }
   let filterObj = {
@@ -22,12 +22,12 @@ const SearchForm = props => {
         <Row>
           <Col md={3}>
             <h3>
-              enter details for {action === "Lost" ? "lost" : "found"} dog
+              enter details for {action === "Found" ? "lost" : "found"} dog
             </h3>
             <Form className="m-3">
               <Form.Group>
                 <Form.Label>
-                  {action === "Lost"
+                  {action === "Found"
                     ? "where was your dog last seen?"
                     : "where did you find this dog?"}
                 </Form.Label>
@@ -41,7 +41,7 @@ const SearchForm = props => {
                 />
                 <Form.Label>
                   {" "}
-                  {action === "Lost"
+                  {action === "Found"
                     ? "when was your dog last seen?"
                     : "when did you find this dog?"}
                 </Form.Label>
@@ -55,7 +55,7 @@ const SearchForm = props => {
                 />
                 <Form.Label>
                   {" "}
-                  {action === "Lost"
+                  {action === "Found"
                     ? "what color is your dog?"
                     : "what color is this dog?"}
                 </Form.Label>
@@ -69,7 +69,7 @@ const SearchForm = props => {
                 />
                 <Form.Label>
                   {" "}
-                  {action === "Lost" ? "gender?" : "gender?"}
+                  {action === "Found" ? "gender?" : "gender?"}
                 </Form.Label>
                 <Form.Control
                   onChange={e => {
