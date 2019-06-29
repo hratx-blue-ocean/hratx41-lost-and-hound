@@ -73,7 +73,7 @@ The MVP of the app aimed to have an interactive search that allowed the display 
 ***GIF
 
 ### Git Workflow
-
+![](https://github.com/hratx-blue-ocean/hratx41-lost-and-hound/blob/feature/readme/documentation/gitworkflow.gif)
 
 We had a master, develop, and personal feature branches. The master branch stores the official release history, and the develop branch serves as an integration branch for features. Develop contains a complete history of the project, where master contains an abridged version. Our developers continuously need to pull to their develop branch and then merge that with their feature branch to stay up to date and minimize conflicts. Each new feature should reside in its own branch, which can be pushed to the develop branch upon completion. Features should never interact directly with the master branch, they strictly merge with the develop branch.  
 * What did you learn from the process
