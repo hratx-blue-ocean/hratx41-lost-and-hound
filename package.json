@@ -23,7 +23,8 @@
   "homepage": "https://github.com/selder18/blue-ocean-rewrite#readme",
   "dependencies": {
     "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5"
+    "@babel/preset-env": "^7.4.5",
+    "dotenv": "^8.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
