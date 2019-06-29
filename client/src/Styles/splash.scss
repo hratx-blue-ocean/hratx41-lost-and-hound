@@ -4,15 +4,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 10%;
+  // margin-right: 10%;
   margin-top: 6vh;
   font-size: 23px;
   font-weight: 900;
   font-family: 'Nunito', sans-serif;
 
-  #banner {
-    // border: 1px solid;
-  }
 }
 
 #action-selector {
@@ -26,7 +23,9 @@
     @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
     font-family: 'Nunito', sans-serif;
 
-    &:hover {}
+    &:hover {
+      
+    }
 
     @include shadow;
     height: 81px;

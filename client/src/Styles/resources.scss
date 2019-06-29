@@ -4,4 +4,21 @@
   @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
   font-family: 'Nunito', sans-serif !important;
   background-color: none;
+
+  #center-column {
+    text-align: center;
+
+    #resources-contents {
+      padding: 3%;
+      margin-top: 5em;
+      margin-bottom: 5em;
+      border-radius: 15px;
+      background-color: lightgrey;
+
+      h2 {
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+        font-family: 'Pacifico', cursive;
+      }
+    }
+  }
 }
