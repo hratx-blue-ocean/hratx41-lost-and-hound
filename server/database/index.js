@@ -29,7 +29,8 @@ const dogSchema = new mongoose.Schema({
     state: String,
     zip: String
   },
-  status: String
+  status: String,
+  infoURL: String
 });
 
 const Dog = mongoose.model("Dog", dogSchema);
