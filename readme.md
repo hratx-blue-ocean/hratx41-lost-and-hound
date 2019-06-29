@@ -66,16 +66,20 @@ Our team strived to meet the expectations of our primary user by organizing deli
 * As a user, if my search query is taking longer than 1 second, I should see visual feedback of my search result so that I can know that the website is working
 
 ## Minimum Viable Product (MVP)
-The MVP of the app aimed to have an interactive search that allowed the display of lost or found dogs from other sources and then find a list of lost/found dogs based on location. Additionally, being able to sort by description/categories/most recent was a main goal.
+The MVP of the app has an interactive search that allows the display of lost or found dogs from other sources and then find a list of lost/found dogs based on location. The user can also share a specific posting on Facebook.
 
 ### How the App Works:
+![](https://github.com/hratx-blue-ocean/hratx41-lost-and-hound/blob/feature/readme/documentation/screenrecoring.gif)
 
-***GIF
 
 ### Git Workflow
 ![](https://github.com/hratx-blue-ocean/hratx41-lost-and-hound/blob/feature/readme/documentation/gitworkflow.gif)
 
-We had a master, develop, and personal feature branches. The master branch stores the official release history, and the develop branch serves as an integration branch for features. Develop contains a complete history of the project, where master contains an abridged version. Our developers continuously need to pull to their develop branch and then merge that with their feature branch to stay up to date and minimize conflicts. Each new feature should reside in its own branch, which can be pushed to the develop branch upon completion. Features should never interact directly with the master branch, they strictly merge with the develop branch.  
+Our team utilized the Gitflow workflow. . The master branch only contained working code, while our develop branch served as an integration branch for all features. We meticulously kept track of all changes and reviewed all code before pulling back into develop. Though the process was rigorous and time-intensive, it ensured that we had working code at all times.
+
+Additionally, our team utilized the Agile workflow with Trello to keep track of tickets. All work that was performed was specifically associated with a ticket. Every morning, we tracked the progress of tickets and updated our Trello board.
+
+
 * What did you learn from the process
 Using a dedicated branch to prepare releases makes it possible for one team to polish the current release while another team continues working on features for the next release. It also creates well-defined phases of development. Git workflow is great for agile development, allowing large teams to constantly develop independently and come together with ease as a whole. 
 * What were key takeaways from stand ups, code reviews, etc
