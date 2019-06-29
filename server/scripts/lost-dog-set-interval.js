@@ -97,7 +97,6 @@ let getLostDogs = function () {
 		.then(function (results) {
 			// console.log(results);
 			db.uploadDogs(results, err => {
-				console.log(reuslts);
 				if (err) {
 					console.error(err);
 				}
