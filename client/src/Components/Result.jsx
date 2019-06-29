@@ -16,9 +16,7 @@ const Result = props => {
             <ListGroup.Item>{props.result.looksLike}</ListGroup.Item>
             <ListGroup.Item>{props.result.sex}</ListGroup.Item>
             <ListGroup.Item>
-              <a
-                href={`https://lost-and-hound.com/flyer?id=${props.result._id}`}
-              >
+              <a href={`http://localhost:8000/flyer?id=${props.result._id}`}>
                 Click For More Information
               </a>
             </ListGroup.Item>
@@ -30,4 +28,3 @@ const Result = props => {
 };
 
 export default Result;
-//

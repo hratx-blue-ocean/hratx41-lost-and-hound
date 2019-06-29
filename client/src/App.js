@@ -15,13 +15,11 @@ class App extends React.Component {
     this.state = {
       action: "",
       formData: {
-        lostDate: "",
-        color: "",
-        gender: ["male", "female"],
+        lostDate: null,
+        color: null,
+        gender: null,
         zipcode: null
       },
-      modalView: true,
-      modalIndex: -1,
       results: []
     };
     this.splashPageClickHandler = this.splashPageClickHandler.bind(this);
@@ -54,7 +52,7 @@ class App extends React.Component {
       },
       () => {
         if (this.state.action === "Found") {
-          axios.get("https://lost-and-hound.com/api/found").then(response => {
+          axios.get("/api/found").then(response => {
             console.log(response.data);
             this.setState({
               results: response.data
@@ -78,10 +76,15 @@ class App extends React.Component {
     if (temp === "lostDate") {
       value += "T00:00:00.000";
     }
-    this.setState((prevState, props) => {
-      prevState.formData[temp] = value;
-      return { formData: prevState.formData };
-    });
+    this.setState(
+      (prevState, props) => {
+        prevState.formData[temp] = value;
+        return { formData: prevState.formData };
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
   }
 
   resultExpand(index) {
@@ -111,6 +114,7 @@ class App extends React.Component {
               text={this.setText}
               fetch={this.fetchHandler}
               action={this.state.action}
+              filter={this.state.formData}
             />
           );
 
@@ -121,9 +125,10 @@ class App extends React.Component {
               text={this.setText}
               fetch={this.fetchHandler}
               action={this.state.action}
+              filter={this.state.formData}
             />
           );
-
+        //
         case "resources":
           return <Resources />;
 

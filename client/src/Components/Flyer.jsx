@@ -18,7 +18,8 @@ class Flyer extends React.Component {
           state: "",
           zip: ""
         }
-      }
+      },
+      simpleLocation: ""
     };
   }
   componentWillMount() {
@@ -30,7 +31,15 @@ class Flyer extends React.Component {
             doggieData: response.data
           },
           () => {
-            console.log(this.state);
+            let loc = "";
+            for (let key in this.state.doggieData.location) {
+              if (this.state.doggieData.location[key] !== null) {
+                loc += this.state.doggieData.location[key] + " ";
+              }
+            }
+            this.setState({
+              simpleLocation: loc
+            });
           }
         )
       );
@@ -57,6 +66,9 @@ class Flyer extends React.Component {
                   <ListGroup.Item>{this.state.doggieData.age}</ListGroup.Item>
                 ) : null}
                 <ListGroup.Item>{this.state.doggieData.color}</ListGroup.Item>
+                <ListGroup.Item action href={this.state.doggieData.infoURL}>
+                  Click Here for Original Posting
+                </ListGroup.Item>
                 <ListGroup.Item>
                   {this.state.doggieData.looksLike}
                 </ListGroup.Item>
@@ -67,11 +79,7 @@ class Flyer extends React.Component {
                     {this.state.doggieData.date.substring(0, 10)}
                   </ListGroup.Item>
                 ) : null}
-                <ListGroup.Item>
-                  {this.state.doggieData.location.address +
-                    ", " +
-                    this.state.doggieData.location.zip}
-                </ListGroup.Item>
+                <ListGroup.Item>{this.state.simpleLocation}</ListGroup.Item>
               </ListGroup>
               <div id="fb-root" />
               {(function(d, s, id) {
@@ -100,3 +108,4 @@ class Flyer extends React.Component {
   }
 }
 export default Flyer;
+//

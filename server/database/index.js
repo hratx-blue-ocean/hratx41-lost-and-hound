@@ -72,13 +72,13 @@ const oneDog = (id, callback) => {
 };
 
 const insertDog = (dogData, callback) => {
-  Dog.create(dogData, (err) => {
+  Dog.create(dogData, err => {
     if (err) {
       callback(err);
     } else {
       callback(null);
     }
-  })
-}
+  });
+};
 
 module.exports = { uploadDogs, allFoundDogs, allLostDogs, oneDog, insertDog };

@@ -71,7 +71,11 @@ const SearchForm = props => {
           </Col>
           <Col md={9}>
             {props.results.length === 0 ? null : (
-              <ResultsList results={props.results} action={props.action} />
+              <ResultsList
+                filter={props.filter}
+                results={props.results}
+                action={props.action}
+              />
             )}
           </Col>
         </Row>
