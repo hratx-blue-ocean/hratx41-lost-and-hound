@@ -43,10 +43,7 @@ class PostDog extends React.Component {
       image: this.state.postData.image
     };
     axios
-      .post(
-        "http://ec2-3-130-116-160.us-east-2.compute.amazonaws.com/api/dog",
-        data
-      )
+      .post("https://lost-and-hound.com/api/dog", data)
       .then(response => console.log(response))
       .catch(err => console.log(err));
   }

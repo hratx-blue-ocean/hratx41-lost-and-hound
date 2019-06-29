@@ -7,10 +7,8 @@ import Header from "./Components/Header.jsx";
 import PostDog from "./Components/PostDog.jsx";
 import About from "./Components/About.jsx";
 import Resources from "./Components/Resources.jsx";
-import { Button } from "react-bootstrap";
 import "./App.scss";
 
-// const GOOGLE_BUTTON_ID = "google-sign-in-button";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -56,27 +54,19 @@ class App extends React.Component {
       },
       () => {
         if (this.state.action === "Found") {
-          axios
-            .get(
-              "http://ec2-3-130-116-160.us-east-2.compute.amazonaws.com/api/found"
-            )
-            .then(response => {
-              console.log(response.data);
-              this.setState({
-                results: response.data
-              });
+          axios.get("https://lost-and-hound.com/api/found").then(response => {
+            console.log(response.data);
+            this.setState({
+              results: response.data
             });
+          });
         } else if (this.state.action === "Lost") {
-          axios
-            .get(
-              "http://ec2-3-130-116-160.us-east-2.compute.amazonaws.com/api/lost"
-            )
-            .then(response => {
-              console.log(response.data);
-              this.setState({
-                results: response.data
-              });
+          axios.get("https://lost-and-hound.com/api/lost").then(response => {
+            console.log(response.data);
+            this.setState({
+              results: response.data
             });
+          });
         }
       }
     );
