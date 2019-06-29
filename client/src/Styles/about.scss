@@ -1,0 +1,30 @@
+@import './mixins.scss';
+
+#about-container {
+  @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+  font-family: 'Nunito', sans-serif;
+
+
+  #center-column {
+    text-align: center;
+
+    #about-contents {
+      padding: 4%;
+      margin-top: 5em;
+      border-radius: 15px;
+      background-color: lightgrey;
+
+      h2 {
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+        font-family: 'Pacifico', cursive;
+      }
+    }
+  }
+
+  img {
+    width: 70%;
+    margin: auto;
+    border-radius: 10px;
+    @include shadow;
+  }
+}

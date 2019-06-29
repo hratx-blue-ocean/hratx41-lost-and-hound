@@ -4,6 +4,17 @@
   z-index: 99;
   @include shadow;
   opacity: 0.86;
+  background-color: $applecore;
+
+  #brand-icon {
+    fill: white;
+  }
+
+  button {
+    background-color: $applecore;
+    border: none;
+    color: white;
+  }
 
   .navbar-nav {
     .nav-link {
@@ -15,6 +26,5 @@
     cursor: pointer;
   }
 
-  #links {
-  }
+  #links {}
 }
