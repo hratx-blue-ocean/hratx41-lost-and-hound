@@ -1,4 +1,4 @@
-@import './mixins.scss';
+@import "./mixins.scss";
 
 #banner {
   margin-top: 5%;
@@ -11,27 +11,30 @@
   // border: 1px solid;
 
   #logo {
-    margin-left: 30%;
-    height: 100%;
+    margin-left: -50%;
+    height: 22.5vw;
     @include shadow;
     stroke: $blueberry;
     stroke-width: 5;
     stroke-dasharray: 1500;
     stroke-dashoffset: 1500;
-    animation: offset .7s linear forwards, fill-it 1.0s .7s linear forwards;
+    animation: offset 0.7s linear forwards, fill-it 1s 0.7s linear forwards;
     // animation: fill-it 1.0s 1.0s linear forwards;
   }
 
   #company-details {
+    z-index: 1;
     #company-name {
       // border: 1px solid;
-      @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
-      font-family: 'Pacifico', cursive;
-      font-size: 7.5rem;
+      @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+      font-family: "Pacifico", cursive;
+      font-size: 8vw;
       @include shadow;
     }
+    #sub-title {
+      font-size: 2vw;
+    }
   }
-
 }
 
 @keyframes offset {
