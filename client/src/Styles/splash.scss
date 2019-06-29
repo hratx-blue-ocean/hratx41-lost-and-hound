@@ -1,4 +1,4 @@
-@import './mixins.scss';
+@import "./mixins.scss";
 
 .splashContainer {
   display: flex;
@@ -8,11 +8,12 @@
   margin-top: 6vh;
   font-size: 23px;
   font-weight: 900;
-  font-family: 'Nunito', sans-serif;
-
+  font-family: "Nunito", sans-serif;
 }
 
 #action-selector {
+  display: flex;
+  justify-content: center;
   background-color: $applecore;
   @include item-container;
   text-align: center;
@@ -20,18 +21,38 @@
   margin: 7% auto;
 
   #splashButton {
-    @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
-    font-family: 'Nunito', sans-serif;
+    @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+    font-family: "Nunito", sans-serif;
 
     &:hover {
-      
     }
 
     @include shadow;
-    height: 81px;
+    height: 8vw;
+    width: 13vw;
     margin: 30px;
     border-radius: 5px;
     font-weight: 900;
-    font-size: 1.6rem;
+    font-size: 1.7vw;
+    line-height: 1;
+  }
+  @media only screen and (max-width: 900px) {
+    width: 70%;
+    #splashButton {
+      @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+      font-family: "Nunito", sans-serif;
+
+      &:hover {
+      }
+
+      @include shadow;
+      height: 11vw;
+      width: 18vw;
+      margin: 15px;
+      border-radius: 5px;
+      font-weight: 900;
+      font-size: 1.6vw;
+      line-height: 1;
+    }
   }
 }

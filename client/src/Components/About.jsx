@@ -25,7 +25,7 @@ const About = props => {
               of finding someone elses. Our mission is to use the power of
               technology to bring people who care about their pets together.
             </p>
-            <img src="http://localhost:8000/assets/aboutus.jpg" />
+            <img src="https://lost-and-hound.com/assets/aboutus.jpg" />
           </div>
         </Col>
         <Col sm={2} />

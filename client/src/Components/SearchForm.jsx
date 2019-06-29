@@ -8,6 +8,12 @@ const SearchForm = props => {
   if (action === "Lost") {
     formTitle = "enter details for the dog that you lost";
   }
+  let filterObj = {
+    color: null,
+    lostDate: null,
+    gender: null,
+    zipcode: null
+  };
 
   return (
     <div>
@@ -26,7 +32,9 @@ const SearchForm = props => {
                     : "where did you find this dog?"}
                 </Form.Label>
                 <Form.Control
-                  onChange={props.text}
+                  onChange={e => {
+                    filterObj.zipcode = e.target.value;
+                  }}
                   type="number"
                   id="zipcode"
                   placeholder="zipcode"
@@ -39,7 +47,9 @@ const SearchForm = props => {
                 </Form.Label>
                 <Form.Control
                   type="Date"
-                  onChange={props.text}
+                  onChange={e => {
+                    filterObj.lostDate = e.target.value;
+                  }}
                   id="lostDate"
                   placeholder="Enter Date Lost"
                 />
@@ -50,7 +60,9 @@ const SearchForm = props => {
                     : "what color is this dog?"}
                 </Form.Label>
                 <Form.Control
-                  onChange={props.text}
+                  onChange={e => {
+                    filterObj.color = e.target.value;
+                  }}
                   id="color"
                   type="text"
                   placeholder="Color"
@@ -59,19 +71,36 @@ const SearchForm = props => {
                   {" "}
                   {action === "Lost" ? "gender?" : "gender?"}
                 </Form.Label>
-                <Form.Control onChange={props.text} id="gender" as="select">
+                <Form.Control
+                  onChange={e => {
+                    filterObj.gender = e.target.value;
+                  }}
+                  id="gender"
+                  as="select"
+                >
+                  <option>Select</option>
                   <option>Male</option>
                   <option>Female</option>
                 </Form.Control>
               </Form.Group>
-              <Button variant="light" className="m-3" onClick={props.fetch}>
+              <Button
+                variant="light"
+                className="m-3"
+                onClick={() => {
+                  props.fetch(filterObj);
+                }}
+              >
                 Fetch
               </Button>
             </Form>
           </Col>
           <Col md={9}>
             {props.results.length === 0 ? null : (
-              <ResultsList results={props.results} action={props.action} />
+              <ResultsList
+                filter={props.filter}
+                results={props.results}
+                action={props.action}
+              />
             )}
           </Col>
         </Row>
