@@ -1,4 +1,4 @@
-let getLostDogs = function() {
+let getLostDogs = function () {
 	var Nightmare = require('nightmare');
 	const db = require('./../database');
 
@@ -19,7 +19,7 @@ let getLostDogs = function() {
 		//wait 10 seconds to ensure page loads. HACKY
 		//execute javascript on the page
 		//here, the function is getting the HREF of the first search result
-		.evaluate(function() {
+		.evaluate(function () {
 			//get names
 			let allNames = document.querySelectorAll('.info h4');
 			allNames = [...allNames];
@@ -65,11 +65,17 @@ let getLostDogs = function() {
 			allImages = [...allImages].slice(1);
 			allImages = allImages.map(elem => elem.src);
 
+			//get image url
+			let allImageUrls = document.querySelectorAll('.info .btn');
+			allImageUrls = [...allImageUrls];
+			allImageUrls = allImageUrls.map(elem => elem.href);
+			//allImageUrls = allImageUrls.map(elem => 'https://www.lostmydoggie.com/' + elem);
+
 			//build result array
 			let resultArray = [];
 			for (let i = 0; i < allDates.length; i++) {
-        let dogObj = {};
-        let date = new Date(allDates[i]);
+				let dogObj = {};
+				let date = new Date(allDates[i]);
 				dogObj['name'] = allNames[i];
 				dogObj['sex'] = allGenders[i].slice(1);
 				dogObj['location'] = allAdresses[i];
@@ -78,6 +84,7 @@ let getLostDogs = function() {
 				dogObj['date'] = date.toISOString();
 				dogObj['image'] = allImages[i];
 				dogObj['status'] = 'Lost';
+				dogObj['infoURL'] = allImageUrls[i];
 
 				resultArray.push(dogObj);
 			}
@@ -87,16 +94,17 @@ let getLostDogs = function() {
 		//end the Nightmare instance along with the Electron instance it wraps
 		.end()
 		//run the queue of commands specified, followed by logging the HREF
-		.then(function(results) {
-			//console.log(results);
+		.then(function (results) {
+			// console.log(results);
 			db.uploadDogs(results, err => {
+				console.log(reuslts);
 				if (err) {
 					console.error(err);
 				}
 			});
 		})
 		//catch errors if they happen
-		.catch(function(error) {
+		.catch(function (error) {
 			console.error('an error has occurred: ' + error);
 		});
 };
