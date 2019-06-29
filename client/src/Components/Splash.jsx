@@ -1,7 +1,7 @@
 import React from "react";
 import "../Styles/splash.scss";
 import Banner from "./Banner.jsx";
-import { Button, Col, Row, Container } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 const Splash = props => {
   return (
@@ -34,4 +34,3 @@ const Splash = props => {
 };
 
 export default Splash;
-//

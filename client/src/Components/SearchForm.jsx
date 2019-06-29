@@ -78,6 +78,7 @@ const SearchForm = props => {
                   id="gender"
                   as="select"
                 >
+                  <option>Select</option>
                   <option>Male</option>
                   <option>Female</option>
                 </Form.Control>
@@ -108,4 +109,3 @@ const SearchForm = props => {
   );
 };
 export default SearchForm;
-//
