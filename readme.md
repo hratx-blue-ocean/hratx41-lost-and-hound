@@ -77,7 +77,7 @@ The MVP of the app has an interactive search that allows the display of lost or 
 
 Our team utilized the Gitflow workflow. . The master branch only contained working code, while our develop branch served as an integration branch for all features. We meticulously kept track of all changes and reviewed all code before pulling back into develop. Though the process was rigorous and time-intensive, it ensured that we had working code at all times.
 
-Additionally, our team utilized the Agile workflow with Trello to keep track of tickets. All work that was performed was specifically associated with a ticket. Every morning, we tracked the progress of tickets and updated our Trello board.
+Additionally, our team utilized the Agile workflow with [Trello](https://trello.com/b/K6y30AZf/lost-and-hound) to keep track of tickets. All work that was performed was specifically associated with a ticket. Every morning, we tracked the progress of tickets and updated our Trello board.
 
 
 * What did you learn from the process
@@ -89,7 +89,7 @@ Stand-ups are a fundamental part of agile development. The stand-up is important
 In the long run, writing tests actually make our code more robust, and easier to maintain. Tests are also important in catching bugs earlier, the more you wait the more nested and difficult the bug becomes, testing allows you to catch bugs early. Testing also improves the quality of code by identifying defects. 
 
 * Link to your trello board, discuss completed tickets
-https://trello.com/b/K6y30AZf/lost-and-hound
+
 
 Any non-MVP tickets (optional)
 Code refactorings
