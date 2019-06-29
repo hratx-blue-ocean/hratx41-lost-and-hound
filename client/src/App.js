@@ -7,10 +7,8 @@ import Header from "./Components/Header.jsx";
 import PostDog from "./Components/PostDog.jsx";
 import About from "./Components/About.jsx";
 import Resources from "./Components/Resources.jsx";
-import { Button } from "react-bootstrap";
 import "./App.scss";
 
-// const GOOGLE_BUTTON_ID = "google-sign-in-button";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -56,14 +54,14 @@ class App extends React.Component {
       },
       () => {
         if (this.state.action === "Found") {
-          axios.get("/api/found").then(response => {
+          axios.get("https://lost-and-hound.com/api/found").then(response => {
             console.log(response.data);
             this.setState({
               results: response.data
             });
           });
         } else if (this.state.action === "Lost") {
-          axios.get("/api/lost").then(response => {
+          axios.get("https://lost-and-hound.com/api/lost").then(response => {
             console.log(response.data);
             this.setState({
               results: response.data
@@ -99,7 +97,6 @@ class App extends React.Component {
         case "":
           return (
             <>
-              {/* <div id={GOOGLE_BUTTON_ID} /> */}
               <Splash
                 clickHandler={this.splashPageClickHandler}
                 fetch={this.fetchHandler}
