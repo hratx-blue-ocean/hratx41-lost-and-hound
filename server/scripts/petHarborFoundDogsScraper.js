@@ -9,7 +9,7 @@ const getPHFoundDogs = () => {
 	nightmare
 		//load a url
 		.goto(
-			'http://petharbor.com/results.asp?searchtype=LOST&start=4&stylesheet=include/default.css&frontdoor=1&friends=1&samaritans=1&nosuccess=0&rows=492&imght=300&imgres=detail&tWidth=200&view=sysadm.v_animal&nomax=1&fontface=arial&fontsize=10&zip=78759&miles=50&shelterlist=%27ASTN%27,%27GRGT%27,%27KLEN%27,%27HHTX%27,%27PFLG%27&atype=dog&where=type_DOG&PAGE=1'
+			'https://petharbor.com/results.asp?searchtype=LOST&start=4&stylesheet=include/default.css&frontdoor=1&friends=1&samaritans=1&nosuccess=0&rows=492&imght=300&imgres=detail&tWidth=200&view=sysadm.v_animal&nomax=1&fontface=arial&fontsize=10&zip=78759&miles=50&shelterlist=%27ASTN%27,%27GRGT%27,%27KLEN%27,%27HHTX%27,%27PFLG%27&atype=dog&where=type_DOG&PAGE=1'
 		)
 		//simulate typing into an element identified by a CSS selector
 		//here, Nightmare is typing into the search bar
@@ -88,7 +88,7 @@ const getPHFoundDogs = () => {
 			allImages = allImages.map(elem => elem.href);
 			allImages = allImages.map(
 				elem =>
-					'http://petharbor.com/get_image.asp?RES=Detail&' +
+					'https://petharbor.com/get_image.asp?RES=Detail&' +
 					elem.slice(elem.indexOf('?') + 1, elem.indexOf('&searchtype'))
 			);
 
@@ -109,13 +109,8 @@ const getPHFoundDogs = () => {
 				else if (allAddresses[i].includes('Harker Heights Pet Adoption Center')) zip = '76548';
 				else if (allAddresses[i].includes('Pflugerville Animal Welfare Services')) zip = '78660';
 
-<<<<<<< HEAD
-        let dogObj = {};
-        let date = new Date(allDates[i]);
-=======
 				let dogObj = {};
 				let date = new Date(allDates[i]);
->>>>>>> develop
 				dogObj['name'] = allNames[i];
 				dogObj['sex'] = allGenders[i];
 				dogObj['looksLike'] = allBreeds[i];

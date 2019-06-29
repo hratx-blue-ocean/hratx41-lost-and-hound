@@ -15,7 +15,7 @@ const getAACFoundData = () => {
 		.then(dogResults => {
 			let dogData = dogResults.data.map(dog => {
 				return {
-					image: 'http://petharbor.com/get_image.asp?RES=Detail&LOCATION=ASTN&ID=' + dog.animal_id,
+					image: 'https://petharbor.com/get_image.asp?RES=Detail&LOCATION=ASTN&ID=' + dog.animal_id,
 					name: null,
 					color: dog.color,
 					date: Date(dog['intake_date']),
