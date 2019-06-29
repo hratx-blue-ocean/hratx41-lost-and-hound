@@ -69,6 +69,8 @@ Our team strived to meet the expectations of our primary user by organizing deli
 The MVP of the app aimed to have an interactive search that allowed the display of lost or found dogs from other sources and then find a list of lost/found dogs based on location. Additionally, being able to sort by description/categories/most recent was a main goal.
 
 ### How the App Works:
+***Tree
+
 ***GIF
 
 What research was required?
@@ -101,3 +103,5 @@ What additional features do you plan to add, how do you plan to implement those 
 Include use of Facebook Groups API to allow for more lost and found doggie data to be scraped from local groups.
 * Additional dev ops considerations?
 * UI/UX additions?
+
+### Optimizations
