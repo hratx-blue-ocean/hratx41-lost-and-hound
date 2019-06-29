@@ -8,7 +8,7 @@ const getPHLostDogs = () => {
 	nightmare
 		//load a url
 		.goto(
-			'http://petharbor.com/results.asp?searchtype=PUBFOUND&start=4&stylesheet=include/default.css&frontdoor=1&friends=1&samaritans=1&nosuccess=0&rows=272&imght=300&imgres=detail&tWidth=200&view=sysadm.v_animal&nomax=1&fontface=arial&fontsize=10&zip=78759&miles=50&shelterlist=%27ASTN%27,%27GRGT%27,%27KLEN%27,%27HHTX%27,%27PFLG%27,%2791903%27,%2785257%27,%2772312%27,%2773748%27,%2763250%27,%2799671%27,%2778098%27,%2772699%27,%2786498%27,%2777056%27,%2786592%27,%2780971%27,%2776178%27,%2780018%27,%2792063%27,%2795288%27,%27106476%27,%27101804%27,%2785794%27,%2797274%27,%2789153%27,%27121365%27,%2798295%27,%2775304%27,%2778366%27,%2790607%27,%2776488%27,%2783335%27,%2788018%27,%27101752%27,%2790490%27,%2776816%27,%2787978%27,%2782004%27,%2789469%27,%2798504%27,%2786357%27,%27102091%27,%2777343%27,%2769562%27,%2782050%27,%2789868%27,%27101616%27,%27106910%27,%2784976%27,%2790690%27,%2786555%27,%27101790%27,%27104454%27,%27100055%27,%2782718%27,%2786148%27,%2778842%27,%2796520%27,%2775015%27,%2785506%27,%2777070%27,%2789220%27,%2769865%27,%2778344%27,%2783518%27,%2788989%27&atype=dog&where=type_DOG&NewOrderBy=Lost%20On&PAGE=1'
+			'https://petharbor.com/results.asp?searchtype=PUBFOUND&start=4&stylesheet=include/default.css&frontdoor=1&friends=1&samaritans=1&nosuccess=0&rows=272&imght=300&imgres=detail&tWidth=200&view=sysadm.v_animal&nomax=1&fontface=arial&fontsize=10&zip=78759&miles=50&shelterlist=%27ASTN%27,%27GRGT%27,%27KLEN%27,%27HHTX%27,%27PFLG%27,%2791903%27,%2785257%27,%2772312%27,%2773748%27,%2763250%27,%2799671%27,%2778098%27,%2772699%27,%2786498%27,%2777056%27,%2786592%27,%2780971%27,%2776178%27,%2780018%27,%2792063%27,%2795288%27,%27106476%27,%27101804%27,%2785794%27,%2797274%27,%2789153%27,%27121365%27,%2798295%27,%2775304%27,%2778366%27,%2790607%27,%2776488%27,%2783335%27,%2788018%27,%27101752%27,%2790490%27,%2776816%27,%2787978%27,%2782004%27,%2789469%27,%2798504%27,%2786357%27,%27102091%27,%2777343%27,%2769562%27,%2782050%27,%2789868%27,%27101616%27,%27106910%27,%2784976%27,%2790690%27,%2786555%27,%27101790%27,%27104454%27,%27100055%27,%2782718%27,%2786148%27,%2778842%27,%2796520%27,%2775015%27,%2785506%27,%2777070%27,%2789220%27,%2769865%27,%2778344%27,%2783518%27,%2788989%27&atype=dog&where=type_DOG&NewOrderBy=Lost%20On&PAGE=1'
 		)
 		//simulate typing into an element identified by a CSS selector
 		//here, Nightmare is typing into the search bar
@@ -20,7 +20,7 @@ const getPHLostDogs = () => {
 		//wait 10 seconds to ensure page loads. HACKY
 		//execute javascript on the page
 		//here, the function is getting the HREF of the first search result
-		.evaluate(function() {
+		.evaluate(function () {
 			//get names
 			// let allNames = document.querySelectorAll('.info h4');
 			// allNames = [...allNames];
@@ -80,9 +80,11 @@ const getPHLostDogs = () => {
 			let allImages = document.querySelectorAll('tbody tr td:nth-of-type(1) a');
 			allImages = [...allImages];
 			allImages = allImages.map(elem => elem.href);
+			//get image and image url
+			let allImageUrls = allImages;
 			allImages = allImages.map(
 				elem =>
-					'http://petharbor.com/get_image.asp?RES=Detail&' +
+					'https://petharbor.com/get_image.asp?RES=Detail&' +
 					elem.slice(elem.indexOf('?') + 1, elem.indexOf('&searchtype'))
 			);
 
@@ -95,8 +97,8 @@ const getPHLostDogs = () => {
 				// harker heights
 				// pflugerville
 
-        let dogObj = {};
-        let date = new Date(allDates[i]);
+				let dogObj = {};
+				let date = new Date(allDates[i]);
 				dogObj['name'] = null;
 				dogObj['sex'] = allGenders[i];
 				dogObj['looksLike'] = allBreeds[i];
@@ -107,6 +109,7 @@ const getPHLostDogs = () => {
 				dogObj['location'] = {
 					city: allCities[i],
 				};
+				dogObj['infoURL'] = allImageUrls[i];
 
 				resultArray.push(dogObj);
 			}
@@ -126,13 +129,13 @@ const getPHLostDogs = () => {
 		//end the Nightmare instance along with the Electron instance it wraps
 		.end()
 		//run the queue of commands specified, followed by logging the HREF
-		.then(function(result) {
+		.then(function (result) {
 			db.uploadDogs(result, err => {
 				if (err) console.error(err);
 			});
 		})
 		//catch errors if they happen
-		.catch(function(error) {
+		.catch(function (error) {
 			console.error('an error has occurred: ' + error);
 		});
 };

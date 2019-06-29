@@ -18,23 +18,28 @@ class Flyer extends React.Component {
           state: "",
           zip: ""
         }
-      }
+      },
+      simpleLocation: ""
     };
   }
   componentWillMount() {
     axios
-      .get(
-        `http://ec2-3-130-116-160.us-east-2.compute.amazonaws.com/api/dog${
-          this.props.location.search
-        }`
-      )
+      .get(`https://lost-and-hound.com/api/dog${this.props.location.search}`)
       .then(response =>
         this.setState(
           {
             doggieData: response.data
           },
           () => {
-            console.log(this.state);
+            let loc = "";
+            for (let key in this.state.doggieData.location) {
+              if (this.state.doggieData.location[key] !== null) {
+                loc += this.state.doggieData.location[key] + " ";
+              }
+            }
+            this.setState({
+              simpleLocation: loc
+            });
           }
         )
       );
@@ -43,7 +48,10 @@ class Flyer extends React.Component {
     return (
       <>
         <Navbar id="nav" sticky="top" bg="light" expand="lg">
-          <Navbar.Brand className="navTitle" href={`http://localhost:8000/`}>
+          <Navbar.Brand
+            className="navTitle"
+            href={`https://lost-and-hound.com/`}
+          >
             <img alt="logo" src="./assets/logo.png" width="40" />
           </Navbar.Brand>
         </Navbar>
@@ -58,6 +66,9 @@ class Flyer extends React.Component {
                   <ListGroup.Item>{this.state.doggieData.age}</ListGroup.Item>
                 ) : null}
                 <ListGroup.Item>{this.state.doggieData.color}</ListGroup.Item>
+                <ListGroup.Item action href={this.state.doggieData.infoURL}>
+                  Click Here for Original Posting
+                </ListGroup.Item>
                 <ListGroup.Item>
                   {this.state.doggieData.looksLike}
                 </ListGroup.Item>
@@ -68,11 +79,7 @@ class Flyer extends React.Component {
                     {this.state.doggieData.date.substring(0, 10)}
                   </ListGroup.Item>
                 ) : null}
-                <ListGroup.Item>
-                  {this.state.doggieData.location.address +
-                    ", " +
-                    this.state.doggieData.location.zip}
-                </ListGroup.Item>
+                <ListGroup.Item>{this.state.simpleLocation}</ListGroup.Item>
               </ListGroup>
               <div id="fb-root" />
               {(function(d, s, id) {
@@ -87,7 +94,7 @@ class Flyer extends React.Component {
               })(document, "script", "facebook-jssdk")}
               <div
                 className="fb-share-button"
-                data-href={`http://localhost:8000/flyer/${
+                data-href={`https://lost-and-hound.com/flyer/${
                   this.props.location.search
                 }`}
                 data-layout="button_count"
@@ -101,3 +108,4 @@ class Flyer extends React.Component {
   }
 }
 export default Flyer;
+//

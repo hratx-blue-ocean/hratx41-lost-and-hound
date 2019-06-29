@@ -8,27 +8,25 @@ const Splash = props => {
     <>
       <div className="splashContainer">
         <Banner />
-        <div id="action-selector">
-          <h3>I</h3>
-          <div>
-            <Button
-              id="splashButton"
-              onClick={props.clickHandler}
-              value="Lost"
-              variant="light"
-            >
-              lost
-            </Button>
-            <Button
-              id="splashButton"
-              onClick={props.clickHandler}
-              value="Found"
-              variant="light"
-            >
-              found
-            </Button>
-          </div>
-          <h3>a dog</h3>
+      </div>
+      <div id="action-selector">
+        <div>
+          <Button
+            id="splashButton"
+            onClick={props.clickHandler}
+            value="Lost"
+            variant="light"
+          >
+            I found a dog
+          </Button>
+          <Button
+            id="splashButton"
+            onClick={props.clickHandler}
+            value="Found"
+            variant="light"
+          >
+            I lost my dog
+          </Button>
         </div>
       </div>
     </>
@@ -36,4 +34,3 @@ const Splash = props => {
 };
 
 export default Splash;
-//

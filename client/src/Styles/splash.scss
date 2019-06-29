@@ -1,36 +1,57 @@
-@import './mixins.scss';
+@import "./mixins.scss";
 
 .splashContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 6vh;
+  // margin-right: 10%;
+  // margin-top: 6vh;
   font-size: 23px;
   font-weight: 900;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
+}
 
-  #banner,
-  img,
-  #title {
-    // border: 1px solid;
+#action-selector {
+  display: flex;
+  justify-content: center;
+  background-color: $applecore;
+  @include item-container;
+  text-align: center;
+  width: 40%;
+  margin: 4% auto;
+
+  #splashButton {
+    @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+    font-family: "Nunito", sans-serif;
+
+    &:hover {
+    }
+
+    @include shadow;
+    height: 8vw;
+    width: 13vw;
+    margin: 30px;
+    border-radius: 5px;
+    font-weight: 900;
+    font-size: 1.7vw;
+    line-height: 1;
   }
-
-  #action-selector {
-    margin-top: 2%;
-    @include item-container;
-    text-align: center;
-    padding: 1%;
-
+  @media only screen and (max-width: 900px) {
     #splashButton {
-      &:hover {}
+      @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+      font-family: "Nunito", sans-serif;
+
+      &:hover {
+      }
 
       @include shadow;
-      height: 81px;
-      width: 150px;
-      margin: 30px;
+      height: 11vw;
+      width: 18vw;
+      margin: 15px;
       border-radius: 5px;
       font-weight: 900;
-      font-size: 1.6rem;
+      font-size: 1.6vw;
+      line-height: 1;
     }
   }
 }
