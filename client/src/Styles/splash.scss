@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   // margin-right: 10%;
-  margin-top: 6vh;
+  // margin-top: 6vh;
   font-size: 23px;
   font-weight: 900;
   font-family: "Nunito", sans-serif;
@@ -17,8 +17,8 @@
   background-color: $applecore;
   @include item-container;
   text-align: center;
-  width: 25%;
-  margin: 7% auto;
+  width: 40%;
+  margin: 4% auto;
 
   #splashButton {
     @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
@@ -37,7 +37,6 @@
     line-height: 1;
   }
   @media only screen and (max-width: 900px) {
-    width: 70%;
     #splashButton {
       @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
       font-family: "Nunito", sans-serif;

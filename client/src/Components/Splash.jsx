@@ -17,7 +17,7 @@ const Splash = props => {
             value="Lost"
             variant="light"
           >
-            I lost my dog
+            I found a dog
           </Button>
           <Button
             id="splashButton"
@@ -25,7 +25,7 @@ const Splash = props => {
             value="Found"
             variant="light"
           >
-            I found a dog
+            I lost my dog
           </Button>
         </div>
       </div>
