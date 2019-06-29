@@ -23,11 +23,7 @@ class Flyer extends React.Component {
   }
   componentWillMount() {
     axios
-      .get(
-        `http://ec2-3-130-116-160.us-east-2.compute.amazonaws.com/api/dog${
-          this.props.location.search
-        }`
-      )
+      .get(`https://lost-and-hound.com/api/dog${this.props.location.search}`)
       .then(response =>
         this.setState(
           {
@@ -43,7 +39,10 @@ class Flyer extends React.Component {
     return (
       <>
         <Navbar id="nav" sticky="top" bg="light" expand="lg">
-          <Navbar.Brand className="navTitle" href={`http://localhost:8000/`}>
+          <Navbar.Brand
+            className="navTitle"
+            href={`https://lost-and-hound.com/`}
+          >
             <img alt="logo" src="./assets/logo.png" width="40" />
           </Navbar.Brand>
         </Navbar>
@@ -87,7 +86,7 @@ class Flyer extends React.Component {
               })(document, "script", "facebook-jssdk")}
               <div
                 className="fb-share-button"
-                data-href={`http://localhost:8000/flyer/${
+                data-href={`https://lost-and-hound.com/flyer/${
                   this.props.location.search
                 }`}
                 data-layout="button_count"
