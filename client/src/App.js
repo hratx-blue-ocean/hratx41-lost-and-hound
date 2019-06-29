@@ -45,14 +45,20 @@ class App extends React.Component {
     });
   }
 
-  fetchHandler() {
+  fetchHandler(obj) {
     this.setState(
       {
-        results: []
+        results: [],
+        formData: obj || {
+          color: null,
+          lostDate: null,
+          zipcode: null,
+          gender: null
+        }
       },
       () => {
         if (this.state.action === "Found") {
-          axios.get("/api/found").then(response => {
+          axios.get("https://lost-and-hound.com/api/found").then(response => {
             console.log(response.data);
             this.setState({
               results: response.data
@@ -61,6 +67,7 @@ class App extends React.Component {
         } else if (this.state.action === "Lost") {
           axios.get("https://lost-and-hound.com/api/lost").then(response => {
             console.log(response.data);
+            console.log(this.state);
             this.setState({
               results: response.data
             });
