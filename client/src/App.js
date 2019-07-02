@@ -59,15 +59,12 @@ class App extends React.Component {
       () => {
         if (this.state.action === "Found") {
           axios.get("https://lost-and-hound.com/api/found").then(response => {
-            console.log(response.data);
             this.setState({
               results: response.data
             });
           });
         } else if (this.state.action === "Lost") {
           axios.get("https://lost-and-hound.com/api/lost").then(response => {
-            console.log(response.data);
-            console.log(this.state);
             this.setState({
               results: response.data
             });
@@ -83,15 +80,10 @@ class App extends React.Component {
     if (temp === "lostDate") {
       value += "T00:00:00.000";
     }
-    this.setState(
-      (prevState, props) => {
-        prevState.formData[temp] = value;
-        return { formData: prevState.formData };
-      },
-      () => {
-        console.log(this.state);
-      }
-    );
+    this.setState((prevState, props) => {
+      prevState.formData[temp] = value;
+      return { formData: prevState.formData };
+    });
   }
 
   resultExpand(index) {

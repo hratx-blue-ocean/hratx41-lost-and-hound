@@ -27,7 +27,6 @@ class PostDog extends React.Component {
     });
   }
   postForm(e) {
-    console.log(this.state);
     const data = {
       color: this.state.postData.color,
       date: this.state.postData.date,
@@ -41,12 +40,12 @@ class PostDog extends React.Component {
       name: this.state.postData.name,
       status: this.state.postData.status,
       looksLike: this.state.postData.looksLike,
-      image: this.state.postData.image
+      image: this.state.postData.image,
+      infoURL: this.state.postData.infoURL
     };
     axios
       .post("https://lost-and-hound.com/api/dog", data)
-      .then(response => console.log(response))
-      .catch(err => console.log(err));
+      .catch(err => alert("Error submitting post, please try again."));
   }
   render() {
     return (
@@ -93,6 +92,12 @@ class PostDog extends React.Component {
                 <Form.Control onChange={this.setForm} id="name" type="text" />
                 <Form.Label>color</Form.Label>
                 <Form.Control onChange={this.setForm} id="color" type="text" />
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  onChange={this.setForm}
+                  id="infoURL"
+                  type="text"
+                />
                 <Form.Label>breed</Form.Label>
                 <Form.Control
                   onChange={this.setForm}
@@ -102,7 +107,7 @@ class PostDog extends React.Component {
                 <Form.Label>gender</Form.Label>
                 <Form.Control onChange={this.setForm} id="sex" as="select">
                   <option>select</option>
-                  <option>sale</option>
+                  <option>male</option>
                   <option>female</option>
                 </Form.Control>
                 <Form.Label>lost / found</Form.Label>
@@ -130,5 +135,5 @@ class PostDog extends React.Component {
     );
   }
 }
-//
+
 export default PostDog;
