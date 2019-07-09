@@ -78,29 +78,3 @@ The MVP of the app has an interactive search that allows the display of lost or 
 Our team utilized the Gitflow workflow. . The master branch only contained working code, while our develop branch served as an integration branch for all features. We meticulously kept track of all changes and reviewed all code before pulling back into develop. Though the process was rigorous and time-intensive, it ensured that we had working code at all times.
 
 Additionally, our team utilized the Agile workflow with [Trello](https://trello.com/b/K6y30AZf/lost-and-hound) to keep track of tickets. All work that was performed was specifically associated with a ticket. Every morning, we tracked the progress of tickets and updated our Trello board.
-
-
-* What did you learn from the process
-Using a dedicated branch to prepare releases makes it possible for one team to polish the current release while another team continues working on features for the next release. It also creates well-defined phases of development. Git workflow is great for agile development, allowing large teams to constantly develop independently and come together with ease as a whole. 
-* What were key takeaways from stand ups, code reviews, etc
-Testing testing testing. Always test before pull request as things can slip past.
-Stand-ups are a fundamental part of agile development. The stand-up is important to keep everyone aware of the team’s landscape and progress. It allows each member to share what they have been working on and what they are planning to do next. We held our meetings first thing in the morning and quickly went around the group where everyone shared and updated the group. These meetings highlight progress and help flag any larger issues. The daily reinforcement of sharing individual successes and plans keep everyone excited about the team’s overall contribution to the organization.
-* Writing tests
-In the long run, writing tests actually make our code more robust, and easier to maintain. Tests are also important in catching bugs earlier, the more you wait the more nested and difficult the bug becomes, testing allows you to catch bugs early. Testing also improves the quality of code by identifying defects. 
-
-* Link to your trello board, discuss completed tickets
-
-
-Any non-MVP tickets (optional)
-Code refactorings
-Performance Optimizations
-Additional features
-etc
-Notes from your Sprint Retro
-What additional features do you plan to add, how do you plan to implement those features?
-* Future refactoring?
-Include use of Facebook Groups API to allow for more lost and found doggie data to be scraped from local groups.
-* Additional dev ops considerations?
-* UI/UX additions?
-
-### Optimizations
